@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<!-- Footer -->
+	{% block footer %}
+		<footer
+			class="container text-center text-lg-start bg-light text-muted">
+			<!-- Section: Social media -->
+			<section
+				class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+				<!-- Left -->
+				<div class="me-5 d-none d-lg-block">
+					<span>Suivez-nous sur les réseaux sociaux:</span>
+				</div>
+				<!-- Left -->
+
+				<!-- Right -->
+				<div>
+					<a href="" class="me-4 text-reset">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="" class="me-4 text-reset">
+						<i class="fab fa-google"></i>
+					</a>
+					<a href="" class="me-4 text-reset">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="" class="me-4 text-reset">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				</div>
+				<!-- Right -->
+			</section>
+			<!-- Section: Social media -->
+
+			<!-- Section: Links  -->
+			<section class="">
+				<div
+					class="container text-center text-md-start mt-5">
+					<!-- Grid row -->
+					<div
+						class="row mt-3">
+						<!-- Grid column -->
+						<div
+							class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+							<!-- Content -->
+							<h5 class="text-uppercase fw-bold mb-4">
+								<i class="fas fa-gem me-3"></i>Jardin la cour
+							</h5>
+							<p>
+								Jardin la cour accueille les scolaires et le grand public pour des activités pédagagogiques en plein air, à Grand Coude, dans les hauts de Saint-Joseph, la Réunion.
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div
+							class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+							<!-- Links -->
+							<h5 class="text-uppercase fw-bold mb-4">
+								Activités
+							</h5>
+							<p>
+								<a href="{{path('app_grand_public_tunnel')}}" class="text-reset">Tunnel des nombres</a>
+							</p>
+							<p>
+								<a href="{{path('app_grand_public_alphabet')}}" class="text-reset">Visit Petit'Ferme</a>
+							</p>
+							<p>
+								<a href="{{path('app_grand_public_pique_nique')}}" class="text-reset">Aire de pique-nique</a>
+							</p>
+							<p>
+								<a href="{{path('app_grand_public_camping')}}" class="text-reset">Camping nuit australe</a>
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div
+							class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+							<!-- Links -->
+							<h5 class="text-uppercase fw-bold mb-4">
+								Liens
+							</h5>
+							<p>
+								<a href="{{path('main')}}" class="text-reset">Accueil</a>
+							</p>
+							<p>
+								<a href="{{path('app_ecole_marron')}}" class="text-reset">Ecole Marron</a>
+							</p>
+							<p>
+								<a href="{{path('app_grand_public')}}" class="text-reset">Grand Public</a>
+							</p>
+							<p>
+								<a href="{{asset('pdf/livre_d_or_jardin_la_cour.pdf')}}" class="text-reset">Livre d'or</a>
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div
+							class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+							<!-- Links -->
+							<h5 class="text-uppercase fw-bold mb-4">Contact</h5>
+							<p>
+								<i class="fas fa-home me-3"></i>
+								146 route de Grand Coude, 97480</p>
+							<p>
+								<i class="fas fa-envelope me-3"></i>
+								contact@jardinlacour.re
+							</p>
+							<p>
+								<i class="fas fa-phone me-3"></i>
+								+262 692 56 16 16</p>
+							<p>
+								<i class="fas fa-print me-3"></i>
+								+262 692 56 16 16</p>
+						</div>
+						<!-- Grid column -->
+					</div>
+					<!-- Grid row -->
+				</div>
+			</section>
+			<!-- Section: Links  -->
+		</footer>
+
+		<!-- Copyright -->
+		<div class="container text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+			<small>
+				&copy 2023
+				<a href="{{path('main')}}">
+					Jardin la Cour |</a>
+				<a href="{{path('app_mentions_legales')}}">Mentions légales |
+				</a>
+				<a href="{{path('app_politique_confidentialite')}}">Politique de confidentialité |
+				</a>
+				<a href="{{path('app_conditions_generales_de_ventes')}}">CGV |
+				</a>
+				<a href="https://contenucreation.fr/">
+					Site développé par Anthony Etheve</a>
+			</small>
+
+		</div>
+		<!-- Copyright -->
+		<!-- Footer -->
+	{% endblock %}
+
+
+</html>
