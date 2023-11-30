@@ -40,6 +40,13 @@
 		{% block javascripts %}{% endblock %}
 	</head>
 	<body>
+		{% for message in app.flashes('success')%}
+			<div class="alert alert-success">{{ message|raw }}</div>
+		{% endfor %}
+
+		{% for message in app.flashes('error')%}
+			<div class="alert alert-danger">{{ message|raw }}</div>
+		{% endfor %}
 		{% block body %}{% endblock %}
 	</body>
 </html>

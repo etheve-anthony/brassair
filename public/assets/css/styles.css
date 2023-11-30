@@ -12,6 +12,30 @@ p {
     font-family: 'Lato', sans-serif;
 }
 
-.h2-style {
+.h2-style,
+.p-style {
     font-family: 'Dancing Script', cursive;
+}
+
+.navcolor {
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+a {
+    color: black !important;
+    padding: 0px;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+.hamb-menu-lien {
+    text-decoration: underline !important;
 }
