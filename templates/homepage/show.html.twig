@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <h1>Homepage</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ homepage.id }}</td>
+            </tr>
+            <tr>
+                <th>Hero1</th>
+                <td>{{ homepage.hero1 }}</td>
+            </tr>
+            <tr>
+                <th>Hero2</th>
+                <td>{{ homepage.hero2 }}</td>
+            </tr>
+            <tr>
+                <th>MainImage</th>
+                <td>{{ homepage.mainImage }}</td>
+            </tr>
+            <tr>
+                <th>AboutText</th>
+                <td>{{ homepage.aboutText }}</td>
+            </tr>
+            <tr>
+                <th>AboutVideo</th>
+                <td>{{ homepage.aboutVideo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_homepage_index') }}">back to list</a>
+
+    <a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">edit</a>
+
+    {{ include('homepage/_delete_form.html.twig') }}
+{% endblock %}

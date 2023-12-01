@@ -3,34 +3,7 @@
 	<!-- Footer -->
 	{% block footer %}
 		<footer
-			class="container text-center text-lg-start bg-light text-muted">
-			<!-- Section: Social media -->
-			<section
-				class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-				<!-- Left -->
-				<div class="me-5 d-none d-lg-block">
-					<span>Suivez-nous sur les réseaux sociaux:</span>
-				</div>
-				<!-- Left -->
-
-				<!-- Right -->
-				<div>
-					<a href="" class="me-4 text-reset">
-						<i class="fab fa-facebook-f"></i>
-					</a>
-					<a href="" class="me-4 text-reset">
-						<i class="fab fa-google"></i>
-					</a>
-					<a href="" class="me-4 text-reset">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a href="" class="me-4 text-reset">
-						<i class="fab fa-linkedin"></i>
-					</a>
-				</div>
-				<!-- Right -->
-			</section>
-			<!-- Section: Social media -->
+			class="text-center text-lg-start bg-light text-muted py-2">
 
 			<!-- Section: Links  -->
 			<section class="">
@@ -44,10 +17,10 @@
 							class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 							<!-- Content -->
 							<h5 class="text-uppercase fw-bold mb-4">
-								<i class="fas fa-gem me-3"></i>Jardin la cour
+								<i class="fa-solid fa-mountain-sun me-3"></i>Robert Cuisines
 							</h5>
 							<p>
-								Jardin la cour accueille les scolaires et le grand public pour des activités pédagagogiques en plein air, à Grand Coude, dans les hauts de Saint-Joseph, la Réunion.
+								Robert Cuisines est une entreprise réunionnaise qui fabrique des cuisines, des meubles de rangement et de salle de bain. Nous avons un showroom et un atelier de fabrication au Tampon.
 							</p>
 						</div>
 						<!-- Grid column -->
@@ -57,19 +30,19 @@
 							class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 							<!-- Links -->
 							<h5 class="text-uppercase fw-bold mb-4">
-								Activités
+								Nos cuisines
 							</h5>
 							<p>
-								<a href="{{path('app_grand_public_tunnel')}}" class="text-reset">Tunnel des nombres</a>
+								<a href="#" class="text-reset">Cuisine 1</a>
 							</p>
 							<p>
-								<a href="{{path('app_grand_public_alphabet')}}" class="text-reset">Visit Petit'Ferme</a>
+								<a href="#" class="text-reset">Cuisine 2</a>
 							</p>
 							<p>
-								<a href="{{path('app_grand_public_pique_nique')}}" class="text-reset">Aire de pique-nique</a>
+								<a href="#" class="text-reset">Cuisine 3</a>
 							</p>
 							<p>
-								<a href="{{path('app_grand_public_camping')}}" class="text-reset">Camping nuit australe</a>
+								<a href="#" class="text-reset">Cuisine 4</a>
 							</p>
 						</div>
 						<!-- Grid column -->
@@ -82,16 +55,23 @@
 								Liens
 							</h5>
 							<p>
-								<a href="{{path('main')}}" class="text-reset">Accueil</a>
+								<a href="#" class="text-reset">L'offre du moment</a>
 							</p>
 							<p>
-								<a href="{{path('app_ecole_marron')}}" class="text-reset">Ecole Marron</a>
+								<a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#messageModal">
+									Envoyer un message
+								</a>
 							</p>
 							<p>
-								<a href="{{path('app_grand_public')}}" class="text-reset">Grand Public</a>
+								<a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#locationModal">
+									Nous trouver sur la carte
+								</a>
 							</p>
 							<p>
-								<a href="{{asset('pdf/livre_d_or_jardin_la_cour.pdf')}}" class="text-reset">Livre d'or</a>
+								<a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#horaireModal">
+									Nos horaires
+								</a>
+
 							</p>
 						</div>
 						<!-- Grid column -->
@@ -103,17 +83,18 @@
 							<h5 class="text-uppercase fw-bold mb-4">Contact</h5>
 							<p>
 								<i class="fas fa-home me-3"></i>
-								146 route de Grand Coude, 97480</p>
+								21 Chemin Leroy, Tampon, 97430</p>
 							<p>
 								<i class="fas fa-envelope me-3"></i>
-								contact@jardinlacour.re
+								robertcuisines@orange.fr
 							</p>
 							<p>
 								<i class="fas fa-phone me-3"></i>
-								+262 692 56 16 16</p>
+								+262 692 86 77 45</p>
 							<p>
-								<i class="fas fa-print me-3"></i>
-								+262 692 56 16 16</p>
+								<i class="fab fa-facebook-f me-3"></i>
+								<a href="#">Suivez-nous sur Facebook</a>
+							</p>
 						</div>
 						<!-- Grid column -->
 					</div>
@@ -124,16 +105,14 @@
 		</footer>
 
 		<!-- Copyright -->
-		<div class="container text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+		<div class="text-center p-4 bg-footer">
 			<small>
-				&copy 2023
-				<a href="{{path('main')}}">
-					Jardin la Cour |</a>
-				<a href="{{path('app_mentions_legales')}}">Mentions légales |
+				&copy 2024
+				<a href="#" class="me-3">
+					Robert Cuisines</a>
+				<a href="#" class="me-3">Mentions légales
 				</a>
-				<a href="{{path('app_politique_confidentialite')}}">Politique de confidentialité |
-				</a>
-				<a href="{{path('app_conditions_generales_de_ventes')}}">CGV |
+				<a href="#" class="me-3">Politique de confidentialité
 				</a>
 				<a href="https://contenucreation.fr/">
 					Site développé par Anthony Etheve</a>

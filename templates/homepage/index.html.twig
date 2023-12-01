@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage index{% endblock %}
+
+{% block body %}
+    <h1>Homepage index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hero1</th>
+                <th>Hero2</th>
+                <th>MainImage</th>
+                <th>AboutText</th>
+                <th>AboutVideo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for homepage in homepages %}
+            <tr>
+                <td>{{ homepage.id }}</td>
+                <td>{{ homepage.hero1 }}</td>
+                <td>{{ homepage.hero2 }}</td>
+                <td>{{ homepage.mainImage }}</td>
+                <td>{{ homepage.aboutText }}</td>
+                <td>{{ homepage.aboutVideo }}</td>
+                <td>
+                    <a href="{{ path('app_homepage_show', {'id': homepage.id}) }}">show</a>
+                    <a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_homepage_new') }}">Create new</a>
+{% endblock %}

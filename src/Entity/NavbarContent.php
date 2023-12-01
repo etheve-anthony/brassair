@@ -32,6 +32,11 @@ class NavbarContent
     private ?string $menu3Url = null;
 
     #[ORM\Column(length: 100)]
+    private ?string $menu4 = null;
+    #[ORM\Column(length: 100)]
+    private ?string $menu4Url = null;
+
+    #[ORM\Column(length: 100)]
     private ?string $logoImage = null;
 
     #[ORM\Column(length: 100, nullable: true)]
@@ -149,6 +154,30 @@ class NavbarContent
     public function setMenu3Url(string $menu3Url): static
     {
         $this->menu3Url = $menu3Url;
+
+        return $this;
+    }
+
+    public function getMenu4(): ?string
+    {
+        return $this->menu4;
+    }
+
+    public function setMenu4(string $menu4): static
+    {
+        $this->menu4 = $menu4;
+
+        return $this;
+    }
+
+    public function getMenu4Url(): ?string
+    {
+        return $this->menu4Url;
+    }
+
+    public function setMenu4Url(string $menu4Url): static
+    {
+        $this->menu4Url = $menu4Url;
 
         return $this;
     }
