@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_image_file_delete', {'id': image_file.id}) }}" onsubmit="return confirm('Etes vous sûr de supprimer ce fichier??');">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ image_file.id) }}">
+	<button class="btn btn-danger mt-3">Supprimer</button>
+</form>

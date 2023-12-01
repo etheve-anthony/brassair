@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fichier image
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="mt-3">Fichier image</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ image_file.id }}</td>
+				</tr>
+				<tr>
+					<th>Nom du fichier</th>
+					<td>{{ image_file.imageName }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<td>
+						<img src="{{ asset('images/' ~ image_file.imageName) }}"></td>
+				</tr>
+				<tr>
+					<th>URL du fichier</th>
+					<td>{% set baseURL = 'https://bluetec.re' %}
+						{# Base de l'URL #}
+						{% set imageFile = image_file.imageName %}
+						{# Nom du fichier MP3 #}
+
+						{% set imageURL = baseURL ~ '/images/' ~ imageFile %}
+						{# Concaténation de l'URL #}
+
+
+						{{ imageURL }}
+					</td>
+				</tr>
+				<tr>
+					<th>Taille du fichier</th>
+					<td>{% set fileSizeInBytes = image_file.imageSize %}{% set fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024) %}
+						{{ fileSizeInMegabytes | number_format(2) }}
+						Mo</td>
+				</tr>
+				<tr>
+					<th>Modifié le</th>
+					<td>{{ image_file.updatedAt ? image_file.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_image_file_index') }}">Revenir à la liste</a>
+
+		<a href="{{ path('app_image_file_edit', {'id': image_file.id}) }}">éditer</a>
+
+		{{ include('image_file/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

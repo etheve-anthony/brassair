@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer image
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="mt-3">Editer fichier image</h1>
+
+		{{ include('image_file/_form.html.twig', {'button_label': 'Modifier'}) }}
+		<a href="{{ 'https://bluetec.re/images/' ~ image_id }}" download>Télécharger</a>
+		<br>
+		<hr>
+		<a href="{{ path('app_image_file_index') }}">Revenir à la liste</a>
+
+		{{ include('image_file/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

@@ -23,24 +23,6 @@ class Homepage
     #[ORM\Column(length: 255)]
     private ?string $mainImage = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $collectionImage1 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $collectionText1 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $collectionImage2 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $collectionText2 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $collectionImage3 = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $collectionText3 = null;
-
     #[ORM\Column(type: Types::TEXT)]
     private ?string $aboutText = null;
 
@@ -84,78 +66,6 @@ class Homepage
     public function setMainImage(string $mainImage): static
     {
         $this->mainImage = $mainImage;
-
-        return $this;
-    }
-
-    public function getCollectionImage1(): ?string
-    {
-        return $this->collectionImage1;
-    }
-
-    public function setCollectionImage1(string $collectionImage1): static
-    {
-        $this->collectionImage1 = $collectionImage1;
-
-        return $this;
-    }
-
-    public function getCollectionText1(): ?string
-    {
-        return $this->collectionText1;
-    }
-
-    public function setCollectionText1(string $collectionText1): static
-    {
-        $this->collectionText1 = $collectionText1;
-
-        return $this;
-    }
-
-    public function getCollectionImage2(): ?string
-    {
-        return $this->collectionImage2;
-    }
-
-    public function setCollectionImage2(string $collectionImage2): static
-    {
-        $this->collectionImage2 = $collectionImage2;
-
-        return $this;
-    }
-
-    public function getCollectionText2(): ?string
-    {
-        return $this->collectionText2;
-    }
-
-    public function setCollectionText2(string $collectionText2): static
-    {
-        $this->collectionText2 = $collectionText2;
-
-        return $this;
-    }
-
-    public function getCollectionImage3(): ?string
-    {
-        return $this->collectionImage3;
-    }
-
-    public function setCollectionImage3(string $collectionImage3): static
-    {
-        $this->collectionImage3 = $collectionImage3;
-
-        return $this;
-    }
-
-    public function getCollectionText3(): ?string
-    {
-        return $this->collectionText3;
-    }
-
-    public function setCollectionText3(string $collectionText3): static
-    {
-        $this->collectionText3 = $collectionText3;
 
         return $this;
     }
