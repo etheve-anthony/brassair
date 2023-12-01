@@ -28,7 +28,7 @@ p {
 }
 
 a {
-    color: black !important;
+    color: black;
     padding: 0px;
 }
 
@@ -38,4 +38,45 @@ a {
 
 .hamb-menu-lien {
     text-decoration: underline !important;
+}
+
+.bandeau-promo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Commence à partir du côté gauche du conteneur */
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #b01601;
+    color: white;
+    padding: 20px;
+    position: relative;
+    /* Position relative pour le positionnement absolu du texte */
+}
+
+.bandeau-promo p {
+    position: absolute;
+    /* Positionnement absolu */
+    left: 100%;
+    /* Commence en dehors du bandeau, à droite */
+    margin: 0;
+    animation: defilement 25s linear infinite;
+}
+
+@keyframes defilement {
+    0% {
+        left: 100%;
+    }
+
+    /* Début de l'animation hors du bandeau, à droite */
+    100% {
+        left: -100%;
+    }
+
+    /* Fin de l'animation hors du bandeau, à gauche */
+}
+
+body>div.d-none.d-lg-block>div.bandeau-promo>p>a {
+    color: white;
+    text-decoration: underline;
 }
