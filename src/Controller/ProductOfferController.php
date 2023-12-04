@@ -11,14 +11,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/offres/du/moment')]
+#[Route('/annonces')]
 class ProductOfferController extends AbstractController
 {
     #[Route('/', name: 'app_product_offer_index', methods: ['GET'])]
     public function index(ProductOfferRepository $productOfferRepository): Response
     {
         return $this->render('product_offer/index.html.twig', [
-            'product_offers' => $productOfferRepository->findAll(),
+            'product_offers' => $productOfferRepository->findBy(
+                [],
+                ['id' => 'DESC'],
+                30
+            ),
         ]);
     }
 
@@ -30,6 +34,20 @@ class ProductOfferController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // Fabrication du slug
+            $slug = $form->getData()->getTitle();
+            // To lower case
+            $slug = strtolower($slug);
+            // On cherche le premier espace
+            $positionPremierEspace = strpos($slug, ' ');
+            if ($positionPremierEspace !== false) {
+                $slug = substr_replace($slug, '-', $positionPremierEspace, 1);
+            }
+            // On remplace les espaces par des tirets
+            $slug = str_replace(' ', '-', $slug);
+            // On set le slug
+            $productOffer->setSlug($slug);
+            // On enregistre en base de données
             $entityManager->persist($productOffer);
             $entityManager->flush();
 
@@ -42,17 +60,33 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_product_offer_show', methods: ['GET'])]
-    public function show(ProductOffer $productOffer): Response
+    // #[Route('/{id}', name: 'app_product_offer_show', methods: ['GET'])]
+    // public function show(ProductOffer $productOffer): Response
+    // {
+    //     return $this->render('product_offer/show.html.twig', [
+    //         'product_offer' => $productOffer,
+    //     ]);
+    // }
+
+    #[Route('/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
+    public function showToVisitors(string $slug, ProductOffer $productOffer, ProductOfferRepository $productOfferRepository): Response
     {
-        return $this->render('product_offer/show.html.twig', [
+        $productOffer = $productOfferRepository->findOneBy(['slug' => $slug]);
+
+        if (!$productOffer) {
+            throw $this->createNotFoundException('No product offer found for slug ' . $slug);
+        }
+
+        return $this->render('product_offer/show_visitors.html.twig', [
             'product_offer' => $productOffer,
         ]);
     }
 
-    #[Route('/{id}/modifier', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager): Response
+    #[Route('/{slug}/modifier', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
+    public function edit(string $slug, Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository): Response
     {
+        $productOffer = $productOfferRepository->findOneBy(['slug' => $slug]);
+
         $form = $this->createForm(ProductOfferType::class, $productOffer);
         $form->handleRequest($request);
 
@@ -71,6 +105,7 @@ class ProductOfferController extends AbstractController
     #[Route('/{id}', name: 'app_product_offer_delete', methods: ['POST'])]
     public function delete(Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager): Response
     {
+
         if ($this->isCsrfTokenValid('delete' . $productOffer->getId(), $request->request->get('_token'))) {
             $entityManager->remove($productOffer);
             $entityManager->flush();

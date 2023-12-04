@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Offre du moment
 {% endblock %}
@@ -11,7 +11,7 @@
 	<div class="d-block d-lg-none">
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
-	<div class="container">
+	<div class="mx-5">
 		<h1>Offre du moment</h1>
 
 		<table class="table">
@@ -52,13 +52,19 @@
 					<th>Image 3</th>
 					<td>{{ product_offer.image3 }}</td>
 				</tr>
+				<tr>
+					<th>Slug</th>
+					<td>{{ product_offer.slug }}</td>
+				</tr>
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_product_offer_index') }}">Revenir à liste</a>
-
-		<a href="{{ path('app_product_offer_edit', {'id': product_offer.id}) }}">éditer</a>
-
+		<p>
+			<a href="{{ path('app_product_offer_index') }}">Revenir à liste</a>
+			|
+			<a href="{{ path('app_product_offer_edit', {'id': product_offer.id}) }}">éditer</a>
+		</p>
+		<hr>
 		{{ include('product_offer/_delete_form.html.twig') }}
 	</div>
 

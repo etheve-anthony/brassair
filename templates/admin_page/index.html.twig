@@ -11,37 +11,39 @@
 	<div class="d-block d-lg-none">
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
-	<div class="mx-5">
+	<div class="mx-5 mt-3">
 
 		{% if statuts == admin %}
 			<div id="message-bienvenue" style="display: flex">
 				<p class="ms-1">
-					{{ prenom }}!</p>
+					{{ prenom }}! Vous êtes connecté(e) avec votre identifiant :
+					{{ app.user.userIdentifier }}.
+					<a href="{{ path('app_logout') }}">Se déconnecter</a>
+				</p>
 			</div>
 
-			<div class="mb-3">
-				Vous êtes connecté(e) avec votre identifiant :
-				{{ app.user.userIdentifier }}.
-				<a href="{{ path('app_logout') }}">Se déconnecter</a>
-			</div>
-
-			<div id="date-semaine" class="mb-3"></div>
 			<p class="mb-3">Statut :
 				{{ statuts }}
 			</p>
 
-			<p>Nombre de visites sur le site aujourd'hui :
-				<span>
-					....
-				</span>
-			</p>
+			<div id="date-semaine" class="mb-3"></div>
 
-			<p>Nombre de visites sur le site cette semaine :
-				<span>
-					....
-				</span>
-			</p>
-
+			<div class="row">
+				<div class="col-lg-4">
+					<p>Nombre de visites sur le site aujourd'hui :
+						<span>
+							....
+						</span>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<p>Nombre de visites sur le site les 7 derniers jours :
+						<span>
+							....
+						</span>
+					</p>
+				</div>
+			</div>
 
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
@@ -51,10 +53,10 @@
 					<button class="nav-link" id="accueil-tab" data-bs-toggle="tab" data-bs-target="#accueil" type="button" role="tab" aria-controls="accueil" aria-selected="false">Page d'accueil</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="true">Utilisateurs</button>
+					<button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines</button>
+					<button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="true">Utilisateurs</button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
@@ -69,16 +71,16 @@
 				<div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Administration des utilisateurs</h3>
 					<div class="row">
-						<div class="col-lg-4 mt-2">
+						<div class="col-lg-2 mt-2">
 							<a href="{{ path('app_register_staff') }}">Ajouter un collaborateur</a>
 						</div>
 
-						<div class="col-lg-4 mt-2">
+						<div class="col-lg-2 mt-2">
 							<a href="{{ path('app_register_listing') }}">Liste des collaborateurs</a>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-lg-4 mt-2">
+						<div class="col-lg-2 mt-2">
 							<a href="{{ path('app_register_profil') }}">Mon profil</a>
 						</div>
 					</div>
@@ -99,6 +101,15 @@
 
 				<div class="tab-pane fade show active" id="offres" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Offres</h3>
+					<div class="row">
+						<div class="col-lg-2 mt-2">
+							<a href="{{ path('app_product_offer_new') }}">Ajouter une offre</a>
+						</div>
+
+						<div class="col-lg-2 mt-2">
+							<a href="{{ path('app_product_offer_index') }}">Liste des offres</a>
+						</div>
+					</div>
 				</div>
 
 				<div class="tab-pane fade show" id="contact" role="tabpanel" aria-labelledby="home-tab">
@@ -109,5 +120,4 @@
 		{% endif %}
 
 	</div>
-
 {% endblock %}

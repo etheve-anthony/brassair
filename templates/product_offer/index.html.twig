@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Liste des offres
 {% endblock %}
@@ -11,7 +11,7 @@
 	<div class="d-block d-lg-none">
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
-	<div class="container">
+	<div class="mx-5">
 
 		<h1 class="mt-3">Liste des offres</h1>
 
@@ -23,10 +23,6 @@
 					<th>Annonce 1</th>
 					<th>Annonce 2</th>
 					<th>Annonce 3</th>
-					<th>Description</th>
-					<th>Image 1</th>
-					<th>Image 2</th>
-					<th>Image 3</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -38,13 +34,9 @@
 						<td>{{ product_offer.message1 }}</td>
 						<td>{{ product_offer.message2 }}</td>
 						<td>{{ product_offer.message3 }}</td>
-						<td>{{ product_offer.description }}</td>
-						<td>{{ product_offer.image1 }}</td>
-						<td>{{ product_offer.image2 }}</td>
-						<td>{{ product_offer.image3 }}</td>
 						<td>
-							<a href="{{ path('app_product_offer_show', {'id': product_offer.id}) }}">voir</a>
-							<a href="{{ path('app_product_offer_edit', {'id': product_offer.id}) }}">éditer</a>
+							<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">voir</a>
+							<a href="{{ path('app_product_offer_edit', {'slug': product_offer.slug}) }}">éditer</a>
 						</td>
 					</tr>
 				{% else %}
@@ -55,7 +47,12 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_product_offer_new') }}">Créer une nouvelle offre</a>
+		<p>
+			<a href="{{ path('app_product_offer_new') }}">Créer une nouvelle offre</a>
+			|
+			<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
+		</p>
+
 
 	</div>
 

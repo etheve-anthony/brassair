@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Modifier offre
 {% endblock %}
@@ -11,12 +11,13 @@
 	<div class="d-block d-lg-none">
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
-	<div class="container">
+	<div class="mx-5">
 		<h1 class="mt-3">Editer offre</h1>
 
 		{{ include('product_offer/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
 		<a href="{{ path('app_product_offer_index') }}">Revenir à la liste</a>
+		<hr>
 
 		{{ include('product_offer/_delete_form.html.twig') }}
 

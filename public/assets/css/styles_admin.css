@@ -17,6 +17,10 @@ p {
     font-family: 'Dancing Script', cursive;
 }
 
+#date-semaine {
+    font-family: 'Lato', sans-serif;
+}
+
 .p_dark_red {
     font-family: 'Quicksand', sans-serif;
     color: #841010;

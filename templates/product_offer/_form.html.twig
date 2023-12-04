@@ -1,4 +1,38 @@
 {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+
+<div class="row">
+	<div class="col-lg-4">
+		{{ form_row(form.title) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-4">
+		{{ form_row(form.message1) }}
+	</div>
+	<div class="col-lg-4">
+		{{ form_row(form.message2) }}
+	</div>
+	<div class="col-lg-4">
+		{{ form_row(form.message3) }}
+	</div>
+</div>
+<small class="text-danger fst-italic">Le titre et les 3 annonces seront visibles sur le bandeau rouge déroulant.</small>
+<div class="row mt-3">
+	<div class="col-lg-4">
+		{{ form_row(form.description) }}
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-4">
+		{{ form_row(form.image1) }}
+	</div>
+	<div class="col-lg-4">
+		{{ form_row(form.image2) }}
+	</div>
+	<div class="col-lg-4">
+		{{ form_row(form.image3) }}
+	</div>
+</div>
+
+<button class="btn btn-success mb-3">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
