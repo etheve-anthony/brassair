@@ -23,11 +23,50 @@ class Homepage
     #[ORM\Column(length: 255)]
     private ?string $mainImage = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $aboutText = null;
+    #[ORM\Column(length: 100)]
+    private ?string $buttonText = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $aboutVideo = null;
+    #[ORM\Column(length: 100)]
+    private ?string $titleSection2Small = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $titleSection2Big = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise1 = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise2 = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise3 = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise4 = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise1Image = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise2Image = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise3Image = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $promise4Image = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $titleSection3 = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $aboutText1 = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $aboutText2 = null;
+
+    // #[ORM\Column(length: 255)]
+    // private ?string $aboutVideo = null;
 
     public function getId(): ?int
     {
@@ -70,27 +109,171 @@ class Homepage
         return $this;
     }
 
-    public function getAboutText(): ?string
+    public function getButtonText(): ?string
     {
-        return $this->aboutText;
+        return $this->buttonText;
     }
 
-    public function setAboutText(string $aboutText): static
+    public function setButtonText(string $buttonText): static
     {
-        $this->aboutText = $aboutText;
+        $this->buttonText = $buttonText;
 
         return $this;
     }
 
-    public function getAboutVideo(): ?string
+    public function getTitleSection2Small(): ?string
     {
-        return $this->aboutVideo;
+        return $this->titleSection2Small;
     }
 
-    public function setAboutVideo(string $aboutVideo): static
+    public function setTitleSection2Small(string $titleSection2Small): static
     {
-        $this->aboutVideo = $aboutVideo;
+        $this->titleSection2Small = $titleSection2Small;
 
         return $this;
     }
+
+    public function getTitleSection2Big(): ?string
+    {
+        return $this->titleSection2Big;
+    }
+
+    public function setTitleSection2Big(string $titleSection2Big): static
+    {
+        $this->titleSection2Big = $titleSection2Big;
+
+        return $this;
+    }
+
+    public function getPromise1(): ?string
+    {
+        return $this->promise1;
+    }
+
+    public function setPromise1(string $promise1): static
+    {
+        $this->promise1 = $promise1;
+
+        return $this;
+    }
+
+    public function getPromise2(): ?string
+    {
+        return $this->promise2;
+    }
+
+    public function setPromise2(string $promise2): static
+    {
+        $this->promise2 = $promise2;
+
+        return $this;
+    }
+
+    public function getPromise3(): ?string
+    {
+        return $this->promise3;
+    }
+
+    public function setPromise3(string $promise3): static
+    {
+        $this->promise3 = $promise3;
+
+        return $this;
+    }
+
+    public function getPromise4(): ?string
+    {
+        return $this->promise4;
+    }
+
+    public function setPromise4(string $promise4): static
+    {
+        $this->promise4 = $promise4;
+
+        return $this;
+    }
+
+    public function getPromise1Image(): ?string
+    {
+        return $this->promise1Image;
+    }
+
+    public function setPromise1Image(string $promise1Image): static
+    {
+        $this->promise1Image = $promise1Image;
+
+        return $this;
+    }
+
+    public function getPromise2Image(): ?string
+    {
+        return $this->promise2Image;
+    }
+
+    public function setPromise2Image(string $promise2Image): static
+    {
+        $this->promise2Image = $promise2Image;
+
+        return $this;
+    }
+
+    public function getPromise3Image(): ?string
+    {
+        return $this->promise3Image;
+    }
+
+    public function setPromise3Image(string $promise3Image): static
+    {
+        $this->promise3 = $promise3Image;
+
+        return $this;
+    }
+
+    public function getPromise4Image(): ?string
+    {
+        return $this->promise4Image;
+    }
+
+    public function setPromise4Image(string $promise4Image): static
+    {
+        $this->promise4Image = $promise4Image;
+
+        return $this;
+    }
+
+    public function getAboutText1(): ?string
+    {
+        return $this->aboutText1;
+    }
+
+    public function setAboutText1(string $aboutText1): static
+    {
+        $this->aboutText1 = $aboutText1;
+
+        return $this;
+    }
+
+    public function getAboutText2(): ?string
+    {
+        return $this->aboutText2;
+    }
+
+    public function setAboutText2(string $aboutText2): static
+    {
+        $this->aboutText2 = $aboutText2;
+
+        return $this;
+    }
+
+    // public function getAboutVideo(): ?string
+    // {
+    //     return $this->aboutVideo;
+    // }
+
+    // public function setAboutVideo(string $aboutVideo): static
+    // {
+    //     $this->aboutVideo = $aboutVideo;
+
+    //     return $this;
+    // }
 }

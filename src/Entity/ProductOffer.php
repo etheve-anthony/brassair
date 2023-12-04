@@ -17,6 +17,15 @@ class ProductOffer
     #[ORM\Column(length: 100)]
     private ?string $title = null;
 
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message1 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message2 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message3 = null;
+
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
@@ -42,6 +51,42 @@ class ProductOffer
     public function setTitle(string $title): static
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getMessage1(): ?string
+    {
+        return $this->message1;
+    }
+
+    public function setMessage1(string $message1): static
+    {
+        $this->message1 = $message1;
+
+        return $this;
+    }
+
+    public function getMessage2(): ?string
+    {
+        return $this->message2;
+    }
+
+    public function setMessage2(string $message2): static
+    {
+        $this->message2 = $message2;
+
+        return $this;
+    }
+
+    public function getMessage3(): ?string
+    {
+        return $this->message3;
+    }
+
+    public function setMessage3(string $message3): static
+    {
+        $this->message3 = $message3;
 
         return $this;
     }
