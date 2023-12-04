@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/product/offer')]
+#[Route('/offres/du/moment')]
 class ProductOfferController extends AbstractController
 {
     #[Route('/', name: 'app_product_offer_index', methods: ['GET'])]
@@ -22,7 +22,7 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_product_offer_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_product_offer_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $productOffer = new ProductOffer();
@@ -50,7 +50,7 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ProductOfferType::class, $productOffer);
@@ -71,7 +71,7 @@ class ProductOfferController extends AbstractController
     #[Route('/{id}', name: 'app_product_offer_delete', methods: ['POST'])]
     public function delete(Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$productOffer->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $productOffer->getId(), $request->request->get('_token'))) {
             $entityManager->remove($productOffer);
             $entityManager->flush();
         }

@@ -1,11 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New ProductOffer{% endblock %}
+{% block title %}Nouvelle offre
+{% endblock %}
 
 {% block body %}
-    <h1>Create new ProductOffer</h1>
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
 
-    {{ include('product_offer/_form.html.twig') }}
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="container">
 
-    <a href="{{ path('app_product_offer_index') }}">back to list</a>
+		<h1>Créer une nouvelle offre</h1>
+
+		{{ include('product_offer/_form.html.twig') }}
+
+		<a href="{{ path('app_product_offer_index') }}">Revenir à la liste</a>
+
+	</div>
+
 {% endblock %}

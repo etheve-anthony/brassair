@@ -1,54 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ProductOffer{% endblock %}
+{% block title %}Offre du moment
+{% endblock %}
 
 {% block body %}
-    <h1>ProductOffer</h1>
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ product_offer.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ product_offer.title }}</td>
-            </tr>
-            <tr>
-                <th>Message1</th>
-                <td>{{ product_offer.message1 }}</td>
-            </tr>
-            <tr>
-                <th>Message2</th>
-                <td>{{ product_offer.message2 }}</td>
-            </tr>
-            <tr>
-                <th>Message3</th>
-                <td>{{ product_offer.message3 }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ product_offer.description }}</td>
-            </tr>
-            <tr>
-                <th>Image1</th>
-                <td>{{ product_offer.image1 }}</td>
-            </tr>
-            <tr>
-                <th>Image2</th>
-                <td>{{ product_offer.image2 }}</td>
-            </tr>
-            <tr>
-                <th>Image3</th>
-                <td>{{ product_offer.image3 }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="container">
+		<h1>Offre du moment</h1>
 
-    <a href="{{ path('app_product_offer_index') }}">back to list</a>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ product_offer.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td>{{ product_offer.title }}</td>
+				</tr>
+				<tr>
+					<th>Message 1</th>
+					<td>{{ product_offer.message1 }}</td>
+				</tr>
+				<tr>
+					<th>Message 2</th>
+					<td>{{ product_offer.message2 }}</td>
+				</tr>
+				<tr>
+					<th>Message 3</th>
+					<td>{{ product_offer.message3 }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>{{ product_offer.description }}</td>
+				</tr>
+				<tr>
+					<th>Image 1</th>
+					<td>{{ product_offer.image1 }}</td>
+				</tr>
+				<tr>
+					<th>Image 2</th>
+					<td>{{ product_offer.image2 }}</td>
+				</tr>
+				<tr>
+					<th>Image 3</th>
+					<td>{{ product_offer.image3 }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <a href="{{ path('app_product_offer_edit', {'id': product_offer.id}) }}">edit</a>
+		<a href="{{ path('app_product_offer_index') }}">Revenir à liste</a>
 
-    {{ include('product_offer/_delete_form.html.twig') }}
+		<a href="{{ path('app_product_offer_edit', {'id': product_offer.id}) }}">éditer</a>
+
+		{{ include('product_offer/_delete_form.html.twig') }}
+	</div>
+
 {% endblock %}

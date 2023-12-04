@@ -1,0 +1,235 @@
+h1 h2,
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+.h2-style,
+.p-style {
+    font-family: 'Dancing Script', cursive;
+}
+
+.p_dark_red {
+    font-family: 'Quicksand', sans-serif;
+    color: #841010;
+}
+
+.p_red {
+    font-family: 'Quicksand', sans-serif;
+    color: #b01601;
+}
+
+.p_yellow {
+    font-family: 'Quicksand', sans-serif;
+    color: #ffca0a;
+}
+
+.custom-icon-1 {
+    color: #841010;
+    /* Couleur pour la première icône */
+}
+
+.custom-icon-2 {
+    color: #ffca0a;
+    /* Couleur pour la deuxième icône */
+}
+
+.custom-icon-3 {
+    color: #b01601;
+    /* Couleur pour la troisième icône */
+}
+
+.bg-footer {
+    background-color: #841010;
+    color: white !important;
+}
+
+.navcolor {
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: black !important;
+}
+
+a {
+    color: black;
+    padding: 0px;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+.hamb-menu-lien {
+    text-decoration: underline !important;
+}
+
+.bandeau-promo-fixe {
+    background-color: #b01601;
+    color: white;
+}
+
+/* Lien bandeau promotionnel VOIR L'OFFRE */
+body>div.d-none.d-lg-block>div.bandeau-promo-fixe>p>a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Lien bandeau footer (liens légales et section kitchen) */
+body>div.text-center.p-4.bg-footer>small>a:nth-child(1),
+body>div.text-center.p-4.bg-footer>small>a:nth-child(2),
+body>div.text-center.p-4.bg-footer>small>a:nth-child(3),
+body>div.text-center.p-4.bg-footer>small>a:nth-child(4),
+body>div.kitchen-section.px-5.py-5>div:nth-child(2)>div:nth-child(1)>h4>a,
+body>div.kitchen-section.px-5.py-5>div:nth-child(2)>div:nth-child(2)>h4>a,
+body>div.kitchen-section.px-5.py-5>div:nth-child(3)>div:nth-child(1)>h4>a,
+body>div.kitchen-section.px-5.py-5>div:nth-child(3)>div:nth-child(2)>h4>a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero section accueil */
+.hero-section {
+    background-image: url('https://127.0.0.1:8000/images/homepage/robert_cuisines_cuisine_bois.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Hero section paragraphe */
+body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
+    font-size: 17px;
+}
+
+/* BTN hero section */
+.btn-hero-section {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.btn-hero-section:hover,
+.btn-hero-section:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #b01601;
+}
+
+.btn-hero-section:hover {
+    transform: translateY(-1px);
+}
+
+.btn-hero-section:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+/* Promise section */
+.promise-section {
+    background-color: #841010;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.img-reunion {
+    border-radius: 50%;
+}
+
+/* Kitchen section */
+.kitchen-section {
+    background-color: #ffca0a;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+/* About section */
+.about-section {
+    background-color: #b01601;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* ou la hauteur que vous souhaitez */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    /* Votre style pour le contenu ici */
+}
+
+#materiauxModal>div>div>div.modal-body>ul {
+    font-family: 'Lato', sans-serif;
+}

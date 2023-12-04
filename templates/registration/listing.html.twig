@@ -1,0 +1,48 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="container my-3">
+
+		<h2 class="text-center">Utilisateurs de l'application</h2>
+		<p class="text-center lead">Liste des collaborateurs</p>
+
+		<h3>Liste utilisateurs</h3>
+		{% for item in items %}
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="">ID utilisateur</label>
+					<div>{{ item.id }}</div>
+				</div>
+				<div class="col-lg-3">
+					<label for="">Prénom/Nom</label>
+					<div>{{ item.first_name }}
+						{{ item.last_name }}</div>
+				</div>
+				<div class="col-lg-3">
+					<label for="">Fonction</label>
+					<div>{{ item.roles }}</div>
+				</div>
+				<div class="col-3">
+					<a href="{{ path('app_register_edit', {id: item.id})}}" class="btn btn-warning mb-5">Modifier</a>
+					<a href="{{ path('app_register_delete', {id: item.id})}}" class="btn btn-danger mb-5">Supprimer</a>
+				</div>
+			</div>
+			<hr>
+		{% endfor %}
+
+
+		<br>
+		<a href="{{ path('app_register_staff')}}">Ajouter un collaborateur</a>
+		<div class="mb-5"></div>
+	</div>
+
+{% endblock %}

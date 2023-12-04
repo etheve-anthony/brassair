@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use App\Entity\User;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+class AdminPageController extends AbstractController
+{
+    #[Route('/administration', name: 'app_admin_page')]
+    public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager): Response
+    {
+
+        $roles = '';
+        $firstName = '';
+
+        if ($authChecker->isGranted('IS_AUTHENTICATED_FULLY')) {
+            // L'utilisateur est connecté
+            /** @var Users $user */
+            $user = $tokenStorage->getToken()->getUser();
+            $roles = $user->getRoles();
+            $roles = $roles[0];
+            $firstName = $user->getFirstName();
+        }
+
+        $role_admin = 'ROLE_ADMIN';
+        $role_secretaire = 'ROLE_USER_SEC';
+
+        return $this->render('admin_page/index.html.twig', [
+            'statuts' => $roles,
+            'admin' => $role_admin,
+            'secretaire' => $role_secretaire,
+            'prenom' => $firstName,
+        ]);
+    }
+}
