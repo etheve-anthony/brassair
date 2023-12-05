@@ -17,6 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+use App\Repository\ContactInfosRepository;
 
 #[Route('/inscription', name: 'app_register_')]
 class RegistrationController extends AbstractController
@@ -29,8 +30,11 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/collaborateur', name: 'staff')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
@@ -64,6 +68,7 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            'contact' => $contactContent,
         ]);
     }
 
@@ -89,19 +94,26 @@ class RegistrationController extends AbstractController
 
     // Fonction pour lire tous les utilisateurs admins et secrétaires
     #[Route('/liste-utilisateurs', name: 'listing')]
-    public function show(Request $request, EntityManagerInterface $entityManager): Response
+    public function show(Request $request, EntityManagerInterface $entityManager, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
         $repository = $entityManager->getRepository(User::class)->getAllUsers();
 
         return $this->render('registration/listing.html.twig', [
             'items' => $repository,
+            'contact' => $contactContent,
         ]);
     }
 
     // Fonction pour modifier son profil personnel
     #[Route('/profil', name: 'profil')]
-    public function profil(Request $request, EntityManagerInterface $entityManager, TokenStorageInterface $tokenStorage, UserPasswordHasherInterface $userPasswordHasher): Response
+    public function profil(Request $request, EntityManagerInterface $entityManager, TokenStorageInterface $tokenStorage, UserPasswordHasherInterface $userPasswordHasher, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
         // On récupère l'utilisateur connecté
         /** @var User $user */
         $user = $tokenStorage->getToken()->getUser();
@@ -137,13 +149,16 @@ class RegistrationController extends AbstractController
             'first_name' => $firstName,
             'last_name' => $lastName,
             'role' => $roles,
+            'contact' => $contactContent,
         ]);
     }
     // Fonction d'édition des utilisateurs (pour l'admin)
     #[Route('/edition/{id}', name: 'edit')]
-    public function edit(User $user, Request $request, EntityManagerInterface $em): Response
+    public function edit(User $user, Request $request, EntityManagerInterface $em, ContactInfosRepository $contactInfosRepository): Response
     {
-
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
         $form = $this->createForm(EditUsersType::class, $user);
         $form->handleRequest($request);
 
@@ -161,14 +176,18 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/edit.html.twig', [
             'user' => $form->createView(),
+            'contact' => $contactContent,
         ]);
     }
 
     // Fonction pour supprimer des utilisateurs (admin)
     #[Route('/suppression/{id}', name: 'delete')]
-    public function delete(User $user, Request $request, EntityManagerInterface $em): Response
+    public function delete(User $user, Request $request, EntityManagerInterface $em, ContactInfosRepository $contactInfosRepository): Response
     {
 
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
         $form = $this->createForm(RemoveUsersType::class, $user);
         $form->handleRequest($request);
 
@@ -184,6 +203,7 @@ class RegistrationController extends AbstractController
 
         return $this->render('registration/delete.html.twig', [
             'user' => $form->createView(),
+            'contact' => $contactContent,
         ]);
     }
 }

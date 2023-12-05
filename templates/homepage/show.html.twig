@@ -1,42 +1,96 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Page d'accueil
+{% endblock %}
 
 {% block body %}
-    <h1>Homepage</h1>
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ homepage.id }}</td>
-            </tr>
-            <tr>
-                <th>Hero1</th>
-                <td>{{ homepage.hero1 }}</td>
-            </tr>
-            <tr>
-                <th>Hero2</th>
-                <td>{{ homepage.hero2 }}</td>
-            </tr>
-            <tr>
-                <th>MainImage</th>
-                <td>{{ homepage.mainImage }}</td>
-            </tr>
-            <tr>
-                <th>AboutText</th>
-                <td>{{ homepage.aboutText }}</td>
-            </tr>
-            <tr>
-                <th>AboutVideo</th>
-                <td>{{ homepage.aboutVideo }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5">
+		<h1 class="mt-3">Page d'accueil</h1>
 
-    <a href="{{ path('app_homepage_index') }}">back to list</a>
-
-    <a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">edit</a>
-
-    {{ include('homepage/_delete_form.html.twig') }}
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ homepage.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre 1 accueil (grand)</th>
+					<td>{{ homepage.hero1 }}</td>
+				</tr>
+				<tr>
+					<th>Titre 2 accueil (petit)</th>
+					<td>{{ homepage.hero2 }}</td>
+				</tr>
+				<tr>
+					<th>Image principale</th>
+					<td>{{ homepage.mainImage }}</td>
+				</tr>
+				<tr>
+					<th>Titre 2 (petit)</th>
+					<td>{{ homepage.titleSection2Small }}</td>
+				</tr>
+				<tr>
+					<th>Titre 2 (grand)</th>
+					<td>{{ homepage.titleSection2Big }}</td>
+				</tr>
+				<tr>
+					<th>Promesse 1</th>
+					<td>{{ homepage.promise1 }}</td>
+				</tr>
+				<tr>
+					<th>Promesse 2</th>
+					<td>{{ homepage.promise2 }}</td>
+				</tr>
+				<tr>
+					<th>Promesse 3</th>
+					<td>{{ homepage.promise3 }}</td>
+				</tr>
+				<tr>
+					<th>Promesse 4</th>
+					<td>{{ homepage.promise4 }}</td>
+				</tr>
+				<tr>
+					<th>Image Promesse 1</th>
+					<td>{{ homepage.promise1Image }}</td>
+				</tr>
+				<tr>
+					<th>Image Promesse 2</th>
+					<td>{{ homepage.promise2Image }}</td>
+				</tr>
+				<tr>
+					<th>Image Promesse 3</th>
+					<td>{{ homepage.promise3Image }}</td>
+				</tr>
+				<tr>
+					<th>Image Promesse 4</th>
+					<td>{{ homepage.promise4Image }}</td>
+				</tr>
+				<tr>
+					<th>Titre section 3</th>
+					<td>{{ homepage.titleSection3 }}</td>
+				</tr>
+				<tr>
+					<th>Texte à propos 1</th>
+					<td>{{ homepage.aboutText1 }}</td>
+				</tr>
+				<tr>
+					<th>Texte à propos 2</th>
+					<td>{{ homepage.aboutText2 }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<a href="{{ path('app_homepage_index') }}">Revenir à la liste</a>
+			|
+			<a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">éditer</a>
+		</p>
+		{{ include('homepage/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

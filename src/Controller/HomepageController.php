@@ -6,6 +6,7 @@ use App\Entity\Homepage;
 use App\Form\HomepageType;
 use App\Repository\HomepageRepository;
 use App\Repository\ProductOfferRepository;
+use App\Repository\ContactInfosRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +16,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomepageController extends AbstractController
 {
     #[Route('/', name: 'app_homepage_visitors', methods: ['GET'])]
-    public function accueil(HomepageRepository $homepageRepository, ProductOfferRepository $productOfferRepository): Response
+    public function accueil(HomepageRepository $homepageRepository, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
+        // Récupération du contenu du bandeau promotionnel
         $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
         $productOffer = $promoContent[0] ?? null;
 
+        // Récupération du contenu de la page d'accueil
+        $homepageContent = $homepageRepository->findAll();
+        $homepageContent = $homepageContent[0] ?? null;
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         return $this->render('homepage/visitors.html.twig', [
-            'homepages' => $homepageRepository->findAll(),
+            'homepage' => $homepageContent,
+            'contact' => $contactContent,
             'product_offer' => $productOffer,
         ]);
     }

@@ -66,16 +66,13 @@
 					<button class="nav-link active" id="offres-tab" data-bs-toggle="tab" data-bs-target="#offres" type="button" role="tab" aria-controls="offres" aria-selected="false">Offres/Annonces</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="accueil-tab" data-bs-toggle="tab" data-bs-target="#accueil" type="button" role="tab" aria-controls="accueil" aria-selected="false">Page d'accueil</button>
+					<button class="nav-link" id="accueil-tab" data-bs-toggle="tab" data-bs-target="#accueil" type="button" role="tab" aria-controls="accueil" aria-selected="false">Accueil/Infos</button>
 				</li>
 				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines</button>
+					<button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines/Images</button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="true">Utilisateurs</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statistiques" type="button" role="tab" aria-controls="statistiques" aria-selected="false">Rapports</button>
@@ -86,38 +83,52 @@
 
 				<div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Administration des utilisateurs</h3>
-					<div class="row">
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_register_staff') }}">Ajouter un collaborateur</a>
-						</div>
-
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_register_listing') }}">Liste des collaborateurs</a>
-						</div>
+					<div class="mt-2">
+						<a href="{{ path('app_register_staff') }}">Ajouter un collaborateur</a>
 					</div>
-					<div class="row">
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_register_profil') }}">Mon profil</a>
-						</div>
+
+					<div class="mt-2">
+						<a href="{{ path('app_register_listing') }}">Liste des collaborateurs</a>
+					</div>
+
+					<div class="mt-2">
+						<a href="{{ path('app_register_profil') }}">Mon profil</a>
 					</div>
 				</div>
 
 				<div class="tab-pane fade" id="cuisines" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Cuisines
 					</h3>
-					<div class="row">
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
-						</div>
+					<div class="mt-2">
+						<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
+					</div>
 
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
-						</div>
+					<div class="mt-2">
+						<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
 					</div>
 				</div>
 
 				<div class="tab-pane fade" id="accueil" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Page d'accueil</h3>
+					<h3 class="my-3">Accueil</h3>
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="mt-2">
+								<a href="{{ path('app_homepage_new') }}">Ajouter la page d'accueil</a>
+							</div>
+							<div class="mt-2">
+								<a href="{{ path('app_homepage_index') }}">Liste des pages</a>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="mt-2">
+								<a href="{{ path('app_contact_infos_new') }}">Ajouter l'identité</a>
+							</div>
+
+							<div class="mt-2">
+								<a href="{{ path('app_contact_infos_index') }}">Liste des identités</a>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="tab-pane fade" id="statistiques" role="tabpanel" aria-labelledby="home-tab">
@@ -126,19 +137,13 @@
 
 				<div class="tab-pane fade show active" id="offres" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Offres</h3>
-					<div class="row">
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_product_offer_new') }}">Ajouter une offre</a>
-						</div>
-
-						<div class="col-lg-2 mt-2">
-							<a href="{{ path('app_product_offer_index') }}">Liste des offres</a>
-						</div>
+					<div class="mt-2">
+						<a href="{{ path('app_product_offer_new') }}">Ajouter une offre</a>
 					</div>
-				</div>
 
-				<div class="tab-pane fade show" id="contact" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Contact</h3>
+					<div class="mt-2">
+						<a href="{{ path('app_product_offer_index') }}">Liste des offres</a>
+					</div>
 				</div>
 
 			</div>

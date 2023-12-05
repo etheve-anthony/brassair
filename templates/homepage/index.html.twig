@@ -1,43 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Homepage index{% endblock %}
+{% block title %}Page d'accueil
+{% endblock %}
 
 {% block body %}
-    <h1>Homepage index</h1>
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Hero1</th>
-                <th>Hero2</th>
-                <th>MainImage</th>
-                <th>AboutText</th>
-                <th>AboutVideo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for homepage in homepages %}
-            <tr>
-                <td>{{ homepage.id }}</td>
-                <td>{{ homepage.hero1 }}</td>
-                <td>{{ homepage.hero2 }}</td>
-                <td>{{ homepage.mainImage }}</td>
-                <td>{{ homepage.aboutText }}</td>
-                <td>{{ homepage.aboutVideo }}</td>
-                <td>
-                    <a href="{{ path('app_homepage_show', {'id': homepage.id}) }}">show</a>
-                    <a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5">
+		<h1 class="mt-3">Liste des pages</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre 1 accueil</th>
+					<th>Titre 2 accueil</th>
+					<th>Image principale</th>
+					<th>Texte à propos 1</th>
+					<th>Texte à propos 2</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for homepage in homepages %}
+					<tr>
+						<td>{{ homepage.id }}</td>
+						<td>{{ homepage.hero1 }}</td>
+						<td>{{ homepage.hero2 }}</td>
+						<td>{{ homepage.mainImage }}</td>
+						<td>{{ homepage.aboutText1 }}</td>
+						<td>{{ homepage.aboutText2 }}</td>
+						<td>
+							<a href="{{ path('app_homepage_show', {'id': homepage.id}) }}">voir</a>
+							<a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">éditer</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="7">Pas de pages trouvées</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<p>
+			<a href="{{ path('app_homepage_new') }}">Créer une nouvelle page</a>
+			|
+			<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
+		</p>
+	</div>
 
-    <a href="{{ path('app_homepage_new') }}">Create new</a>
+
 {% endblock %}

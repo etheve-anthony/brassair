@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn btn-success mb-3">{{ button_label|default('Enregistrer') }}</button>
+<br>
+<small>*Ajouter l'image du logo dans
+	<a href="{{path('app_image_file_index')}}">administration cuisines</a>
+	puis mettre le lien ci-dessus.</small>
+{{ form_end(form) }}

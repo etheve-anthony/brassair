@@ -32,13 +32,13 @@ class ProductOffer
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 150, nullable: true)]
     private ?string $image1 = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 150, nullable: true)]
     private ?string $image2 = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 150, nullable: true)]
     private ?string $image3 = null;
 
     public function getId(): ?int

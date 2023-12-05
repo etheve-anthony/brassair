@@ -18,13 +18,13 @@ class Homepage
     private ?string $hero1 = null;
 
     #[ORM\Column(length: 255)]
+    private ?string $hero1Part2 = null;
+
+    #[ORM\Column(length: 255)]
     private ?string $hero2 = null;
 
     #[ORM\Column(length: 255)]
     private ?string $mainImage = null;
-
-    #[ORM\Column(length: 100)]
-    private ?string $buttonText = null;
 
     #[ORM\Column(length: 100)]
     private ?string $titleSection2Small = null;
@@ -44,16 +44,16 @@ class Homepage
     #[ORM\Column(length: 100)]
     private ?string $promise4 = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 150)]
     private ?string $promise1Image = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 150)]
     private ?string $promise2Image = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 150)]
     private ?string $promise3Image = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 150)]
     private ?string $promise4Image = null;
 
     #[ORM\Column(length: 100)]
@@ -85,6 +85,18 @@ class Homepage
         return $this;
     }
 
+    public function getHero1Part2(): ?string
+    {
+        return $this->hero1Part2;
+    }
+
+    public function setHero1Part2(string $hero1Part2): static
+    {
+        $this->hero1Part2 = $hero1Part2;
+
+        return $this;
+    }
+
     public function getHero2(): ?string
     {
         return $this->hero2;
@@ -105,18 +117,6 @@ class Homepage
     public function setMainImage(string $mainImage): static
     {
         $this->mainImage = $mainImage;
-
-        return $this;
-    }
-
-    public function getButtonText(): ?string
-    {
-        return $this->buttonText;
-    }
-
-    public function setButtonText(string $buttonText): static
-    {
-        $this->buttonText = $buttonText;
 
         return $this;
     }
@@ -224,7 +224,7 @@ class Homepage
 
     public function setPromise3Image(string $promise3Image): static
     {
-        $this->promise3 = $promise3Image;
+        $this->promise3Image = $promise3Image;
 
         return $this;
     }
@@ -237,6 +237,18 @@ class Homepage
     public function setPromise4Image(string $promise4Image): static
     {
         $this->promise4Image = $promise4Image;
+
+        return $this;
+    }
+
+    public function getTitleSection3(): ?string
+    {
+        return $this->titleSection3;
+    }
+
+    public function setTitleSection3(string $titleSection3): static
+    {
+        $this->titleSection3 = $titleSection3;
 
         return $this;
     }

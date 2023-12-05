@@ -8,15 +8,23 @@
 				<h3 class="my-4 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Contactez Robert Cuisines pour vos projets !</h3>
 				<div class="col-md-12 col-lg-4 text-center">
 					<i class="fa-solid fa-envelope fa-4x d-block mb-2 custom-icon-1"></i>
-					<span class="lead">robertcuisines@orange.fr</span>
+					<span class="lead">{{ contact.email }}</span>
 				</div>
 				<div class="col-md-12 col-lg-4 text-center">
 					<i class="fa-solid fa-phone fa-4x d-block mb-2 custom-icon-2"></i>
-					<span class="lead">0692 86 77 45</span>
+					<span class="lead">{% set formattedNumber = '' %}
+						{% set phoneNumber = contact.telephone %}
+						{% for i in 0..(phoneNumber|length / 2)|round(0, 'floor') - 1 %}
+							{% set start = i * 2 %}
+							{% set formattedNumber = formattedNumber ~ phoneNumber|slice(start, 2) ~ ' ' %}
+						{% endfor %}
+
+						{{ formattedNumber }}
+					</span>
 				</div>
 				<div class="col-md-12 col-lg-4 text-center">
 					<i class="fa-solid fa-location-dot fa-4x d-block mb-2 custom-icon-3"></i>
-					<span class="lead">21 Chemin Leroy, Tampon, 97430 (showroom)</span>
+					<span class="lead">{{ contact.address }}</span>
 				</div>
 			</div>
 		</div>

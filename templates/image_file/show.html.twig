@@ -27,7 +27,7 @@
 				<tr>
 					<th>Image</th>
 					<td>
-						<img src="{{ asset('images/' ~ image_file.imageName) }}"></td>
+						<img src="{{ asset('images/kitchen/' ~ image_file.imageName) }}"></td>
 				</tr>
 				<tr>
 					<th>URL du fichier</th>
@@ -36,7 +36,7 @@
 						{% set imageFile = image_file.imageName %}
 						{# Nom du fichier MP3 #}
 
-						{% set imageURL = baseURL ~ '/images/' ~ imageFile %}
+						{% set imageURL = baseURL ~ '/images/kitchen/' ~ imageFile %}
 						{# Concaténation de l'URL #}
 
 

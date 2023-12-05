@@ -19,8 +19,6 @@
 			<p>Pas d'offre disponible pour le moment.</p>
 		{% endif %}
 	</div>
-
-
 	<div class="d-none d-lg-block">
 		{% include 'navbar_visitors_lg.html.twig' %}
 	</div>
@@ -29,10 +27,10 @@
 		{% include 'navbar_visitors_md.html.twig' %}
 	</div>
 
-	<div class="hero-section text-white px-5 py-5">
-		<h1 class="wow fadeInUp" data-wow-delay="0.1s">Expert en Fabrication
-			<br>de Cuisines Sur Mesure</h1>
-		<p>Robert Cuisines, votre Partenaire Idéal pour une Cuisine Moderne</p>
+	<div class="hero-section text-white px-5 py-5" id="dynamic-hero-homepage-background">
+		<h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ homepage.hero1}}
+			<br>{{ homepage.hero1Part2}}</h1>
+		<p>{{ homepage.hero2}}</p>
 		<p>
 			<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="btn-hero-section">{{ product_offer.title }}
 				<span>
@@ -45,13 +43,13 @@
 	</div>
 
 	<div class="promise-section px-5 py-5">
-		<p class="text-center text-white">NOTRE PROMESSE</p>
-		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">Une Fabrication Réunionnaise Compétente</h2>
+		<p class="text-center text-white">{{ homepage.titleSection2Small}}</p>
+		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection2Big}}</h2>
 		<div class="row">
-			<div class="col-lg-3 text-center text-white"><img src="{{asset('images/icones/reunion_flag.svg.png')}}" alt="" class="img-reunion" width="175px" height="175px">
+			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise1Image}}" alt="" class="img-reunion" width="175px" height="175px">
 				<h4 class="mt-3">
 					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#assemblageModal">
-						Un Assemblage 100% local
+						{{ homepage.promise1}}
 					</a>
 				</h4>
 				<!-- Modal promise 1 assemblage local-->
@@ -59,7 +57,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title text-black" id="assemblageModalLabel">Un Assemblage 100% local</h5>
+								<h5 class="modal-title text-black" id="assemblageModalLabel">{{ homepage.promise1}}</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
@@ -72,10 +70,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{asset('images/icones/materiau_plan_travail.jpg')}}" alt="" class="img-reunion" width="175px" height="175px">
+			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise2Image}}" alt="" class="img-reunion" width="175px" height="175px">
 				<h4 class="mt-3">
 					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#materiauxModal">
-						Une Diversité de Matériaux
+						{{ homepage.promise2}}
 					</a>
 				</h4>
 				<!-- Modal promise 2 matériaux-->
@@ -83,7 +81,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title text-black" id="matériauxModalLabel">Une Diversité de Matériaux</h5>
+								<h5 class="modal-title text-black" id="matériauxModalLabel">{{ homepage.promise2}}</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
@@ -115,13 +113,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{asset('images/icones/cuisine_couleur_bleu_robert_cuisines.jpg')}}" alt="" class="img-reunion" width="175px" height="175px">
-				<h4 class="mt-3">Des Couleurs Variées</h4>
+			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise3Image}}" alt="" class="img-reunion" width="175px" height="175px">
+				<h4 class="mt-3">{{ homepage.promise3}}</h4>
 			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{asset('images/icones/robert_cuisines_cuisine_ilot.jpg')}}" alt="" class="img-reunion" width="175px" height="175px">
+			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise4Image}}" alt="" class="img-reunion" width="175px" height="175px">
 				<h4 class="mt-3">
 					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#styleCuisineModal">
-						Des Styles Modernes et Anciens
+						{{ homepage.promise4}}
 					</a>
 				</h4>
 				<!-- Modal promise 1 styleCuisine-->
@@ -129,7 +127,7 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title text-black" id="styleCuisineModalLabel">Des Styles Modernes et Anciens</h5>
+								<h5 class="modal-title text-black" id="styleCuisineModalLabel">{{ homepage.promise4}}</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
@@ -146,9 +144,9 @@
 	</div>
 
 	<div class="kitchen-section px-5 py-5">
-		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">Explorez notre collection de cuisines</h2>
+		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection3}}</h2>
 		<div class="row">
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_bois.jpg')}}" alt="" class="img-fluid rounded">
+			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-bois-656ed09e9ed05025866810.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3 mb-4">
 					<a href="#" class="menu-item">Style bois
 						<span>
@@ -159,7 +157,7 @@
 					</a>
 				</h4>
 			</div>
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_acrylique.jpg')}}" alt="" class="img-fluid rounded">
+			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-acrylique-656ed098056c8875603270.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3 mb-4">
 					<a href="#" class="menu-item">Acrylique
 						<span>
@@ -172,7 +170,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_mélaminé.jpg')}}" alt="" class="img-fluid rounded">
+			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-melamine-656ed0a3db0f5065280037.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3">
 					<a href="#" class="menu-item">Mélaminé
 						<span>
@@ -183,7 +181,7 @@
 					</a>
 				</h4>
 			</div>
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_laqué.jpg')}}" alt="" class="img-fluid rounded">
+			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-laque-656ed0b1b3f76857267564.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3">
 					<a href="#" class="menu-item">Laqué
 						<span>
@@ -202,12 +200,29 @@
 			<h2 class="mt-3 mb-4 h2-style wow fadeInUp" data-wow-delay="0.1s">
 				Robert Cuisines
 			</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur reprehenderit eos ipsum id porro labore recusandae<br>
-				maiores amet totam commodi?
-																																																																																																																																																																																																																																																																																																																																																																																																				Dolorem accusantium aspernatur commodi vel aliquid magnam, explicabo incidunt delectus?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam commodi impedit beatae esse explicabo.<br>
-				Totam, vero odio ullam cupiditate ad
-																																																																																																																																																																																																																																																																																																																																																																																																				numquam molestiae repudiandae. Ex suscipit aut eius unde odio!</p>
+			{% set words = homepage.aboutText1|split(' ') %}
+			<p>
+				{% for word in words %}
+					{{ word }}
+					{% if loop.index is divisible by(17) and not loop.last %}
+						<br>
+					{% else %}
+						{% if not loop.last %}{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+			{% set words = homepage.aboutText2|split(' ') %}
+			<p>
+				{% for word in words %}
+					{{ word }}
+					{% if loop.index is divisible by(17) and not loop.last %}
+						<br>
+					{% else %}
+						{% if not loop.last %}{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+
 		</div>
 	</div>
 	<div class="text-center text-white ratio ratio-16x9">
@@ -226,4 +241,18 @@
 	{% include 'contact_bar.html.twig' %}
 	{% include 'footer.html.twig' %}
 
+{% endblock %}
+
+{% block javascripts %}
+
+	<script>
+		// ajout image 1 hero section
+document.addEventListener('DOMContentLoaded', function () {
+var imageUrl = "{{ homepage.mainImage }}"; // Récupère l'URL de l'image depuis Twig
+var heroSection = document.getElementById('dynamic-hero-homepage-background');
+
+// Définit l'image de fond
+heroSection.style.backgroundImage = 'url(' + imageUrl + ')';
+});
+	</script>
 {% endblock %}

@@ -10,15 +10,21 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use App\Repository\ProductOfferRepository;
+use App\Repository\ContactInfosRepository;
 
 class AdminPageController extends AbstractController
 {
     #[Route('/administration', name: 'app_admin_page')]
-    public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository): Response
+    public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
+        // Récupération du contenu du bandeau promotionnel
         $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
         $productOffer = $promoContent[0] ?? null;
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
 
         $roles = '';
         $firstName = '';
@@ -41,6 +47,7 @@ class AdminPageController extends AbstractController
             'secretaire' => $role_secretaire,
             'prenom' => $firstName,
             'product_offer' => $productOffer,
+            'contact' => $contactContent,
         ]);
     }
 }
