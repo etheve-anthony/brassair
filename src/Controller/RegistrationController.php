@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Form\RegistrationFormTypeEdit;
+use App\Form\EditUsersType;
+use App\Form\RemoveUsersType;
 use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -63,7 +65,7 @@ class RegistrationController extends AbstractController
             // );
 
             $this->addFlash('success', 'Le collaborateur est enregistré! Bienvenue à lui!');
-            return $this->redirectToRoute('app_homepage_visitors');
+            return $this->redirectToRoute('app_register_listing');
         }
 
         return $this->render('registration/register.html.twig', [

@@ -11,12 +11,9 @@
 	<div class="d-block d-lg-none">
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
-	<div class="mx-5">
+	<div class="mx-5 mb-5">
 		<h1 class="mt-3">Editer la page d'accueil</h1>
 		{{ include('homepage/_form.html.twig', {'button_label': 'Modifier'}) }}
-
 		<a href="{{ path('app_homepage_index') }}">Revenir à la liste</a>
-		<hr>
-		{{ include('homepage/_delete_form.html.twig') }}
 	</div>
 {% endblock %}

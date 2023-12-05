@@ -33,7 +33,7 @@
 						<td>{{ product_offer.message2 }}</td>
 						<td>{{ product_offer.message3 }}</td>
 						<td>
-							<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">voir</a>
+							<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="btn btn-primary">voir</a>
 						</td>
 					</tr>
 				{% else %}

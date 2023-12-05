@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modification de profil
+{% endblock %}
+
+{% block body %}
+
+	<section class="container my-3">
+		<div class="row">
+			<div class="col">
+				<h2 class="text-center">Mes informations</h2>
+				<p class="text-center lead text-warning">Modifier mes informations</p>
+
+				{{ form_start(user) }}
+
+				<label>E-mail</label>
+				{{ form_widget(user.email)}}
+
+				<label class="mt-3">Prénom</label>
+				{{ form_widget(user.first_name)}}
+
+				<label class="mt-3">Nom</label>
+				{{ form_widget(user.last_name) }}
+
+				<label class="mt-3">Rôle utilisateur</label>
+				{{ form_widget(user.roles) }}
+
+				<button type="submit" class="btn btn-warning my-3">Modifier</button>
+				{{ form_end(user) }}
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

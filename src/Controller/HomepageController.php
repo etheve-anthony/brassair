@@ -39,16 +39,26 @@ class HomepageController extends AbstractController
     }
 
     #[Route('/accueil/administration', name: 'app_homepage_index', methods: ['GET'])]
-    public function index(HomepageRepository $homepageRepository): Response
+    public function index(HomepageRepository $homepageRepository, ContactInfosRepository $contactInfosRepository): Response
     {
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         return $this->render('homepage/index.html.twig', [
             'homepages' => $homepageRepository->findAll(),
+            'contact' => $contactContent,
         ]);
     }
 
     #[Route('/accueil/administration/nouveau', name: 'app_homepage_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         $homepage = new Homepage();
         $form = $this->createForm(HomepageType::class, $homepage);
         $form->handleRequest($request);
@@ -63,20 +73,30 @@ class HomepageController extends AbstractController
         return $this->render('homepage/new.html.twig', [
             'homepage' => $homepage,
             'form' => $form,
+            'contact' => $contactContent,
         ]);
     }
 
     #[Route('/accueil/administration/{id}', name: 'app_homepage_show', methods: ['GET'])]
-    public function show(Homepage $homepage): Response
+    public function show(Homepage $homepage, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         return $this->render('homepage/show.html.twig', [
             'homepage' => $homepage,
+            'contact' => $contactContent,
         ]);
     }
 
     #[Route('/accueil/administration/editer/{id}', name: 'app_homepage_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Homepage $homepage, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Homepage $homepage, EntityManagerInterface $entityManager, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         $form = $this->createForm(HomepageType::class, $homepage);
         $form->handleRequest($request);
 
@@ -89,6 +109,7 @@ class HomepageController extends AbstractController
         return $this->render('homepage/edit.html.twig', [
             'homepage' => $homepage,
             'form' => $form,
+            'contact' => $contactContent,
         ]);
     }
 

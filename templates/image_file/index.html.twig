@@ -34,8 +34,8 @@
 							Mo</td>
 						<td>{{ image_file.updatedAt ? image_file.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
 						<td>
-							<a href="{{ path('app_image_file_show', {'id': image_file.id}) }}">voir</a>
-							<a href="{{ path('app_image_file_edit', {'id': image_file.id}) }}">éditer</a>
+							<a href="{{ path('app_image_file_show', {'id': image_file.id}) }}" class="btn btn-primary">voir</a>
+							<a href="{{ path('app_image_file_edit', {'id': image_file.id}) }}" class="btn btn-warning">éditer</a>
 						</td>
 					</tr>
 				{% else %}

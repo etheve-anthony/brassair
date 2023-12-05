@@ -55,10 +55,15 @@ class ContactInfosController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_contact_infos_show', methods: ['GET'])]
-    public function show(ContactInfos $contactInfo): Response
+    public function show(ContactInfos $contactInfo, ContactInfosRepository $contactInfosRepository): Response
     {
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
         return $this->render('contact_infos/show.html.twig', [
             'contact_info' => $contactInfo,
+            'contact' => $contactContent,
         ]);
     }
 

@@ -12,7 +12,7 @@
 		{% include 'navbar_md_admin.html.twig' %}
 	</div>
 	<div class="mx-5">
-		<h1 class="mt-3">Liste des pages</h1>
+		<h1 class="mt-3">La page d'accueil</h1>
 		<table class="table">
 			<thead>
 				<tr>
@@ -20,8 +20,6 @@
 					<th>Titre 1 accueil</th>
 					<th>Titre 2 accueil</th>
 					<th>Image principale</th>
-					<th>Texte à propos 1</th>
-					<th>Texte à propos 2</th>
 					<th>actions</th>
 				</tr>
 			</thead>
@@ -32,11 +30,9 @@
 						<td>{{ homepage.hero1 }}</td>
 						<td>{{ homepage.hero2 }}</td>
 						<td>{{ homepage.mainImage }}</td>
-						<td>{{ homepage.aboutText1 }}</td>
-						<td>{{ homepage.aboutText2 }}</td>
 						<td>
-							<a href="{{ path('app_homepage_show', {'id': homepage.id}) }}">voir</a>
-							<a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}">éditer</a>
+							<a href="{{ path('app_homepage_show', {'id': homepage.id}) }}" class="btn btn-primary">voir</a>
+							<a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}" class="btn btn-warning">éditer</a>
 						</td>
 					</tr>
 				{% else %}
@@ -46,11 +42,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
-		<p>
-			<a href="{{ path('app_homepage_new') }}">Créer une nouvelle page</a>
-			|
-			<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
-		</p>
+		<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
 	</div>
 
 

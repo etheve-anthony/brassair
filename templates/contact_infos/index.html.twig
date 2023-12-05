@@ -22,7 +22,6 @@
 					<th>E-mail</th>
 					<th>Adresse</th>
 					<th>Horaire d'ouverture</th>
-					<th>Page Facebook</th>
 					<th>actions</th>
 				</tr>
 			</thead>
@@ -34,10 +33,9 @@
 						<td>{{ contact_info.email }}</td>
 						<td>{{ contact_info.address }}</td>
 						<td>{{ contact_info.openingHours }}</td>
-						<td>{{ contact_info.facebookPage }}</td>
 						<td>
-							<a href="{{ path('app_contact_infos_show', {'id': contact_info.id}) }}">voir</a>
-							<a href="{{ path('app_contact_infos_edit', {'id': contact_info.id}) }}">éditer</a>
+							<a href="{{ path('app_contact_infos_show', {'id': contact_info.id}) }}" class="btn btn-primary">voir</a>
+							<a href="{{ path('app_contact_infos_edit', {'id': contact_info.id}) }}" class="btn btn-warning">éditer</a>
 						</td>
 					</tr>
 				{% else %}
@@ -47,10 +45,6 @@
 				{% endfor %}
 			</tbody>
 		</table>
-		<p>
-			<a href="{{ path('app_contact_infos_new') }}">Créer les coordonnées</a>
-			|
-			<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
-		</p>
+		<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
 	</div>
 {% endblock %}
