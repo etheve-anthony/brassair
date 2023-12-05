@@ -1,0 +1,52 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Liste des offres
+{% endblock %}
+
+{% block body %}
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5">
+
+		<h1 class="mt-3">Liste des offres</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Annonce 1</th>
+					<th>Annonce 2</th>
+					<th>Annonce 3</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product_offer in product_offers %}
+					<tr>
+						<td>{{ product_offer.title }}</td>
+						<td>{{ product_offer.message1 }}</td>
+						<td>{{ product_offer.message2 }}</td>
+						<td>{{ product_offer.message3 }}</td>
+						<td>
+							<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">voir</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="10">Pas d'offres trouvées</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<p>
+			<a href="{{path('app_homepage_visitors')}}">Revenir à l'accueil</a>
+		</p>
+	</div>
+
+{% endblock %}

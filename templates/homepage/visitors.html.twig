@@ -3,6 +3,24 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+	<div class="bandeau-promo">
+		{% if product_offer is not null %}
+			<p>{{ product_offer.title }}
+				-
+				{{ product_offer.message1 }}
+				-
+				{{ product_offer.message2 }}
+				-
+				{{ product_offer.message3 }}
+				-
+				<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">VOIR L'OFFRE</a>
+			</p>
+		{% else %}
+			<p>Pas d'offre disponible pour le moment.</p>
+		{% endif %}
+	</div>
+
+
 	<div class="d-none d-lg-block">
 		{% include 'navbar_visitors_lg.html.twig' %}
 	</div>
@@ -16,7 +34,13 @@
 			<br>de Cuisines Sur Mesure</h1>
 		<p>Robert Cuisines, votre Partenaire Idéal pour une Cuisine Moderne</p>
 		<p>
-			<a href="#" class="btn-hero-section">L'offre du moment</a>
+			<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="btn-hero-section">{{ product_offer.title }}
+				<span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewbox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+					</svg>
+				</span>
+			</a>
 		</p>
 	</div>
 
@@ -126,7 +150,7 @@
 		<div class="row">
 			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_bois.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3 mb-4">
-					<a href="#">Style bois
+					<a href="#" class="menu-item">Style bois
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -137,7 +161,7 @@
 			</div>
 			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_acrylique.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3 mb-4">
-					<a href="#">Acrylique
+					<a href="#" class="menu-item">Acrylique
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -150,7 +174,7 @@
 		<div class="row">
 			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_mélaminé.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3">
-					<a href="#">Mélaminé
+					<a href="#" class="menu-item">Mélaminé
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -161,7 +185,7 @@
 			</div>
 			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine_style_laqué.jpg')}}" alt="" class="img-fluid rounded">
 				<h4 class="mt-3">
-					<a href="#">Laqué
+					<a href="#" class="menu-item">Laqué
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
 								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
@@ -180,10 +204,10 @@
 			</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur reprehenderit eos ipsum id porro labore recusandae<br>
 				maiores amet totam commodi?
-																																																																																																																																																																																																																																																																																																																																Dolorem accusantium aspernatur commodi vel aliquid magnam, explicabo incidunt delectus?</p>
+																																																																																																																																																																																																																																																																																																																																																																																																				Dolorem accusantium aspernatur commodi vel aliquid magnam, explicabo incidunt delectus?</p>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam commodi impedit beatae esse explicabo.<br>
 				Totam, vero odio ullam cupiditate ad
-																																																																																																																																																																																																																																																																																																																																numquam molestiae repudiandae. Ex suscipit aut eius unde odio!</p>
+																																																																																																																																																																																																																																																																																																																																																																																																				numquam molestiae repudiandae. Ex suscipit aut eius unde odio!</p>
 		</div>
 	</div>
 	<div class="text-center text-white ratio ratio-16x9">

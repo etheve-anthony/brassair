@@ -14,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/annonces')]
 class ProductOfferController extends AbstractController
 {
+    // Index des offres pour les admins
     #[Route('/', name: 'app_product_offer_index', methods: ['GET'])]
     public function index(ProductOfferRepository $productOfferRepository): Response
     {
@@ -22,6 +23,19 @@ class ProductOfferController extends AbstractController
                 [],
                 ['id' => 'DESC'],
                 30
+            ),
+        ]);
+    }
+
+    // Index des anciennes offres pour les visiteurs
+    #[Route('/anciennes-offres', name: 'app_product_offer_index_visitors', methods: ['GET'])]
+    public function indexVisitors(ProductOfferRepository $productOfferRepository): Response
+    {
+        return $this->render('product_offer/index_visitors.html.twig', [
+            'product_offers' => $productOfferRepository->findBy(
+                [],
+                ['id' => 'DESC'],
+                10
             ),
         ]);
     }
@@ -68,7 +82,7 @@ class ProductOfferController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
+    #[Route('/offres/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
     public function showToVisitors(string $slug, ProductOffer $productOffer, ProductOfferRepository $productOfferRepository): Response
     {
         $productOffer = $productOfferRepository->findOneBy(['slug' => $slug]);

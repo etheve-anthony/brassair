@@ -4,7 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5 mt-3">
 		<h1 class="mt-3">Index des fichiers images</h1>
 
 		<table class="table">
@@ -39,6 +46,11 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_image_file_new') }}">Ajouter une nouvelle image</a>
+		<p>
+			<a href="{{ path('app_image_file_new') }}">Ajouter une nouvelle image</a>
+			|
+			<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
+		</p>
+
 	</div>
 {% endblock %}

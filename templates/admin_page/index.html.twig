@@ -4,6 +4,22 @@
 {% endblock %}
 
 {% block body %}
+	<div class="bandeau-promo-fixe">
+		{% if product_offer is not null %}
+			<p class="text-center py-2">{{ product_offer.title }}
+				-
+				{{ product_offer.message1 }}
+				-
+				{{ product_offer.message2 }}
+				-
+				{{ product_offer.message3 }}
+				-
+				<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">VOIR L'OFFRE</a>
+			</p>
+		{% else %}
+			<p>Pas d'offre disponible pour le moment.</p>
+		{% endif %}
+	</div>
 	<div class="d-none d-lg-block">
 		{% include 'navbar_lg_admin.html.twig' %}
 	</div>
@@ -89,6 +105,15 @@
 				<div class="tab-pane fade" id="cuisines" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Cuisines
 					</h3>
+					<div class="row">
+						<div class="col-lg-2 mt-2">
+							<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
+						</div>
+
+						<div class="col-lg-2 mt-2">
+							<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
+						</div>
+					</div>
 				</div>
 
 				<div class="tab-pane fade" id="accueil" role="tabpanel" aria-labelledby="home-tab">

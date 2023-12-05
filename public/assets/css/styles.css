@@ -71,6 +71,49 @@ a {
     color: black;
 }
 
+/* Encadrement rouge du logo au survol */
+.logo-hover {
+    transition: box-shadow 0.3s ease-in-out;
+    /* Transition lisse pour l'effet de survol */
+}
+
+.logo-hover:hover {
+    box-shadow: 1px 1px 1px 1px #b01601;
+    /* Création un "contour" rouge sans affecter la taille de l'élément */
+    border-radius: 0px;
+    /* Arrondi des coins de l'ombre */
+}
+
+/* Soulignement rouge des menus au survol */
+.menu-item {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    /* Épaisseur du soulignement */
+    bottom: -3px;
+    /* Position du soulignement sous le texte */
+    left: 50%;
+    background-color: #b01601;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.menu-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.menu-item:hover {
+    color: #b01601;
+    /* Change la couleur du texte au survol si nécessaire */
+}
+
+
 .hamb-menu-lien {
     text-decoration: underline !important;
 }
@@ -112,7 +155,7 @@ a {
 }
 
 /* Lien bandeau promotionnel VOIR L'OFFRE */
-body>div.d-none.d-lg-block>div.bandeau-promo>p>a {
+body>div.bandeau-promo>p>a {
     color: white;
     text-decoration: underline;
 }
@@ -263,4 +306,16 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 
 #materiauxModal>div>div>div.modal-body>ul {
     font-family: 'Lato', sans-serif;
+}
+
+/* Kitchen page hero section */
+.hero-section-kitchen-1 {
+    background-image: url('https://127.0.0.1:8000/images/homepage/robert_cuisines_cuisine_bois.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
 }

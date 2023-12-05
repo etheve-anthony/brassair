@@ -9,12 +9,16 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use App\Repository\ProductOfferRepository;
 
 class AdminPageController extends AbstractController
 {
     #[Route('/administration', name: 'app_admin_page')]
-    public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager): Response
+    public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository): Response
     {
+
+        $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
+        $productOffer = $promoContent[0] ?? null;
 
         $roles = '';
         $firstName = '';
@@ -36,6 +40,7 @@ class AdminPageController extends AbstractController
             'admin' => $role_admin,
             'secretaire' => $role_secretaire,
             'prenom' => $firstName,
+            'product_offer' => $productOffer,
         ]);
     }
 }

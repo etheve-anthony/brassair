@@ -12,53 +12,53 @@
 		{% include 'navbar_visitors_md.html.twig' %}
 	</div>
 
-	<div class="mx-5">
-		<h1>Offre du moment</h1>
+	<div class="mx-5 mb-3">
 
-		<table class="table">
-			<tbody>
-				<tr>
-					<th>Id</th>
-					<td>{{ product_offer.id }}</td>
-				</tr>
-				<tr>
-					<th>Titre</th>
-					<td>{{ product_offer.title }}</td>
-				</tr>
-				<tr>
-					<th>Message 1</th>
-					<td>{{ product_offer.message1 }}</td>
-				</tr>
-				<tr>
-					<th>Message 2</th>
-					<td>{{ product_offer.message2 }}</td>
-				</tr>
-				<tr>
-					<th>Message 3</th>
-					<td>{{ product_offer.message3 }}</td>
-				</tr>
-				<tr>
-					<th>Description</th>
-					<td>{{ product_offer.description }}</td>
-				</tr>
-				<tr>
-					<th>Image 1</th>
-					<td>{{ product_offer.image1 }}</td>
-				</tr>
-				<tr>
-					<th>Image 2</th>
-					<td>{{ product_offer.image2 }}</td>
-				</tr>
-				<tr>
-					<th>Image 3</th>
-					<td>{{ product_offer.image3 }}</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="row">
+			<div class="col-lg-6">
+				<h1>{{ product_offer.title }}</h1>
+				<p>{{ product_offer.description }}</p>
+			</div>
+			<div class="col-lg-6">
+				<div class="hero-section-kitchen-1 text-white px-5 py-5" id="dynamic-hero-background"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4">{{ product_offer.message1 }}</div>
+			<div class="col-lg-4">{{ product_offer.message2 }}</div>
+			<div class="col-lg-4">{{ product_offer.message3 }}</div>
+		</div>
 
+		<div class="row">
+			<div class="col-lg-6 text-center text-white"><img src="{{ product_offer.image2 }}" alt="" class="img-fluid rounded">
+			</div>
+			<div class="col-lg-6 text-center text-white"><img src="{{ product_offer.image3 }}" alt="" class="img-fluid rounded">
+			</div>
+		</div>
+		<a href="{{ path('app_product_offer_index_visitors') }}">
+			<small>Voir les offres précédentes</small>
+		</a>
 	</div>
 
 	{% include 'contact_bar.html.twig' %}
 	{% include 'footer.html.twig' %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+	<script>
+		// ajout image 1 hero section
+document.addEventListener('DOMContentLoaded', function () {
+var imageUrl = "{{ product_offer.image1 }}"; // Récupère l'URL de l'image depuis Twig
+var heroSection = document.getElementById('dynamic-hero-background');
+
+// Définit l'image de fond
+heroSection.style.backgroundImage = 'url(' + imageUrl + ')';
+heroSection.style.backgroundSize = 'cover';
+heroSection.style.backgroundPosition = 'center';
+heroSection.style.minHeight = '650px';
+});
+	</script>
 
 {% endblock %}

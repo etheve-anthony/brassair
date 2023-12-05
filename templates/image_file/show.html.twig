@@ -4,7 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5 mt-3">
 		<h1 class="mt-3">Fichier image</h1>
 
 		<table class="table">
@@ -24,7 +31,7 @@
 				</tr>
 				<tr>
 					<th>URL du fichier</th>
-					<td>{% set baseURL = 'https://bluetec.re' %}
+					<td>{% set baseURL = 'https://127.0.0.1:8000' %}
 						{# Base de l'URL #}
 						{% set imageFile = image_file.imageName %}
 						{# Nom du fichier MP3 #}
