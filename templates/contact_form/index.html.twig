@@ -1,10 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Index contact
 {% endblock %}
 
 {% block body %}
-	<div class="container my-4">
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5 mb-5">
 		<h1>Index des formulaires de contact</h1>
 
 		<table class="table">
@@ -13,8 +20,8 @@
 					<th>Id</th>
 					<th>Nom</th>
 					<th>E-mail</th>
-					<th>Sujet</th>
-					<th>Message</th>
+					<th>Tel</th>
+					<th>Demande</th>
 					<th>RGPD</th>
 					<th>Actions</th>
 				</tr>
@@ -25,8 +32,8 @@
 						<td>{{ contact_form.id }}</td>
 						<td>{{ contact_form.name }}</td>
 						<td>{{ contact_form.email }}</td>
-						<td>{{ contact_form.subject }}</td>
-						<td>{{ contact_form.message }}</td>
+						<td>{{ contact_form.telelephone }}</td>
+						<td>{{ contact_form.request }}</td>
 						<td>
 							{% if contact_form.RGPD == 1 %}
 								accepté

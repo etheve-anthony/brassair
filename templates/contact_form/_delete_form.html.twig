@@ -1,5 +1,5 @@
 <div class="container mb-3">
-	<form method="post" action="{{ path('app_contact_form_delete', {'id': contact_form.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+	<form method="post" action="{{ path('app_contact_form_delete', {'id': contact_form.id}) }}" onsubmit="return confirm('Etes vous sûr de vouloir supprimer la page d'accueil?');">
 		<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contact_form.id) }}">
 		<button class="btn btn-danger">Supprimer</button>
 	</form>

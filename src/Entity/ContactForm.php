@@ -32,6 +32,12 @@ class ContactForm
     #[ORM\Column(type: Types::TEXT)]
     private ?string $RGPD = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $request = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $attachedFile = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +111,30 @@ class ContactForm
     public function setRGPD(string $RGPD): self
     {
         $this->RGPD = $RGPD;
+
+        return $this;
+    }
+
+    public function getRequest(): ?string
+    {
+        return $this->request;
+    }
+
+    public function setRequest(string $request): static
+    {
+        $this->request = $request;
+
+        return $this;
+    }
+
+    public function getAttachedFile(): ?string
+    {
+        return $this->attachedFile;
+    }
+
+    public function setAttachedFile(?string $attachedFile): static
+    {
+        $this->attachedFile = $attachedFile;
 
         return $this;
     }

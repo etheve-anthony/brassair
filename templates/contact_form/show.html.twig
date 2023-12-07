@@ -1,10 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
 {% block title %}Formulaire de contact
 {% endblock %}
 
 {% block body %}
-	<div class="container my-4">
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5 mb-5">
 		<h1>Formulaire de contact</h1>
 
 		<table class="table">

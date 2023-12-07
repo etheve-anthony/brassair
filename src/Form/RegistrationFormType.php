@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
@@ -49,10 +50,14 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Veuillez saisir un mot de passe',
                     ]),
                     new Length([
-                        'min' => 6,
+                        'min' => 10,
                         'minMessage' => 'Votre mot de passe devrait avoir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
+                    ]),
+                    new Regex([
+                        'pattern' => '/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).+$/',
+                        'message' => 'Votre mot de passe doit contenir des lettres, des chiffres et au moins un caractère spécial',
                     ]),
                 ],
             ])

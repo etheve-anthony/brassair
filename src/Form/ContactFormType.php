@@ -9,8 +9,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\File;
 
 
 class ContactFormType extends AbstractType
@@ -49,6 +53,40 @@ class ContactFormType extends AbstractType
                         'exactMessage' => 'Le numéro de téléphone doit contenir exactement 10 chiffres (ex: 0692424344).'
                     ])
                 ]
+            ])
+            ->add('request', ChoiceType::class, [
+                'required' => true,
+                'multiple' => false,
+                'expanded' => false,
+                'choices'  => [
+                    'Demande de devis' => 'devis',
+                    'Demande de stage/candidature' => 'stage/emploi',
+                    'Autres' => 'autres',
+                ],
+                'attr' => [
+                    'class' => 'form-control mb-3'
+                ],
+                'label' => 'Type de demande',
+                'placeholder' => 'Votre demande'
+            ])
+            ->add('attachedFile', FileType::class, [
+                'label' => 'Fichier à joindre (plan de cuisine, CV, autres)',
+                'attr' => [
+                    'class' => 'form-control mb-3',
+                ],
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '10240k',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'application/pdf',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez uploader un fichier image valide de moins de 10 mo (JPEG, PNG, PDF).',
+                    ])
+                ],
             ])
             ->add('subject', TextType::class, [
                 'attr' => [

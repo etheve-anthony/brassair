@@ -4,8 +4,14 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'navbar_visitors.html.twig' %}
-	<div class="container my-4">
+	<div class="d-none d-lg-block">
+		{% include 'navbar_visitors_lg.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_visitors_md.html.twig' %}
+	</div>
+	<div class="mx-5">
 		<h1>Contactez-nous</h1>
 
 		<div class="row">
@@ -13,11 +19,9 @@
 				{{ include('contact_form/_form.html.twig') }}
 			</div>
 			<div class="col-lg-6">
-				<img src="{{asset('images/vue_pique_nique_jardin_la_cour.jpg')}}" alt="" class="img-fluid rounded mx-auto d-block mb-3" style="width:80%">
+				<img src="{{asset('images/kitchen/devanture-robert-cuisines-6571accee9977183373935.jpg')}}" alt="" class="img-fluid rounded mx-auto d-block mb-3" style="width:80%">
 			</div>
 		</div>
-
-
 	</div>
 
 	{% include 'footer.html.twig' %}
