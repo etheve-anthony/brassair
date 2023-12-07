@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index contact
+{% endblock %}
+
+{% block body %}
+	<div class="container my-4">
+		<h1>Index des formulaires de contact</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>E-mail</th>
+					<th>Sujet</th>
+					<th>Message</th>
+					<th>RGPD</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for contact_form in contact_forms %}
+					<tr>
+						<td>{{ contact_form.id }}</td>
+						<td>{{ contact_form.name }}</td>
+						<td>{{ contact_form.email }}</td>
+						<td>{{ contact_form.subject }}</td>
+						<td>{{ contact_form.message }}</td>
+						<td>
+							{% if contact_form.RGPD == 1 %}
+								accepté
+							{% else %}
+								...
+							{% endif %}
+						</td>
+						<td>
+							<a href="{{ path('app_contact_form_show', {'id': contact_form.id}) }}">voir</a>
+							{# <a href="{{ path('app_contact_form_edit', {'id': contact_form.id}) }}">éditer</a> #}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">pas de formulaires trouvés</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		{# <a href="{{ path('app_contact_form_new') }}">Créer un nouveau formulaire</a> #}
+	</div>
+
+{% endblock %}
