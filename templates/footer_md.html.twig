@@ -59,32 +59,13 @@
 							</p>
 							<p>
 								<a type="button" class="nav-link mb-3" data-bs-toggle="modal" data-bs-target="#telModalSm">
-								Informations
+									Informations
 								</a>
 							</p>
-						<!-- Button trigger modal location-->
-						<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#locationModalSm">
-								Nous trouver
-						</a>
-
-						<!-- Modal adresse-->
-						<div class="modal fade" id="locationModalSm" tabindex="-1" aria-labelledby="locationModalSmLabel" aria-hidden="true">
-							<div class="modal-dialog modal-sm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="locationModalSmLabel">Adresse du showroom</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<p>{{ contact.address }}</p>
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7437.288754750737!2d55.512681927143014!3d-21.245946076612515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2178754d36d32169%3A0xb4116f0fe53d7f60!2sROBERT%20CUISINES!5e0!3m2!1sen!2sfr!4v1701319147952!5m2!1sen!2sfr" width="770" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-									</div>
-									<div class="modal-footer">
-										<p class="p-style">Robert Cuisines</p>
-									</div>
-								</div>
-							</div>
-						</div>
+							<p>
+								<a href="{{path('app_contact_form_new')}}" class="nav-link">Envoyer un message</a>
+							</p>
+							<a href="https://maps.app.goo.gl/4A2jhBKKv1FykMgx9" class="nav-link">Nous trouver</a>
 						</div>
 						<!-- Grid column -->
 
@@ -120,13 +101,13 @@
 		<div class="text-center p-4 bg-footer">
 			<small>
 				&copy 2024
-				<a href="{{path('app_homepage_visitors')}}" class="me-3">
+				<a href="{{path('app_homepage_visitors')}}" class="nav-footer-small me-3">
 					Robert Cuisines</a>
-				<a href="{{path('app_mentions_legales')}}" class="me-3">Mentions légales
+				<a href="{{path('app_mentions_legales')}}" class="nav-footer-small me-3">Mentions légales
 				</a>
-				<a href="{{path('app_politique_confidentialite')}}" class="me-3">Politique de confidentialité
+				<a href="{{path('app_politique_confidentialite')}}" class="nav-footer-small me-3">Politique de confidentialité
 				</a>
-				<a href="https://contenucreation.fr/">
+				<a href="https://contenucreation.fr/" class="nav-footer-small me-3">
 					Site développé par Anthony Etheve</a>
 			</small>
 

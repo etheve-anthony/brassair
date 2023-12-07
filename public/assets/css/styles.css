@@ -357,6 +357,16 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
     font-family: 'Lato', sans-serif;
 }
 
+.nav-footer-small {
+    color: #F0F0F1;
+    text-decoration: none;
+}
+
+.nav-footer-small:hover {
+    color: #ffca0a;
+    text-decoration: none;
+}
+
 /* Kitchen page hero section */
 .hero-section-kitchen-1 {
     background-image: url('https://127.0.0.1:8000/images/homepage/robert_cuisines_cuisine_bois.jpg');

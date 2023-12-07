@@ -58,9 +58,7 @@
 								<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="text-reset">{{ product_offer.title }}</a>
 							</p>
 							<p>
-								<a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#messageModal">
-									Envoyer un message
-								</a>
+								<a href="{{path('app_contact_form_new')}}" class="nav-link me-3">Envoyer un message</a>
 							</p>
 							<p>
 								<a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#locationModal">
@@ -108,13 +106,13 @@
 		<div class="text-center p-4 bg-footer">
 			<small>
 				&copy 2024
-				<a href="{{path('app_homepage_visitors')}}" class="me-3">
+				<a href="{{path('app_homepage_visitors')}}" class="nav-footer-small me-3">
 					Robert Cuisines</a>
-				<a href="{{path('app_mentions_legales')}}" class="me-3">Mentions légales
+				<a href="{{path('app_mentions_legales')}}" class="nav-footer-small me-3">Mentions légales
 				</a>
-				<a href="{{path('app_politique_confidentialite')}}" class="me-3">Politique de confidentialité
+				<a href="{{path('app_politique_confidentialite')}}" class="nav-footer-small me-3">Politique de confidentialité
 				</a>
-				<a href="https://contenucreation.fr/">
+				<a href="https://contenucreation.fr/" class="nav-footer-small me-3">
 					Site développé par Anthony Etheve</a>
 			</small>
 

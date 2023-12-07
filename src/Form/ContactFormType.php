@@ -27,14 +27,16 @@ class ContactFormType extends AbstractType
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Nom, prénom...'
                 ],
-                'label' => 'Nom/Prénom'
+                'label' => 'Nom/Prénom',
+                'required' => true,
             ])
             ->add('email', EmailType::class, [
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Votre e-mail...'
                 ],
-                'label' => 'E-mail'
+                'label' => 'E-mail',
+                'required' => true,
             ])
             ->add('telephone', TelType::class, [
                 'attr' => [
@@ -52,7 +54,8 @@ class ContactFormType extends AbstractType
                         'max' => 10,
                         'exactMessage' => 'Le numéro de téléphone doit contenir exactement 10 chiffres (ex: 0692424344).'
                     ])
-                ]
+                ],
+                'required' => true,
             ])
             ->add('request', ChoiceType::class, [
                 'required' => true,
@@ -93,7 +96,8 @@ class ContactFormType extends AbstractType
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Indiquez un sujet...'
                 ],
-                'label' => 'Sujet'
+                'label' => 'Sujet',
+                'required' => true,
             ])
             ->add('message', TextareaType::class, [
                 'attr' => [
@@ -101,7 +105,8 @@ class ContactFormType extends AbstractType
                     'placeholder' => 'Votre demande...',
                     'rows' => 5,
                 ],
-                'label' => 'Message'
+                'label' => 'Message',
+                'required' => true,
             ])->add('RGPD', CheckboxType::class, [
                 'label' => 'En cochant cette case et en soumettant ce formulaire, j’accepte que mes données personnelles soient utilisées pour me recontacter dans le cadre de ma demande ci jointe.',
                 'required' => true,
