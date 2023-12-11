@@ -5,10 +5,13 @@ namespace App\Entity;
 use App\Repository\KitchenRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Trait\SlugTrait;
 
 #[ORM\Entity(repositoryClass: KitchenRepository::class)]
 class Kitchen
 {
+    use SlugTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -23,8 +26,14 @@ class Kitchen
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $details = null;
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message1 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message2 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $message3 = null;
 
     #[ORM\Column(length: 100)]
     private ?string $image1 = null;
@@ -34,6 +43,12 @@ class Kitchen
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $image3 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $image4 = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $image5 = null;
 
     public function getId(): ?int
     {
@@ -76,14 +91,38 @@ class Kitchen
         return $this;
     }
 
-    public function getDetails(): ?string
+    public function getMessage1(): ?string
     {
-        return $this->details;
+        return $this->message1;
     }
 
-    public function setDetails(string $details): static
+    public function setMessage1(string $message1): static
     {
-        $this->details = $details;
+        $this->message1 = $message1;
+
+        return $this;
+    }
+
+    public function getMessage2(): ?string
+    {
+        return $this->message2;
+    }
+
+    public function setMessage2(string $message2): static
+    {
+        $this->message2 = $message2;
+
+        return $this;
+    }
+
+    public function getMessage3(): ?string
+    {
+        return $this->message3;
+    }
+
+    public function setMessage3(string $message3): static
+    {
+        $this->message3 = $message3;
 
         return $this;
     }
@@ -120,6 +159,30 @@ class Kitchen
     public function setImage3(?string $image3): static
     {
         $this->image3 = $image3;
+
+        return $this;
+    }
+
+    public function getImage4(): ?string
+    {
+        return $this->image4;
+    }
+
+    public function setImage4(?string $image4): static
+    {
+        $this->image4 = $image4;
+
+        return $this;
+    }
+
+    public function getImage5(): ?string
+    {
+        return $this->image5;
+    }
+
+    public function setImage5(?string $image5): static
+    {
+        $this->image5 = $image5;
 
         return $this;
     }

@@ -111,7 +111,7 @@ class ProductOfferController extends AbstractController
         $productOffer = $productOfferRepository->findOneBy(['slug' => $slug]);
 
         if (!$productOffer) {
-            throw $this->createNotFoundException('No product offer found for slug ' . $slug);
+            throw $this->createNotFoundException('Pas d\'offres trouvées pour le slug ' . $slug);
         }
 
         return $this->render('product_offer/show_visitors.html.twig', [

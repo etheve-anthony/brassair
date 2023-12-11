@@ -99,12 +99,26 @@
 				<div class="tab-pane fade" id="cuisines" role="tabpanel" aria-labelledby="home-tab">
 					<h3 class="my-3">Cuisines
 					</h3>
-					<div class="mt-2">
-						<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
-					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="mt-2">
+								<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
+							</div>
 
-					<div class="mt-2">
-						<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
+							<div class="mt-2">
+								<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="mt-2">
+								<a href="{{ path('app_kitchen_new') }}">Ajouter une cuisine</a>
+							</div>
+
+							<div class="mt-2">
+								<a href="{{ path('app_kitchen_index') }}">Liste des cuisines</a>
+							</div>
+
+						</div>
 					</div>
 				</div>
 
@@ -116,7 +130,7 @@
 								<a href="{{ path('app_homepage_new') }}">Ajouter la page d'accueil</a>
 							</div>
 							<div class="mt-2">
-								<a href="{{ path('app_homepage_index') }}">Liste des pages</a>
+								<a href="{{ path('app_homepage_index') }}">Modifier la page d'accueil</a>
 							</div>
 						</div>
 						<div class="col-lg-3">
@@ -125,11 +139,6 @@
 								<br>
 								<small class="fst-italic">(Coordonnées téléphoniques, adresse, logo, horaires...)</small>
 							</div>
-						</div>
-					</div>
-					<div class="row mt-3">
-						<div class="col-lg-3">
-							<p>Faire le formulaire de contact pour la modale</p>
 						</div>
 					</div>
 				</div>

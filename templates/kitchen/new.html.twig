@@ -1,0 +1,25 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Nouveau produit
+{% endblock %}
+
+{% block body %}
+	<div class="d-none d-lg-block">
+		{% include 'navbar_lg_admin.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'navbar_md_admin.html.twig' %}
+	</div>
+	<div class="mx-5">
+		<div class="row">
+			<div class="col-lg-4">
+				<h1>Créer une nouveau produit</h1>
+
+				{{ include('kitchen/_form.html.twig') }}
+
+				<a href="{{ path('app_kitchen_index') }}">Revenir à la liste</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
