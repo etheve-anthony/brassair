@@ -20,8 +20,6 @@
 				<tr>
 					<th>Id</th>
 					<th>Titre</th>
-					<th>Image principale</th>
-					<th>Description</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -30,11 +28,9 @@
 					<tr>
 						<td>{{ kitchen.id }}</td>
 						<td>{{ kitchen.title }}</td>
-						<td>{{ kitchen.mainImage }}</td>
-						<td>{{ kitchen.description }}</td>
 						<td>
-							<a href="{{ path('app_kitchen_show', {'slug': kitchen.slug}) }}">voir</a>
-							<a href="{{ path('app_kitchen_edit', {'slug': kitchen.slug}) }}">éditer</a>
+							<a href="{{ path('app_kitchen_show', {'slug': kitchen.slug}) }}" class="btn btn-primary">voir</a>
+							<a href="{{ path('app_kitchen_edit', {'slug': kitchen.slug}) }}" class="btn btn-warning">éditer</a>
 						</td>
 					</tr>
 				{% else %}

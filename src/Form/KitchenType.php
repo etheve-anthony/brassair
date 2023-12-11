@@ -39,21 +39,21 @@ class KitchenType extends AbstractType
             ])
             ->add('message1', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control mb-3',
                     'placeholder' => 'Entrez l\'annonce 1'
                 ],
                 'label' => 'Annonce 1'
             ])
             ->add('message2', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control mb-3',
                     'placeholder' => 'Entrez l\'annonce 2'
                 ],
                 'label' => 'Annonce 2'
             ])
             ->add('message3', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control mb-3',
                     'placeholder' => 'Entrez l\'annonce 3'
                 ],
                 'label' => 'Annonce 3'

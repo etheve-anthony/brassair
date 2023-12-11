@@ -70,7 +70,7 @@ class ContactFormType extends AbstractType
                     'class' => 'form-control mb-3'
                 ],
                 'label' => 'Type de demande',
-                'placeholder' => 'Votre demande'
+                'placeholder' => 'Sélectionnez le type de demande'
             ])
             ->add('attachedFile', FileType::class, [
                 'label' => 'Fichier à joindre (plan de cuisine, CV, autres)',
