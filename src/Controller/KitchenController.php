@@ -13,10 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/produits')]
 class KitchenController extends AbstractController
 {
-    #[Route('/', name: 'app_kitchen_index', methods: ['GET'])]
+    #[Route('/produits/administration', name: 'app_kitchen_index', methods: ['GET'])]
     public function index(KitchenRepository $kitchenRepository, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
@@ -34,7 +33,7 @@ class KitchenController extends AbstractController
         ]);
     }
 
-    #[Route('/nouveau', name: 'app_kitchen_new', methods: ['GET', 'POST'])]
+    #[Route('/produits/nouveau', name: 'app_kitchen_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
@@ -102,7 +101,7 @@ class KitchenController extends AbstractController
         ]);
     }
 
-    #[Route('/{slug}/modifier', name: 'app_kitchen_edit', methods: ['GET', 'POST'])]
+    #[Route('/produits/{slug}/modifier', name: 'app_kitchen_edit', methods: ['GET', 'POST'])]
     public function edit(string $slug, Request $request, Kitchen $kitchen, KitchenRepository $kitchenRepository, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
@@ -132,7 +131,7 @@ class KitchenController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_kitchen_delete', methods: ['POST'])]
+    #[Route('/produits/{id}', name: 'app_kitchen_delete', methods: ['POST'])]
     public function delete(Request $request, Kitchen $kitchen, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $kitchen->getId(), $request->request->get('_token'))) {

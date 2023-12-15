@@ -12,11 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/annonces')]
 class ProductOfferController extends AbstractController
 {
     // Index des offres pour les admins
-    #[Route('/', name: 'app_product_offer_index', methods: ['GET'])]
+    #[Route('/annonces/admin', name: 'app_product_offer_index', methods: ['GET'])]
     public function index(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -35,7 +34,7 @@ class ProductOfferController extends AbstractController
     }
 
     // Index des anciennes offres pour les visiteurs
-    #[Route('/anciennes-offres', name: 'app_product_offer_index_visitors', methods: ['GET'])]
+    #[Route('/visiteurs/anciennes-offres', name: 'app_product_offer_index_visitors', methods: ['GET'])]
     public function indexVisitors(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -52,7 +51,7 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/nouveau', name: 'app_product_offer_new', methods: ['GET', 'POST'])]
+    #[Route('/annonces/nouveau', name: 'app_product_offer_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -100,7 +99,7 @@ class ProductOfferController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/offres/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
+    #[Route('/visiteurs/offres/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
     public function showToVisitors(string $slug, ProductOffer $productOffer, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -120,7 +119,7 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/{slug}/modifier', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
+    #[Route('/annonces/{slug}/modifier', name: 'app_product_offer_edit', methods: ['GET', 'POST'])]
     public function edit(string $slug, Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -146,7 +145,7 @@ class ProductOfferController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_product_offer_delete', methods: ['POST'])]
+    #[Route('/annonces/{id}', name: 'app_product_offer_delete', methods: ['POST'])]
     public function delete(Request $request, ProductOffer $productOffer, EntityManagerInterface $entityManager): Response
     {
 

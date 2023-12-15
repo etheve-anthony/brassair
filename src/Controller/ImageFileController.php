@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/image/file')]
+#[Route('/image/fichier')]
 class ImageFileController extends AbstractController
 {
     #[Route('/', name: 'app_image_file_index', methods: ['GET'])]
@@ -27,7 +27,7 @@ class ImageFileController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_image_file_new', methods: ['GET', 'POST'])]
+    #[Route('/nouveau', name: 'app_image_file_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ImageFileRepository $imageFileRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération des informations de contact
@@ -64,7 +64,7 @@ class ImageFileController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_image_file_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/editer', name: 'app_image_file_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ImageFile $imageFile, ImageFileRepository $imageFileRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération des informations de contact
