@@ -113,6 +113,14 @@ a {
     /* Change la couleur du texte au survol si nécessaire */
 }
 
+.dropdown-item {
+    font-size: 16px;
+}
+
+.dropdown-item-hover:hover {
+    background-color: #b01601 !important;
+    color: #F0F0F1 !important;
+}
 
 .hamb-menu-lien {
     text-decoration: underline !important;
