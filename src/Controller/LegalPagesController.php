@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ContactInfosRepository;
 use App\Repository\ProductOfferRepository;
 
+#[Route('/infos')]
 class LegalPagesController extends AbstractController
 {
     #[Route('/mentions_legales', name: 'app_mentions_legales')]
