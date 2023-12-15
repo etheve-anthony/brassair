@@ -34,7 +34,7 @@ class ProductOfferController extends AbstractController
     }
 
     // Index des anciennes offres pour les visiteurs
-    #[Route('/anciennes-offres', name: 'app_product_offer_index_visitors', methods: ['GET'])]
+    #[Route('/offres/anciennes-offres', name: 'app_product_offer_index_visitors', methods: ['GET'])]
     public function indexVisitors(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
@@ -99,7 +99,7 @@ class ProductOfferController extends AbstractController
     //     ]);
     // }
 
-    #[Route('/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
+    #[Route('/offres/{slug}', name: 'app_product_offer_visitors', methods: ['GET'])]
     public function showToVisitors(string $slug, ProductOffer $productOffer, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 
