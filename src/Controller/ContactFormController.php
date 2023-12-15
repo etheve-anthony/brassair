@@ -59,7 +59,8 @@ class ContactFormController extends AbstractController
             $email = (new Email())
                 ->from('contact@robertcuisines.fr')
                 ->to('contact@robertcuisines.fr')
-                ->subject('Nouveau message depuis le formulaire de contact')
+                ->cc('anthony@contenucreation.fr')
+                ->subject('Nouveau message reçu sur robertcuisines.fr')
                 ->html('<p>' . 'Nom: ' . $contactForm->getName() . '</p>' . '<p>' . 'Sujet: ' . $contactForm->getSubject() . '</p>' . '<p>' . 'Email: ' . $contactForm->getEmail() . '</p>' . '<p>' . 'Tel: ' . $contactForm->getTelephone() . '<p>' . 'Type de demande: ' . $contactForm->getRequest() . '</p>' . '</p>' . '<p>' . 'Message: ' . $contactForm->getMessage() . '</p>' . '<p>' . 'RGPD: ' . $contactForm->getRGPD() . '</p>');
 
             // Gestion de la pièce jointe (attachée dans l'e-mail)
