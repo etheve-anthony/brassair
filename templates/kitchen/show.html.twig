@@ -38,18 +38,7 @@
 				<img src="{{ kitchen.image1 }}" class="card-img-top" alt="...">
 				<div class="card-body">
 					<h1 class="card-title">{{ kitchen.title }}</h1>
-					{% set words = kitchen.description|split(' ') %}
-			<p class="card-text">
-				{% for word in words %}
-					{{ word }}
-					{% if loop.index is divisible by(20) and not loop.last %}
-						<br>
-					{% else %}
-						{% if not loop.last %}{% endif %}
-					{% endif %}
-				{% endfor %}
-			</p>
-					{# <p class="card-text">{{ kitchen.description }}</p> #}
+					<p class="card-text">{{ kitchen.description }}</p>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">{{ kitchen.message1 }}</li>
