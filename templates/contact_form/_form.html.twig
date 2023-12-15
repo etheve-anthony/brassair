@@ -1,4 +1,12 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
+{% if form.telephone.vars.errors %}
+    <div class="error-message">
+        {% for error in form.telephone.vars.errors %}
+            {{ error.message }}
+        {% endfor %}
+    </div>
+{% endif %}
+
 <button class="btn-contact mb-5">{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}
