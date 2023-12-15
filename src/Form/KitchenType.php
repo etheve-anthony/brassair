@@ -70,28 +70,32 @@ class KitchenType extends AbstractType
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Entrer le lien url de l\'image 2'
                 ],
-                'label' => 'url de l\'image 2'
+                'label' => 'url de l\'image 2',
+                'required' => false
             ])
             ->add('image3', TextType::class, [
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Entrer le lien url de l\'image 3'
                 ],
-                'label' => 'url de l\'image 3'
+                'label' => 'url de l\'image 3',
+                'required' => false
             ])
             ->add('image4', TextType::class, [
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Entrer le lien url de l\'image 4'
                 ],
-                'label' => 'url de l\'image 4'
+                'label' => 'url de l\'image 4',
+                'required' => false
             ])
             ->add('image5', TextType::class, [
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'placeholder' => 'Entrer le lien url de l\'image 5'
                 ],
-                'label' => 'url de l\'image 5'
+                'label' => 'url de l\'image 5',
+                'required' => false
             ]);
     }
 

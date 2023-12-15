@@ -12,7 +12,7 @@
 {# Affichage des erreurs pour chaque champ #}
 {% for field in form %}
     {% if field.vars.errors %}
-        <div class="error-message">
+        <div class="error-message mb-3">
             {% for error in field.vars.errors %}
                 {{ error.message }}
             {% endfor %}

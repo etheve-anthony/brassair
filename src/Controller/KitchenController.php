@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/cuisines')]
+#[Route('/produits')]
 class KitchenController extends AbstractController
 {
     #[Route('/', name: 'app_kitchen_index', methods: ['GET'])]
@@ -78,7 +78,7 @@ class KitchenController extends AbstractController
         ]);
     }
 
-    #[Route('/style/{slug}', name: 'app_kitchen_show', methods: ['GET'])]
+    #[Route('/{slug}', name: 'app_kitchen_show', methods: ['GET'])]
     public function show(string $slug, Kitchen $kitchen, ProductOfferRepository $productOfferRepository, KitchenRepository $kitchenRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
