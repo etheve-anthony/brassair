@@ -1,12 +1,25 @@
 {{ form_start(form) }}
 {{ form_widget(form) }}
-{% if form.telephone.vars.errors %}
-    <div class="error-message mb-3">
-        {% for error in form.telephone.vars.errors %}
+{# Affichage des erreurs globales du formulaire #}
+{% if form.vars.errors %}
+    <div class="error-message">
+        {% for error in form.vars.errors %}
             {{ error.message }}
         {% endfor %}
     </div>
 {% endif %}
+
+{# Affichage des erreurs pour chaque champ #}
+{% for field in form %}
+    {% if field.vars.errors %}
+        <div class="error-message">
+            {% for error in field.vars.errors %}
+                {{ error.message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endfor %}
+
 
 <button class="btn-contact mb-5">{{ button_label|default('Envoyer') }}</button>
 {{ form_end(form) }}
