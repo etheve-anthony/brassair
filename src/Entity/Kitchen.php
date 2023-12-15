@@ -20,7 +20,7 @@ class Kitchen
     #[ORM\Column(length: 100)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 200)]
     private ?string $mainImage = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -35,19 +35,19 @@ class Kitchen
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $message3 = null;
 
-    #[ORM\Column(length: 100)]
+    #[ORM\Column(length: 200)]
     private ?string $image1 = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 200, nullable: true)]
     private ?string $image2 = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(length: 200, nullable: true)]
     private ?string $image3 = null;
 
-    #[ORM\Column(length: 100, nullable: true)]
+    #[ORM\Column(length: 200, nullable: true)]
     private ?string $image4 = null;
 
-    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[ORM\Column(length: 200, nullable: true)]
     private ?string $image5 = null;
 
     public function getId(): ?int
