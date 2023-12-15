@@ -194,24 +194,6 @@
 			</div>
 		</div>
 		<img class="mx-auto d-block my-4" src="{{asset('images/icones/logo_maitre_artisan.png')}}" alt="Logo Maître Artisan" width="200px" height="127px">
-			<div class="row my-4">
-		<div class="col-lg-6 col-sm-12">
-			<div class="ratio ratio-16x9 mb-3">
-				<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines.png')}}">
-					<source src="{{ asset('videos/robert-cuisines-l-equipe-et-les-moyens.mp4') }}" type="video/mp4">
-					Votre navigateur ne supporte pas la balise vidéo.
-				</video>
-			</div>
-		</div>
-		<div class="col-lg-6 col-sm-12">
-			<div class="ratio ratio-16x9 mb-3">
-				<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines_2.png')}}">
-					<source src="{{ asset('videos/les_materiaux_video_robert_cuisines.mp4') }}" type="video/mp4">
-					Votre navigateur ne supporte pas la balise vidéo.
-				</video>
-			</div>
-		</div>
-	</div>
 	</div>
 
 	<div class="about-section px-5 py-5">
@@ -241,7 +223,24 @@
 					{% endif %}
 				{% endfor %}
 			</p>
-
+		</div>
+		<div class="row my-4">
+			<div class="col-lg-6 col-sm-12">
+				<div class="ratio ratio-16x9 mb-3">
+					<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines.png')}}">
+						<source src="{{ asset('videos/robert-cuisines-l-equipe-et-les-moyens.mp4') }}" type="video/mp4">
+						Votre navigateur ne supporte pas la balise vidéo.
+					</video>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12">
+				<div class="ratio ratio-16x9 mb-3">
+					<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines_2.png')}}">
+						<source src="{{ asset('videos/les_materiaux_video_robert_cuisines.mp4') }}" type="video/mp4">
+						Votre navigateur ne supporte pas la balise vidéo.
+					</video>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="text-center text-white ratio ratio-16x9">
