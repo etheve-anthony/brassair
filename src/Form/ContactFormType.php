@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Validator\Constraints\Email as EmailConstraint;
 
 
 class ContactFormType extends AbstractType
@@ -37,6 +38,11 @@ class ContactFormType extends AbstractType
                 ],
                 'label' => 'E-mail',
                 'required' => true,
+                'constraints' => [
+                    new EmailConstraint([
+                        'message' => 'L\'adresse e-mail n\'est pas valide.',
+                    ]),
+                ],
             ])
             ->add('telephone', TelType::class, [
                 'attr' => [
