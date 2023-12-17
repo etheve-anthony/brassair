@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-		<div class="d-none d-lg-block">
+	<div class="d-none d-lg-block">
 		{% include 'navbar_visitors_lg.html.twig' %}
 	</div>
 
@@ -18,10 +18,13 @@
 		</p>
 
 		<h2>Article 1 : Description du Site</h2>
-		<p>Ce site est accessible à l’adresse URL suivante : <a href="https://robertcuisines.fr/">https://robertcuisines.fr/</a> (ci-après le « Site »).</p>
+		<p>Ce site est accessible à l’adresse URL suivante :
+			<a href="https://robertcuisines.fr/">https://robertcuisines.fr/</a>
+			(ci-après le « Site »).</p>
 		<p>L’éditeur du Site est l'entreprise ROBERT CUISINES, immatriculée sous le numéro 85361979900010, dont le siège social est situé 21 Chemin Leroy, Tampon, 97430 représentée par M. Robert Aliday, Directeur de publication, dûment habilitée à l’effet des présentes.</p>
 		<p>GSM : 0692 56 16 16 – E-mail : robertcuisines@orange.fr</p>
-		<p>Réalisation du site: ETHEVE Anthony – E-mail : anthony@contenucreation.fr - Site Web : <a href="https:/contenucreation.fr/">https:/contenucreation.fr/</a>
+		<p>Réalisation du site: ETHEVE Anthony – E-mail : anthony@contenucreation.fr - Site Web :
+			<a href="https:/contenucreation.fr/">https:/contenucreation.fr/</a>
 		</p>
 		<p>L’hébergement de ce site est assuré par la société HOSTINGER INTERNATIONAL LTD, dont le siège social se situe 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant : https://www.hostinger.fr/contact.</p>
 		<p>Le nom de domaine est fourni par OVH, 2 rue kellermann BP 80157 59053 ROUBAIX CEDEX 1 – France</p>
@@ -56,6 +59,13 @@
 		<h2>Article 8 : Législation</h2>
 		<p>Les mentions sont régies par les lois françaises et tout litige relatif à leur exécution et/ou leur interprétation sera soumis aux tribunaux français.</p>
 
-		</div>{% include 'footer.html.twig' %}
+	</div>
+	<div class="d-none d-lg-block">
+		{% include 'footer.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'footer_md.html.twig' %}
+	</div>
 
 {% endblock %}

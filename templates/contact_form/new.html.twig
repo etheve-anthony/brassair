@@ -24,5 +24,11 @@
 		</div>
 	</div>
 
-	{% include 'footer.html.twig' %}
+	<div class="d-none d-lg-block">
+		{% include 'footer.html.twig' %}
+	</div>
+
+	<div class="d-block d-lg-none">
+		{% include 'footer_md.html.twig' %}
+	</div>
 {% endblock %}
