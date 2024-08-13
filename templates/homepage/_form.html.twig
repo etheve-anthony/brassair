@@ -1,87 +1,53 @@
 {{ form_start(form) }}
 
 <div class="row">
-	<h3>Section 1 (accueil)</h3>
-	<div class="col-lg-4">
-		{{ form_row(form.hero1) }}
-	</div>
-	<div class="col-lg-4">
-		{{ form_row(form.hero2) }}
-	</div>
-	<div class="col-lg-4">
-		{{ form_row(form.mainImage) }}
-	</div>
+  <h3>Section 1 (accueil)</h3>
+  <div class="col-lg-4">{{ form_row(form.hero1) }}</div>
+  <div class="col-lg-4">{{ form_row(form.hero2) }}</div>
+  <div class="col-lg-4">{{ form_row(form.mainImage) }}</div>
 </div>
 <div class="row">
-	<div class="col-lg-4">
-		{{ form_row(form.hero1Part2) }}
-	</div>
+  <div class="col-lg-4">{{ form_row(form.hero1Part2) }}</div>
 </div>
-<hr>
+<hr />
 <div class="row">
-	<h3>Section 2 (promesse)</h3>
-	<div class="col-lg-4">
-		{{ form_row(form.titleSection2Small) }}
-	</div>
-	<div class="col-lg-4">
-		{{ form_row(form.titleSection2Big) }}
-	</div>
+  <h3>Section 2 (promesse)</h3>
+  <div class="col-lg-4">{{ form_row(form.titleSection2Small) }}</div>
+  <div class="col-lg-4">{{ form_row(form.titleSection2Big) }}</div>
 </div>
 
 <div class="row">
-	<div class="col-lg-3">
-		{{ form_row(form.promise1) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise2) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise3) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise4) }}
-	</div>
+  <div class="col-lg-3">{{ form_row(form.promise1) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise2) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise3) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise4) }}</div>
 </div>
 
 <div class="row">
-	<div class="col-lg-3">
-		{{ form_row(form.promise1Image) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise2Image) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise3Image) }}
-	</div>
-	<div class="col-lg-3">
-		{{ form_row(form.promise4Image) }}
-	</div>
+  <div class="col-lg-3">{{ form_row(form.promise1Image) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise2Image) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise3Image) }}</div>
+  <div class="col-lg-3">{{ form_row(form.promise4Image) }}</div>
 </div>
-<hr>
+<hr />
 <div class="row">
-	<h3>Section 3 (cuisines)</h3>
-	<div class="col-lg-4">
-		{{ form_row(form.titleSection3) }}
-	</div>
-	<div class="col-lg-4"></div>
+  <h3>Section 3 (produits)</h3>
+  <div class="col-lg-4">{{ form_row(form.titleSection3) }}</div>
+  <div class="col-lg-4"></div>
 </div>
-<hr>
+<hr />
 <div class="row">
-	<h3>Section 4 (à propos)</h3>
-	<div class="col-lg-4">
-		{{ form_row(form.aboutText1) }}
-	</div>
-	<div class="col-lg-4">
-		{{ form_row(form.aboutText2) }}
-	</div>
+  <h3>Section 4 (à propos)</h3>
+  <div class="col-lg-4">{{ form_row(form.aboutText1) }}</div>
+  <div class="col-lg-4">{{ form_row(form.aboutText2) }}</div>
 </div>
 
 <button class="btn btn-success mt-3">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
 <div class="my-4">
-	<small>*Le texte pour le bouton est pris du titre de la dernière offre du moment</small><br>
-	<small>**Les images de cette section sont à ajouter dans l'administration des pages cuisines</small>
-	<br>
-	<small>***La vidéo background peut être changée côté serveur car il faut faire attention au format et à la taille du fichier (anthony@contenucreation.fr)</small><br>
-	<small>****Les informations de contact peuvent être changés dans l'administration dédiée à cet effet.</small>
+  <small>*Le texte pour le bouton est pris du titre de la dernière offre du moment</small><br />
+  <small>**Les images de cette section sont à ajouter dans l'administration des pages produits</small>
+  <br />
+  <small>***La vidéo background peut être changée côté serveur car il faut faire attention au format et à la taille du fichier (anthony@contenucreation.fr)</small><br />
+  <small>****Les informations de contact peuvent être changés dans l'administration dédiée à cet effet.</small>
 </div>

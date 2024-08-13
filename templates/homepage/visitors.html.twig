@@ -1,283 +1,281 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
-
-{% block body %}
-	<div class="bandeau-promo">
-		{% if product_offer is not null %}
-			<p>{{ product_offer.title }}
-				-
-				{{ product_offer.message1 }}
-				-
-				{{ product_offer.message2 }}
-				-
-				{{ product_offer.message3 }}
-				-
-				<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">VOIR L'OFFRE</a>
-			</p>
-		{% else %}
-			<p>Pas d'offre disponible pour le moment.</p>
-		{% endif %}
-	</div>
-	<div class="d-none d-lg-block">
-		{% include 'navbar_visitors_lg.html.twig' %}
-	</div>
-
-	<div class="d-block d-lg-none">
-		{% include 'navbar_visitors_md.html.twig' %}
-	</div>
-
-	<div class="hero-section text-white px-5 py-5" id="dynamic-hero-homepage-background">
-		<h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ homepage.hero1}}
-			<br>{{ homepage.hero1Part2}}</h1>
-		<p>{{ homepage.hero2}}</p>
-		<p>
-			<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="btn-hero-section">{{ product_offer.title }}
-				<span>
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewbox="0 0 16 16">
-						<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-					</svg>
-				</span>
-			</a>
-		</p>
-	</div>
-
-	<div class="promise-section px-5 py-5">
-		<p class="text-center text-white">{{ homepage.titleSection2Small}}</p>
-		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection2Big}}</h2>
-		<div class="row">
-			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise1Image}}" alt="" class="img-reunion" width="175px" height="175px">
-				<h4 class="mt-3">
-					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#assemblageModal">
-						{{ homepage.promise1}}
-					</a>
-				</h4>
-				<!-- Modal promise 1 assemblage local-->
-				<div class="modal fade" id="assemblageModal" tabindex="-1" aria-labelledby="assemblageModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title text-black" id="assemblageModalLabel">{{ homepage.promise1}}</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<p class="text-black">Nous concevons toutes nos cuisines et meubles dans notre atelier de fabrication situé au Grand Tampon. Nous tenons à travailler nous-même les matériaux, pour des raisons éthiques mais aussi pour le SAV, s'il y a un défaut sur un meuble, nous pouvons apporter une solution rapidement.</p>
-							</div>
-							<div class="modal-footer">
-								<p class="p-style text-black">Robert Cuisines</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise2Image}}" alt="" class="img-reunion" width="175px" height="175px">
-				<h4 class="mt-3">
-					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#materiauxModal">
-						{{ homepage.promise2}}
-					</a>
-				</h4>
-				<!-- Modal promise 2 matériaux-->
-				<div class="modal fade" id="materiauxModal" tabindex="-1" aria-labelledby="matériauxModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title text-black" id="matériauxModalLabel">{{ homepage.promise2}}</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<p class="text-black text-start">Une gamme étendue de matériaux est disponible pour les cuisines et les plans de travail:</p>
-								<ul class="text-black text-start">
-									<li>Matériaux meubles cuisines:
-										<ul>
-											<li>Façade bois massif, vernis: mat, satiné, brillant</li>
-											<li>Acrylique, beaucoup de couleurs disponibles</li>
-											<li>Mélaminé, beaucoup de couleurs disponibles</li>
-											<li>Laqué, 9000 couleurs au choix</li>
-										</ul>
-									</li>
-									<li class="mt-2">Plans de travail:
-										<ul>
-											<li>Post formé</li>
-											<li>Quartz</li>
-											<li>Granit</li>
-											<li>Dekton</li>
-											<li>Céramique</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="modal-footer">
-								<p class="p-style text-black">Robert Cuisines</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise3Image}}" alt="" class="img-reunion" width="175px" height="175px">
-				<h4 class="mt-3">{{ homepage.promise3}}</h4>
-			</div>
-			<div class="col-lg-3 text-center text-white"><img src="{{ homepage.promise4Image}}" alt="" class="img-reunion" width="175px" height="175px">
-				<h4 class="mt-3">
-					<a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#styleCuisineModal">
-						{{ homepage.promise4}}
-					</a>
-				</h4>
-				<!-- Modal promise 1 styleCuisine-->
-				<div class="modal fade" id="styleCuisineModal" tabindex="-1" aria-labelledby="styleCuisineModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title text-black" id="styleCuisineModalLabel">{{ homepage.promise4}}</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<p class="text-black">Cuisine linéaire, en parallèle, en ilot, en L ou autres nous pouvons répondre aux formes désirées ainsi que proposer diverses gammes de matériaux.</p>
-							</div>
-							<div class="modal-footer">
-								<p class="p-style text-black">Robert Cuisines</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="kitchen-section px-5 py-5">
-		<h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection3}}</h2>
-		<div class="row">
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-bois-656ed09e9ed05025866810.jpg')}}" alt="" class="img-fluid rounded">
-				<h4 class="mt-3 mb-4">
-					<a href="https://robertcuisines.fr/cuisine-boistyle" class="menu-item">Style bois
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-							</svg>
-						</span>
-					</a>
-				</h4>
-			</div>
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-acrylique-656ed098056c8875603270.jpg')}}" alt="" class="img-fluid rounded">
-				<h4 class="mt-3 mb-4">
-					<a href="https://robertcuisines.fr/cuisine-acrystyle" class="menu-item">Acrylique
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-							</svg>
-						</span>
-					</a>
-				</h4>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-melamine-656ed0a3db0f5065280037.jpg')}}" alt="" class="img-fluid rounded">
-				<h4 class="mt-3">
-					<a href="https://robertcuisines.fr/cuisine-m%C3%A9lastyle" class="menu-item">Mélaminé
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-							</svg>
-						</span>
-					</a>
-				</h4>
-			</div>
-			<div class="col-lg-6 text-center text-white"><img src="{{asset('images/kitchen/cuisine-style-laque-656ed0b1b3f76857267564.jpg')}}" alt="" class="img-fluid rounded">
-				<h4 class="mt-3">
-					<a href="https://robertcuisines.fr/cuisine-lacstyle" class="menu-item">Laqué
-						<span>
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-								<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-							</svg>
-						</span>
-					</a>
-				</h4>
-			</div>
-		</div>
-		<img class="mx-auto d-block my-4" src="{{asset('images/icones/logo_maitre_artisan.png')}}" alt="Logo Maître Artisan" width="200px" height="127px">
-	</div>
-
-	<div class="about-section px-5 py-5">
-		<div class="text-center text-white">
-			<h2 class="mt-3 mb-4 h2-style wow fadeInUp" data-wow-delay="0.1s">
-				Robert Cuisines
-			</h2>
-			{% set words = homepage.aboutText1|split(' ') %}
-			<p>
-				{% for word in words %}
-					{{ word }}
-					{% if loop.index is divisible by(17) and not loop.last %}
-						<br>
-					{% else %}
-						{% if not loop.last %}{% endif %}
-					{% endif %}
-				{% endfor %}
-			</p>
-			{% set words = homepage.aboutText2|split(' ') %}
-			<p>
-				{% for word in words %}
-					{{ word }}
-					{% if loop.index is divisible by(17) and not loop.last %}
-						<br>
-					{% else %}
-						{% if not loop.last %}{% endif %}
-					{% endif %}
-				{% endfor %}
-			</p>
-		</div>
-		<div class="row my-4">
-			<div class="col-lg-6 col-sm-12">
-				<div class="ratio ratio-16x9 mb-3">
-					<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines.png')}}">
-						<source src="{{ asset('videos/robert-cuisines-l-equipe-et-les-moyens.mp4') }}" type="video/mp4">
-						Votre navigateur ne supporte pas la balise vidéo.
-					</video>
-				</div>
-			</div>
-			<div class="col-lg-6 col-sm-12">
-				<div class="ratio ratio-16x9 mb-3">
-					<video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{asset('images/a_propos_video_robert_cuisines_2.png')}}">
-						<source src="{{ asset('videos/les_materiaux_video_robert_cuisines.mp4') }}" type="video/mp4">
-						Votre navigateur ne supporte pas la balise vidéo.
-					</video>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="text-center text-white ratio ratio-16x9">
-		<div class="video-background">
-			<video autoplay loop muted playsinline>
-				<source src="{{asset('videos/rc_dekton.mp4')}}" type="video/mp4">
-				Votre navigateur ne supporte pas les vidéos HTML5.
-			</video>
-			<div
-				class="content"><!-- Votre contenu ici -->
-			</div>
-		</div>
-	</div>
-
-
-	{% include 'contact_bar.html.twig' %}
-
-	<div class="d-none d-lg-block">
-		{% include 'footer.html.twig' %}
-	</div>
-
-	<div class="d-block d-lg-none">
-		{% include 'footer_md.html.twig' %}
-	</div>
+{% block title %}
 
 {% endblock %}
 
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+
+  <div class="hero-section text-white px-5 py-5" id="dynamic-hero-homepage-background">
+    <h1 class="wow fadeInUp" data-wow-delay="0.1s">
+      {{ homepage.hero1 }}
+      <br />{{ homepage.hero1Part2 }}
+    </h1>
+    <p>{{ homepage.hero2 }}</p>
+    <p>
+      <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}" class="btn-hero-section">
+        {{ product_offer.title }}
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right ms-2" viewbox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+          </svg>
+        </span>
+      </a>
+    </p>
+  </div>
+
+  <div class="promise-section px-5 py-5">
+    <p class="text-center text-white">{{ homepage.titleSection2Small }}</p>
+    <h2 class="text-center fw-bold mb-5 text-white wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection2Big }}</h2>
+    <div class="row">
+      <div class="col-lg-3 text-center text-white">
+        <img src="{{ homepage.promise1Image }}" alt="" class="img-reunion" width="175px" height="175px" />
+        <h4 class="mt-3"><a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#assemblageModal">{{ homepage.promise1 }}</a></h4>
+        <!-- Modal promise 1 assemblage local -->
+        <div class="modal fade" id="assemblageModal" tabindex="-1" aria-labelledby="assemblageModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-black" id="assemblageModalLabel">{{ homepage.promise1 }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, eaque mollitia. Ipsam accusamus quos modi, quis vero odio dignissimos consequatur molestias dolorem amet incidunt nisi, eos error officiis, eveniet praesentium.</p>
+              </div>
+              <div class="modal-footer">
+                <p class="p-style text-black">Brass'Air</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center text-white">
+        <img src="{{ homepage.promise2Image }}" alt="" class="img-reunion" width="175px" height="175px" />
+        <h4 class="mt-3"><a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#materiauxModal">{{ homepage.promise2 }}</a></h4>
+        <!-- Modal promise 2 matériaux -->
+        <div class="modal fade" id="materiauxModal" tabindex="-1" aria-labelledby="matériauxModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-black" id="matériauxModalLabel">{{ homepage.promise2 }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-black text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit:</p>
+                <ul class="text-black text-start">
+                  <li>
+                    Loremp Ipsum Dolor sit amet:<ul>
+                      <li>Lorem ipsum dolor sit amet</li>
+                      <li>Lorem ipsum dolor sit amet</li>
+                      <li>Lorem ipsum dolor sit amet</li>
+                      <li>Lorem ipsum dolor sit amet</li>
+                    </ul>
+                  </li>
+                  <li class="mt-2">
+                    Lorem ipsum dolor sit amet:<ul>
+                      <li>Lorem ipsum</li>
+                      <li>Lorem ipsum</li>
+                      <li>Lorem ipsum</li>
+                      <li>Lorem ipsum</li>
+                      <li>Lorem ipsum</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <p class="p-style text-black">Brass'Air</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center text-white">
+        <img src="{{ homepage.promise3Image }}" alt="" class="img-reunion" width="175px" height="175px" />
+        <h4 class="mt-3">{{ homepage.promise3 }}</h4>
+      </div>
+      <div class="col-lg-3 text-center text-white">
+        <img src="{{ homepage.promise4Image }}" alt="" class="img-reunion" width="175px" height="175px" />
+        <h4 class="mt-3"><a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#styleCuisineModal">{{ homepage.promise4 }}</a></h4>
+        <!-- Modal promise 1 styleCuisine -->
+        <div class="modal fade" id="styleCuisineModal" tabindex="-1" aria-labelledby="styleCuisineModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-black" id="styleCuisineModalLabel">{{ homepage.promise4 }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="text-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta, ex. Voluptatem fugit voluptate non totam placeat obcaecati, explicabo deleniti optio earum maxime quaerat veniam quo debitis consectetur excepturi eum facilis?</p>
+              </div>
+              <div class="modal-footer">
+                <p class="p-style text-black">Brass'Air</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="produits-section px-5 py-5">
+    <h2 class="text-center fw-bold mb-5 text-dark wow fadeInUp" data-wow-delay="0.1s">{{ homepage.titleSection3 }}</h2>
+    <div class="row">
+      <div class="col-lg-6 text-center text-dark">
+        <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+        <h4 class="mt-3 mb-4">
+          <a href="https://127.0.0.1:8000/cuisine-boistyle" class="menu-item">
+            Industrie
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+              </svg>
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div class="col-lg-6 text-center text-dark">
+        <img src="{{ asset('images/produits/5-0m-mygym360-st-jo-66baeb9be39d7097578670.jpg') }}" alt="" class="img-fluid rounded" />
+        <h4 class="mt-3 mb-4">
+          <a href="https://127.0.0.1:8000/cuisine-acrystyle" class="menu-item">
+            Zootechnie
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+              </svg>
+            </span>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 text-center text-dark">
+        <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-5-66baeba614d80902021457.jpg') }}" alt="" class="img-fluid rounded" />
+        <h4 class="mt-3">
+          <a href="https://127.0.0.1:8000/cuisine-m%C3%A9lastyle" class="menu-item">
+            Commercial
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+              </svg>
+            </span>
+          </a>
+        </h4>
+      </div>
+      <div class="col-lg-6 text-center text-dark">
+        <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-2-66bb041ee069f401989409.jpg') }}" alt="" class="img-fluid rounded" />
+        <h4 class="mt-3">
+          <a href="https://127.0.0.1:8000/cuisine-lacstyle" class="menu-item">
+            Sport&Culture
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+              </svg>
+            </span>
+          </a>
+        </h4>
+      </div>
+    </div>
+    <img class="mx-auto d-block my-1" src="{{ asset('images/produits/brassage-vert-bleu-transparent-complet-66bb07558414a522518149.png') }}" alt="Logo Brass'Air" />
+  </div>
+
+  <div class="about-section px-5 py-5">
+    <div class="text-center text-white">
+      <h2 class="mt-3 mb-4 h2-style wow fadeInUp" data-wow-delay="0.1s">Brass'Air</h2>
+      {% set words = homepage.aboutText1|split(' ') %}
+      <p>
+        {% for word in words %}
+          {{ word }}
+          {% if loop.index is divisible by(17) and not loop.last %}
+            <br />
+          {% else %}
+            {% if not loop.last %}{% endif %}
+          {% endif %}
+        {% endfor %}
+      </p>
+      {% set words = homepage.aboutText2|split(' ') %}
+      <p>
+        {% for word in words %}
+          {{ word }}
+          {% if loop.index is divisible by(17) and not loop.last %}
+            <br />
+          {% else %}
+            {% if not loop.last %}{% endif %}
+          {% endif %}
+        {% endfor %}
+      </p>
+    </div>
+    <div class="row my-4">
+      <div class="col-lg-6 col-sm-12">
+        <div class="ratio ratio-16x9 mb-3">
+          <video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{ asset('images/produits/4-0m-egl-ass-de-dieu-st-benoit-overlay-30-66bb0605f1f26088266479.jpg') }}">
+            <source src="{{ asset('videos/60m-40m-ass-de-dieu-st-benoit.mp4') }}" type="video/mp4" />Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div class="ratio ratio-16x9 mb-3">
+          <video class="mt-3" controls controlslist="nodownload" preload="none" poster="{{ asset('images/a_propos_video_robert_cuisines_2.png') }}">
+            <source src="{{ asset('videos/les_materiaux_video_robert_cuisines.mp4') }}" type="video/mp4" />Votre navigateur ne supporte pas la balise vidéo.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-white ratio ratio-16x9">
+    <div class="video-background">
+      <video autoplay loop muted playsinline>
+        <source src="{{ asset('videos/rc_dekton.mp4') }}" type="video/mp4" />Votre navigateur ne supporte pas les vidéos HTML5.
+      </video>
+      <div class="content">
+        <!-- Votre contenu ici -->
+      </div>
+    </div>
+  </div>
+
+  {% include 'contact_bar.html.twig' %}
+
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}
+
 {% block javascripts %}
-
-	<script>
-		// ajout image 1 hero section
-document.addEventListener('DOMContentLoaded', function () {
-var imageUrl = "{{ homepage.mainImage }}"; // Récupère l'URL de l'image depuis Twig
-var heroSection = document.getElementById('dynamic-hero-homepage-background');
-
-// Définit l'image de fond
-heroSection.style.backgroundImage = 'url(' + imageUrl + ')';
-});
-	</script>
+  <script>
+    // ajout image 1 hero section
+    document.addEventListener('DOMContentLoaded', function () {
+      var imageUrl = '{{ homepage.mainImage }}' // Récupère l'URL de l'image depuis Twig
+      var heroSection = document.getElementById('dynamic-hero-homepage-background')
+    
+      // Définit l'image de fond
+      heroSection.style.backgroundImage = 'url(' + imageUrl + ')'
+    })
+  </script>
 {% endblock %}

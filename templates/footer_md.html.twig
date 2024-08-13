@@ -1,126 +1,97 @@
 <!DOCTYPE html>
 <html>
-	<!-- Footer -->
-	{% block footer %}
-		<footer
-			class="text-center text-lg-start bg-light text-muted py-2">
+  <!-- Footer -->
+  {% block footer %}
+    <footer class="text-center text-lg-start bg-light text-muted py-2">
+      <!-- Section: Links -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-12 mx-auto mb-4">
+              <!-- Content -->
+              <h5 class="text-uppercase fw-bold mb-4"><i class="fa-solid fa-mountain-sun me-3"></i>Brass'Air</h5>
+              <p>Brass'Air est à la Réunion un acteur clé dans le domaine de la ventilation industrielle, reconnu pour sa capacité à fournir des solutions complètes, innovantes et sur mesure, tout en garantissant des standards élevés de qualité et de performance.</p>
+            </div>
+            <!-- Grid column -->
 
-			<!-- Section: Links  -->
-			<section class="">
-				<div
-					class="container text-center text-md-start mt-5">
-					<!-- Grid row -->
-					<div
-						class="row mt-3">
-						<!-- Grid column -->
-						<div
-							class="col-md-12 mx-auto mb-4">
-							<!-- Content -->
-							<h5 class="text-uppercase fw-bold mb-4">
-								<i class="fa-solid fa-mountain-sun me-3"></i>Robert Cuisines
-							</h5>
-							<p>
-								Robert Cuisines est une entreprise réunionnaise qui fabrique des cuisines, des meubles de rangement et de salle de bain. Nous avons un showroom et un atelier de fabrication au Tampon.
-							</p>
-						</div>
-						<!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-12 mx-auto mb-4">
+              <!-- Links -->
+              <h5 class="text-uppercase fw-bold mb-4">Nos produits</h5>
+              <p>
+                <a href="https://127.0.0.1:8000/cuisine-boistyle" class="text-reset">Industrie</a>
+              </p>
+              <p>
+                <a href="https://127.0.0.1:8000/cuisine-acrystyle" class="text-reset">Zootechnie</a>
+              </p>
+              <p>
+                <a href="https://127.0.0.1:8000/cuisine-m%C3%A9lastyle" class="text-reset">Commercial</a>
+              </p>
+              <p>
+                <a href="https://127.0.0.1:8000/cuisine-lacstyle" class="text-reset">Sport&Culture</a>
+              </p>
+            </div>
+            <!-- Grid column -->
 
-						<!-- Grid column -->
-						<div
-							class="col-md-12 mx-auto mb-4">
-							<!-- Links -->
-							<h5 class="text-uppercase fw-bold mb-4">
-								Nos produits
-							</h5>
-							<p>
-								<a href="https://robertcuisines.fr/cuisine-boistyle" class="text-reset">Boistyle</a>
-							</p>
-							<p>
-								<a href="https://robertcuisines.fr/cuisine-acrystyle" class="text-reset">Acrystyle</a>
-							</p>
-							<p>
-								<a href="https://robertcuisines.fr/cuisine-m%C3%A9lastyle" class="text-reset">Mélastyle</a>
-							</p>
-							<p>
-								<a href="https://robertcuisines.fr/cuisine-lacstyle" class="text-reset">Lacstyle</a>
-							</p>
-							<p>
-								<a href="https://robertcuisines.fr/dressing" class="text-reset">Dressing</a>
-							</p>
-							<p>
-								<a href="https://robertcuisines.fr/salle-de-bain" class="text-reset">Salle de bain</a>
-							</p>
-						</div>
-						<!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-12 mx-auto mb-4">
+              <!-- Links -->
+              <h5 class="text-uppercase fw-bold mb-4">Liens</h5>
+              <p>
+                <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}" class="text-reset">{{ product_offer.title }}</a>
+              </p>
+              <p>
+                <a type="button" class="nav-link mb-3" data-bs-toggle="modal" data-bs-target="#telModalSm">Informations</a>
+              </p>
+              <p>
+                <a href="{{ path('app_contact_form_new') }}" class="nav-link">Envoyer un message</a>
+              </p>
+              <a href="https://maps.app.goo.gl/4A2jhBKKv1FykMgx9" class="nav-link">Nous trouver</a>
+            </div>
+            <!-- Grid column -->
 
-						<!-- Grid column -->
-						<div
-							class="col-md-12 mx-auto mb-4">
-							<!-- Links -->
-							<h5 class="text-uppercase fw-bold mb-4">
-								Liens
-							</h5>
-							<p>
-								<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}" class="text-reset">{{ product_offer.title }}</a>
-							</p>
-							<p>
-								<a type="button" class="nav-link mb-3" data-bs-toggle="modal" data-bs-target="#telModalSm">
-									Informations
-								</a>
-							</p>
-							<p>
-								<a href="{{path('app_contact_form_new')}}" class="nav-link">Envoyer un message</a>
-							</p>
-							<a href="https://maps.app.goo.gl/4A2jhBKKv1FykMgx9" class="nav-link">Nous trouver</a>
-						</div>
-						<!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-12 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h5 class="text-uppercase fw-bold mb-4">Contact</h5>
+              <p>
+                <i class="fas fa-home me-3"></i>
+                2284, Chemin Patelin, 97440, Saint-André
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                noel.baillif@brassair.re
+              </p>
+              <p>
+                <i class="fas fa-phone me-3"></i>
+                0692 86 77 45
+              </p>
+              <p>
+                <i class="fab fa-facebook-f me-3"></i>
+                <a href="https://www.facebook.com">Suivez-nous sur Facebook</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links -->
+    </footer>
 
-						<!-- Grid column -->
-						<div
-							class="col-md-12 mx-auto mb-md-0 mb-4">
-							<!-- Links -->
-							<h5 class="text-uppercase fw-bold mb-4">Contact</h5>
-							<p>
-								<i class="fas fa-home me-3"></i>
-								21 Chemin Leroy, Tampon, 97430</p>
-							<p>
-								<i class="fas fa-envelope me-3"></i>
-								contact@robertcuisines.fr
-							</p>
-							<p>
-								<i class="fas fa-phone me-3"></i>
-								0692 86 77 45</p>
-							<p>
-								<i class="fab fa-facebook-f me-3"></i>
-								<a href="https://www.facebook.com/robertcuisinesreunion">Suivez-nous sur Facebook</a>
-							</p>
-						</div>
-						<!-- Grid column -->
-					</div>
-					<!-- Grid row -->
-				</div>
-			</section>
-			<!-- Section: Links  -->
-		</footer>
-
-		<!-- Copyright -->
-		<div class="text-center p-4 bg-footer">
-			<small>
-				&copy 2024
-				<a href="{{path('app_homepage_visitors')}}" class="nav-footer-small me-3">
-					Robert Cuisines</a>
-				<a href="{{path('app_mentions_legales')}}" class="nav-footer-small me-3">Mentions légales
-				</a>
-				<a href="{{path('app_politique_confidentialite')}}" class="nav-footer-small me-3">Politique de confidentialité
-				</a>
-				<a href="https://contenucreation.fr/" class="nav-footer-small me-3">
-					Site développé par Anthony Etheve</a>
-			</small>
-
-		</div>
-		<!-- Copyright -->
-		<!-- Footer -->
-	{% endblock %}
-
-
+    <!-- Copyright -->
+    <div class="text-center p-4 bg-footer">
+      <small>
+        &copy 2024
+        <a href="{{ path('app_homepage_visitors') }}" class="nav-footer-small me-3">Brass'Air</a>
+        <a href="{{ path('app_mentions_legales') }}" class="nav-footer-small me-3">Mentions légales</a>
+        <a href="{{ path('app_politique_confidentialite') }}" class="nav-footer-small me-3">Politique de confidentialité</a>
+        <a href="https://contenucreation.fr/" class="nav-footer-small me-3">Site développé par Anthony Etheve</a>
+      </small>
+    </div>
+    <!-- Copyright -->
+    <!-- Footer -->
+  {% endblock %}
 </html>

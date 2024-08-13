@@ -31,13 +31,13 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/administration, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/inscription, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/annonces, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/accueil, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/image/fichier, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/produits, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/contact/infos, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/administration, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/inscription, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/annonces, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/accueil, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/image/fichier, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/produits, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/contact/infos, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
         # - { path: ^/profile, roles: ROLE_USER }
 
     role_hierarchy:

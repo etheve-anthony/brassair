@@ -14,7 +14,7 @@ use App\Repository\ContactInfosRepository;
 
 class AdminPageController extends AbstractController
 {
-    #[Route('/administration/robert-cuisines', name: 'app_admin_page')]
+    #[Route('/administration/brassair', name: 'app_admin_page')]
     public function index(TokenStorageInterface $tokenStorage, AuthorizationCheckerInterface $authChecker, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
 

@@ -1,165 +1,158 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Page d'administration
+{% block title %}
+  Page d'administration
 {% endblock %}
 
 {% block body %}
-	<div class="bandeau-promo-fixe">
-		{% if product_offer is not null %}
-			<p class="text-center py-2">{{ product_offer.title }}
-				-
-				{{ product_offer.message1 }}
-				-
-				{{ product_offer.message2 }}
-				-
-				{{ product_offer.message3 }}
-				-
-				<a href="{{ path('app_product_offer_visitors', {'slug': product_offer.slug}) }}">VOIR L'OFFRE</a>
-			</p>
-		{% else %}
-			<p>Pas d'offre disponible pour le moment.</p>
-		{% endif %}
-	</div>
-	<div class="d-none d-lg-block">
-		{% include 'navbar_lg_admin.html.twig' %}
-	</div>
+  <div class="bandeau-promo-fixe">
+    {% if product_offer is not null %}
+      <p class="text-center py-2">
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_lg_admin.html.twig' %}
+  </div>
 
-	<div class="d-block d-lg-none">
-		{% include 'navbar_md_admin.html.twig' %}
-	</div>
-	<div class="mx-5 mt-3">
+  <div class="d-block d-lg-none">
+    {% include 'navbar_md_admin.html.twig' %}
+  </div>
+  <div class="mx-5 mt-3">
+    {% if statuts == admin %}
+      <div id="message-bienvenue" style="display: flex">
+        <p class="ms-1">
+          {{ prenom }}! Vous êtes connecté(e) avec votre identifiant :
+          {{ app.user.userIdentifier }}.
+          <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </p>
+      </div>
 
-		{% if statuts == admin %}
-			<div id="message-bienvenue" style="display: flex">
-				<p class="ms-1">
-					{{ prenom }}! Vous êtes connecté(e) avec votre identifiant :
-					{{ app.user.userIdentifier }}.
-					<a href="{{ path('app_logout') }}">Se déconnecter</a>
-				</p>
-			</div>
+      <p class="mb-3">Statut :
+        {{ statuts }}</p>
 
-			<p class="mb-3">Statut :
-				{{ statuts }}
-			</p>
+      <div id="date-semaine" class="mb-3"></div>
 
-			<div id="date-semaine" class="mb-3"></div>
+      <div class="row">
+        <div class="col-lg-4">
+          <p>
+            Nombre de visites sur le site aujourd'hui :
+            <span>....</span>
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <p>
+            Nombre de visites sur le site les 7 derniers jours :
+            <span>....</span>
+          </p>
+        </div>
+      </div>
 
-			<div class="row">
-				<div class="col-lg-4">
-					<p>Nombre de visites sur le site aujourd'hui :
-						<span>
-							....
-						</span>
-					</p>
-				</div>
-				<div class="col-lg-4">
-					<p>Nombre de visites sur le site les 7 derniers jours :
-						<span>
-							....
-						</span>
-					</p>
-				</div>
-			</div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="offres-tab" data-bs-toggle="tab" data-bs-target="#offres" type="button" role="tab" aria-controls="offres" aria-selected="false">Offres/Annonces</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="accueil-tab" data-bs-toggle="tab" data-bs-target="#accueil" type="button" role="tab" aria-controls="accueil" aria-selected="false">Accueil/Infos</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines/Images</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="true">Utilisateurs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statistiques" type="button" role="tab" aria-controls="statistiques" aria-selected="false">Rapports</button>
+        </li>
+      </ul>
 
-			<ul class="nav nav-tabs" id="myTab" role="tablist">
-				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="offres-tab" data-bs-toggle="tab" data-bs-target="#offres" type="button" role="tab" aria-controls="offres" aria-selected="false">Offres/Annonces</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="accueil-tab" data-bs-toggle="tab" data-bs-target="#accueil" type="button" role="tab" aria-controls="accueil" aria-selected="false">Accueil/Infos</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="cuisines-tab" data-bs-toggle="tab" data-bs-target="#cuisines" type="button" role="tab" aria-controls="cuisines" aria-selected="false">Cuisines/Images</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="users-tab" data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="users" aria-selected="true">Utilisateurs</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#statistiques" type="button" role="tab" aria-controls="statistiques" aria-selected="false">Rapports</button>
-				</li>
-			</ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="my-3">Administration des utilisateurs</h3>
+          <div class="mt-2">
+            <a href="{{ path('app_register_staff') }}">Ajouter un collaborateur</a>
+          </div>
 
-			<div class="tab-content" id="myTabContent">
+          <div class="mt-2">
+            <a href="{{ path('app_register_listing') }}">Liste des collaborateurs</a>
+          </div>
 
-				<div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Administration des utilisateurs</h3>
-					<div class="mt-2">
-						<a href="{{ path('app_register_staff') }}">Ajouter un collaborateur</a>
-					</div>
+          <div class="mt-2">
+            <a href="{{ path('app_register_profil') }}">Mon profil</a>
+          </div>
+        </div>
 
-					<div class="mt-2">
-						<a href="{{ path('app_register_listing') }}">Liste des collaborateurs</a>
-					</div>
+        <div class="tab-pane fade" id="cuisines" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="my-3">Cuisines</h3>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="mt-2">
+                <a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
+              </div>
 
-					<div class="mt-2">
-						<a href="{{ path('app_register_profil') }}">Mon profil</a>
-					</div>
-				</div>
+              <div class="mt-2">
+                <a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="mt-2">
+                <a href="{{ path('app_kitchen_new') }}">Ajouter une cuisine</a>
+              </div>
 
-				<div class="tab-pane fade" id="cuisines" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Cuisines
-					</h3>
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="mt-2">
-								<a href="{{ path('app_image_file_new') }}">Ajouter une image</a>
-							</div>
+              <div class="mt-2">
+                <a href="{{ path('app_kitchen_index') }}">Liste des cuisines</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-							<div class="mt-2">
-								<a href="{{ path('app_image_file_index') }}">Liste des fichiers</a>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="mt-2">
-								<a href="{{ path('app_kitchen_new') }}">Ajouter une cuisine</a>
-							</div>
+        <div class="tab-pane fade" id="accueil" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="my-3">Accueil</h3>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="mt-2">
+                <a href="{{ path('app_homepage_new') }}">Ajouter la page d'accueil</a>
+              </div>
+              <div class="mt-2">
+                <a href="{{ path('app_homepage_index') }}">Modifier la page d'accueil</a>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="mt-2">
+                <a href="{{ path('app_contact_infos_index') }}">Voir/modifier les informations</a>
+                <br />
+                <small class="fst-italic">(Coordonnées téléphoniques, adresse, logo, horaires...)</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
-							<div class="mt-2">
-								<a href="{{ path('app_kitchen_index') }}">Liste des cuisines</a>
-							</div>
+        <div class="tab-pane fade" id="statistiques" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="my-3">Analytique</h3>
+        </div>
 
-						</div>
-					</div>
-				</div>
+        <div class="tab-pane fade show active" id="offres" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="my-3">Offres</h3>
+          <div class="mt-2">
+            <a href="{{ path('app_product_offer_new') }}">Ajouter une offre</a>
+          </div>
 
-				<div class="tab-pane fade" id="accueil" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Accueil</h3>
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="mt-2">
-								<a href="{{ path('app_homepage_new') }}">Ajouter la page d'accueil</a>
-							</div>
-							<div class="mt-2">
-								<a href="{{ path('app_homepage_index') }}">Modifier la page d'accueil</a>
-							</div>
-						</div>
-						<div class="col-lg-3">
-							<div class="mt-2">
-								<a href="{{ path('app_contact_infos_index') }}">Voir/modifier les informations</a>
-								<br>
-								<small class="fst-italic">(Coordonnées téléphoniques, adresse, logo, horaires...)</small>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="tab-pane fade" id="statistiques" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Analytique</h3>
-				</div>
-
-				<div class="tab-pane fade show active" id="offres" role="tabpanel" aria-labelledby="home-tab">
-					<h3 class="my-3">Offres</h3>
-					<div class="mt-2">
-						<a href="{{ path('app_product_offer_new') }}">Ajouter une offre</a>
-					</div>
-
-					<div class="mt-2">
-						<a href="{{ path('app_product_offer_index') }}">Liste des offres</a>
-					</div>
-				</div>
-
-			</div>
-		{% endif %}
-
-	</div>
+          <div class="mt-2">
+            <a href="{{ path('app_product_offer_index') }}">Liste des offres</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 {% endblock %}
