@@ -21,38 +21,38 @@ p {
     font-family: 'Lato', sans-serif;
 }
 
-.p_dark_red {
+.p_dark_blue {
     font-family: 'Quicksand', sans-serif;
-    color: #841010;
+    color: #264B9A;
 }
 
-.p_red {
+.p_blue {
     font-family: 'Quicksand', sans-serif;
-    color: #b01601;
+    color: #264B9A;
 }
 
 .p_yellow {
     font-family: 'Quicksand', sans-serif;
-    color: #ffca0a;
+    color: #197935;
 }
 
 .custom-icon-1 {
-    color: #841010;
+    color: #264B9A;
     /* Couleur pour la première icône */
 }
 
 .custom-icon-2 {
-    color: #ffca0a;
+    color: #197935;
     /* Couleur pour la deuxième icône */
 }
 
 .custom-icon-3 {
-    color: #b01601;
+    color: #FBBB3E;
     /* Couleur pour la troisième icône */
 }
 
 .bg-footer {
-    background-color: #841010;
+    background-color: #264B9A;
     color: white !important;
 }
 
@@ -82,7 +82,7 @@ a {
 }
 
 .logo-hover:hover {
-    box-shadow: 1px 1px 1px 1px #b01601;
+    box-shadow: 1px 1px 1px 1px #197935;
     /* Crée un "contour" rouge sans affecter la taille de l'élément */
     border-radius: 0px;
     /* Arrondi des coins de l'ombre, ajustez selon le besoin */
@@ -103,7 +103,7 @@ a {
     bottom: -3px;
     /* Position du soulignement sous le texte */
     left: 50%;
-    background-color: #b01601;
+    background-color: #197935;
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
@@ -113,7 +113,7 @@ a {
 }
 
 .menu-item:hover {
-    color: #b01601;
+    color: #197935;
     /* Change la couleur du texte au survol si nécessaire */
 }
 
@@ -122,7 +122,7 @@ a {
 }
 
 .bandeau-promo-fixe {
-    background-color: #b01601;
+    background-color: #197935;
     color: white;
 }
 
@@ -195,7 +195,7 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 .btn-hero-section:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: #b01601;
+    color: #197935;
 }
 
 .btn-hero-section:hover {
@@ -212,7 +212,7 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 
 /* Promise section */
 .promise-section {
-    background-color: #841010;
+    background-color: #197935;
     background-size: cover;
     background-position: center;
     min-height: 300px;
@@ -228,7 +228,7 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 
 /* Kitchen section */
 .kitchen-section {
-    background-color: #ffca0a;
+    background-color: #1182C9;
     background-size: cover;
     background-position: center;
     min-height: 400px;
@@ -240,7 +240,7 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 
 /* About section */
 .about-section {
-    background-color: #b01601;
+    background-color: #197935;
     background-size: cover;
     background-position: center;
     min-height: 300px;
