@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\KitchenRepository;
+use App\Repository\ApplicationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Trait\SlugTrait;
 
-#[ORM\Entity(repositoryClass: KitchenRepository::class)]
-class Kitchen
+#[ORM\Entity(repositoryClass: ApplicationRepository::class)]
+class Application
 {
     use SlugTrait;
 

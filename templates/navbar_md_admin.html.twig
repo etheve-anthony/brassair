@@ -1,115 +1,102 @@
 <!DOCTYPE html>
 <html>
+  {% block navbar_md_admin %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- Logo ou titre du site -->
+        <a class="navbar-brand" href="{{ path('app_homepage_visitors') }}"><img src="{{ contact.logoImage }}" alt="" class="img-logo" /></a>
 
-	{% block navbar_md_admin %}
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div
-				class="container-fluid">
-				<!-- Logo ou titre du site -->
-				<a class="navbar-brand" href="{{path('app_homepage_visitors')}}"><img src="{{ contact.logoImage }}" alt="" class="img-logo"></a>
+        <!-- Info contact -->
+        <!-- Info trigger modal -->
+        <a type="button" class="nav-link me-3 mb-3" data-bs-toggle="modal" data-bs-target="#telModalSm">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" class="bi bi-info-circle-fill" viewbox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2" />
+            </svg>
+          </span>
+        </a>
 
-				<!-- Info contact -->
-				<!-- Info trigger modal-->
-				<a type="button" class="nav-link me-3 mb-3" data-bs-toggle="modal" data-bs-target="#telModalSm">
-					<span>
-						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#000000" class="bi bi-info-circle-fill" viewbox="0 0 16 16">
-							<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
-						</svg>
-					</span>
-				</a>
+        <!-- Modal -->
+        <div class="modal fade" id="telModalSm" tabindex="-1" aria-labelledby="telModalSmLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="telModalSmLabel">Contact</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewbox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                      </svg>
+                    </span>
+                    <a href="tel:0692867745" class="hamb-menu-lien">
+                      {% set formattedNumber = '' %}
+                      {% set phoneNumber = contact.telephone %}
+                      {% for i in 0..(((phoneNumber|length) / 2)|round(0, 'floor')) - 1 %}
+                        {% set start = i * 2 %}
+                        {% set formattedNumber = formattedNumber ~ (phoneNumber|slice(start, 2)) ~ ' ' %}
+                      {% endfor %}
 
-				<!-- Modal-->
-				<div class="modal fade" id="telModalSm" tabindex="-1" aria-labelledby="telModalSmLabel" aria-hidden="true">
-					<div class="modal-dialog modal-sm">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="telModalSmLabel">Contact</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<ul class="list-group">
-									<li class="list-group-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewbox="0 0 16 16">
-												<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-											</svg>
-										</span>
-										<a href="tel:0692867745" class="hamb-menu-lien">
-											{% set formattedNumber = '' %}
-											{% set phoneNumber = contact.telephone %}
-											{% for i in 0..(phoneNumber|length / 2)|round(0, 'floor') - 1 %}
-												{% set start = i * 2 %}
-												{% set formattedNumber = formattedNumber ~ phoneNumber|slice(start, 2) ~ ' ' %}
-											{% endfor %}
+                      {{ formattedNumber }}
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewbox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                      </svg>
+                    </span>
+                    {{ contact.address }}
+                  </li>
+                  <li class="list-group-item">
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock-fill" viewbox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                      </svg>
+                    </span>
+                    {{ contact.openingHours }}
+                  </li>
+                  <li class="list-group-item">
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewbox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                      </svg>
+                    </span>
+                    <a href="{{ contact.facebookPage }}" class="hamb-menu-lien">Visiter notre page Facebook</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <p class="p-style">Brass'Air</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-											{{ formattedNumber }}</a>
-									</li>
-									<li class="list-group-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewbox="0 0 16 16">
-												<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-											</svg>
-										</span>
-										{{ contact.address }}</li>
-									<li class="list-group-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clock-fill" viewbox="0 0 16 16">
-												<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-											</svg>
-										</span>
-										{{ contact.openingHours }}</li>
-									<li class="list-group-item">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewbox="0 0 16 16">
-												<path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-											</svg>
-										</span>
-										<a href="{{ contact.facebookPage }}" class="hamb-menu-lien">Visiter notre page Facebook</a>
-									</li>
-								</ul>
+        <!-- Bouton Hamburger pour les petits écrans -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span></button>
 
-							</div>
-							<div class="modal-footer">
-								<p class="p-style">Robert Cuisines</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Bouton Hamburger pour les petits écrans -->
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon">
-						<i class="fa-solid fa-bars"></i>
-					</span>
-				</button>
-
-				<!-- Eléments du menu -->
-				<div class="collapse navbar-collapse my-3" id="navbarNav">
-					<ul class="navbar-nav text-center">
-						<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-boistyle">Boistyle</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-acrystyle">Acrystyle</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-m%C3%A9lastyle">Mélastyle</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-lacstyle">Lacstyle</a>
-						</li>
-												<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/dressing">Dressing</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link fw-bold" href="https://robertcuisines.fr/salle-de-bain">Salle de bain</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-
-	{% endblock %}
-
+        <!-- Eléments du menu -->
+        <div class="collapse navbar-collapse my-3" id="navbarNav">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-boistyle">Industrie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-acrystyle">Zootechnie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-m%C3%A9lastyle">Commercial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="https://robertcuisines.fr/cuisine-lacstyle">Sport&Culture</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  {% endblock %}
 </html>

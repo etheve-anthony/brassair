@@ -1,49 +1,48 @@
 {% extends 'base_admin.html.twig' %}
 
-{% block title %}Page d'accueil
+{% block title %}
+  Page d'accueil
 {% endblock %}
 
 {% block body %}
-	<div class="d-none d-lg-block">
-		{% include 'navbar_lg_admin.html.twig' %}
-	</div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_lg_admin.html.twig' %}
+  </div>
 
-	<div class="d-block d-lg-none">
-		{% include 'navbar_md_admin.html.twig' %}
-	</div>
-	<div class="mx-5">
-		<h1 class="mt-3">La page d'accueil</h1>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Titre 1 accueil</th>
-					<th>Titre 2 accueil</th>
-					<th>Image principale</th>
-					<th>actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for homepage in homepages %}
-					<tr>
-						<td>{{ homepage.id }}</td>
-						<td>{{ homepage.hero1 }}</td>
-						<td>{{ homepage.hero2 }}</td>
-						<td>{{ homepage.mainImage }}</td>
-						<td>
-							<a href="{{ path('app_homepage_show', {'id': homepage.id}) }}" class="btn btn-primary">voir</a>
-							<a href="{{ path('app_homepage_edit', {'id': homepage.id}) }}" class="btn btn-warning">éditer</a>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="7">Pas de pages trouvées</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-		<a href="{{path('app_admin_page')}}">Revenir à l'accueil de l'administration</a>
-	</div>
-
-
+  <div class="d-block d-lg-none">
+    {% include 'navbar_md_admin.html.twig' %}
+  </div>
+  <div class="mx-5">
+    <h1 class="mt-3">La page d'accueil</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Titre 1 accueil</th>
+          <th>Titre 2 accueil</th>
+          <th>Image principale</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for homepage in homepages %}
+          <tr>
+            <td>{{ homepage.id }}</td>
+            <td>{{ homepage.hero1 }}</td>
+            <td>{{ homepage.hero2 }}</td>
+            <td>{{ homepage.mainImage }}</td>
+            <td>
+              <a href="{{ path('app_homepage_show', { id: homepage.id }) }}" class="btn btn-primary">voir</a>
+              <a href="{{ path('app_homepage_edit', { id: homepage.id }) }}" class="btn btn-warning">éditer</a>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="7">Pas de pages trouvées</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ path('app_admin_page') }}">Revenir à l'accueil de l'administration</a>
+  </div>
 {% endblock %}

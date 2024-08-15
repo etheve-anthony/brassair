@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Kitchen;
-use App\Form\KitchenType;
-use App\Repository\KitchenRepository;
+use App\Entity\Application;
+use App\Form\ApplicationType;
+use App\Repository\ApplicationRepository;
 use App\Repository\ProductOfferRepository;
 use App\Repository\ContactInfosRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -13,10 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class KitchenController extends AbstractController
+class ApplicationController extends AbstractController
 {
-    #[Route('/produits/administration', name: 'app_kitchen_index', methods: ['GET'])]
-    public function index(KitchenRepository $kitchenRepository, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
+    #[Route('/application/administration', name: 'app_application_index', methods: ['GET'])]
+    public function index(ApplicationRepository $applicationRepository, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
         $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
@@ -26,14 +26,14 @@ class KitchenController extends AbstractController
         $contactContent = $contactInfosRepository->findAll();
         $contactContent = $contactContent[0] ?? null;
 
-        return $this->render('kitchen/index.html.twig', [
-            'kitchens' => $kitchenRepository->findAll(),
+        return $this->render('application/index.html.twig', [
+            'applications' => $applicationRepository->findAll(),
             'contact' => $contactContent,
             'product_offer' => $productOffer,
         ]);
     }
 
-    #[Route('/produits/nouveau', name: 'app_kitchen_new', methods: ['GET', 'POST'])]
+    #[Route('/application/nouveau', name: 'app_application_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
@@ -44,8 +44,8 @@ class KitchenController extends AbstractController
         $contactContent = $contactInfosRepository->findAll();
         $contactContent = $contactContent[0] ?? null;
 
-        $kitchen = new Kitchen();
-        $form = $this->createForm(KitchenType::class, $kitchen);
+        $application = new Application();
+        $form = $this->createForm(ApplicationType::class, $application);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -61,24 +61,24 @@ class KitchenController extends AbstractController
             // On remplace les espaces par des tirets
             $slug = str_replace(' ', '-', $slug);
             // On set le slug
-            $kitchen->setSlug($slug);
+            $application->setSlug($slug);
             // On enregistre en base de données
-            $entityManager->persist($kitchen);
+            $entityManager->persist($application);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_kitchen_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_application_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('kitchen/new.html.twig', [
-            'kitchen' => $kitchen,
+        return $this->render('application/new.html.twig', [
+            'application' => $application,
             'form' => $form,
             'contact' => $contactContent,
             'product_offer' => $productOffer,
         ]);
     }
 
-    #[Route('/{slug}', name: 'app_kitchen_show', methods: ['GET'])]
-    public function show(string $slug, Kitchen $kitchen, ProductOfferRepository $productOfferRepository, KitchenRepository $kitchenRepository, ContactInfosRepository $contactInfosRepository): Response
+    #[Route('/{slug}', name: 'app_application_show', methods: ['GET'])]
+    public function show(string $slug, Application $application, ProductOfferRepository $productOfferRepository, ApplicationRepository $applicationRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
         $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
@@ -88,21 +88,21 @@ class KitchenController extends AbstractController
         $contactContent = $contactInfosRepository->findAll();
         $contactContent = $contactContent[0] ?? null;
 
-        $kitchen = $kitchenRepository->findOneBy(['slug' => $slug]);
+        $application = $applicationRepository->findOneBy(['slug' => $slug]);
 
-        if (!$kitchen) {
+        if (!$application) {
             throw $this->createNotFoundException('Pas de cuisines trouvées pour le slug ' . $slug);
         }
 
-        return $this->render('kitchen/show.html.twig', [
-            'kitchen' => $kitchen,
+        return $this->render('application/show.html.twig', [
+            'application' => $application,
             'contact' => $contactContent,
             'product_offer' => $productOffer,
         ]);
     }
 
-    #[Route('/produits/{slug}/modifier', name: 'app_kitchen_edit', methods: ['GET', 'POST'])]
-    public function edit(string $slug, Request $request, Kitchen $kitchen, KitchenRepository $kitchenRepository, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
+    #[Route('/application/{slug}/modifier', name: 'app_application_edit', methods: ['GET', 'POST'])]
+    public function edit(string $slug, Request $request, Application $application, ApplicationRepository $applicationRepository, EntityManagerInterface $entityManager, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
         // Récupération du contenu du bandeau promotionnel
         $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
@@ -112,33 +112,33 @@ class KitchenController extends AbstractController
         $contactContent = $contactInfosRepository->findAll();
         $contactContent = $contactContent[0] ?? null;
 
-        $kitchen = $kitchenRepository->findOneBy(['slug' => $slug]);
+        $application = $applicationRepository->findOneBy(['slug' => $slug]);
 
-        $form = $this->createForm(KitchenType::class, $kitchen);
+        $form = $this->createForm(ApplicationType::class, $application);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_kitchen_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_application_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('kitchen/edit.html.twig', [
-            'kitchen' => $kitchen,
+        return $this->render('application/edit.html.twig', [
+            'application' => $application,
             'form' => $form,
             'contact' => $contactContent,
             'product_offer' => $productOffer,
         ]);
     }
 
-    #[Route('/produits/{id}', name: 'app_kitchen_delete', methods: ['POST'])]
-    public function delete(Request $request, Kitchen $kitchen, EntityManagerInterface $entityManager): Response
+    #[Route('/application/{id}', name: 'app_application_delete', methods: ['POST'])]
+    public function delete(Request $request, Application $application, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $kitchen->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($kitchen);
+        if ($this->isCsrfTokenValid('delete' . $application->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($application);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_kitchen_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_application_index', [], Response::HTTP_SEE_OTHER);
     }
 }

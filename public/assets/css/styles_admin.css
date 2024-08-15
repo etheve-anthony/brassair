@@ -132,15 +132,15 @@ body>div.bandeau-promo-fixe>p>a {
     text-decoration: underline;
 }
 
-/* Lien bandeau footer (liens légales et section kitchen) */
+/* Lien bandeau footer (liens légales et section application) */
 body>div.text-center.p-4.bg-footer>small>a:nth-child(1),
 body>div.text-center.p-4.bg-footer>small>a:nth-child(2),
 body>div.text-center.p-4.bg-footer>small>a:nth-child(3),
 body>div.text-center.p-4.bg-footer>small>a:nth-child(4),
-body>div.kitchen-section.px-5.py-5>div:nth-child(2)>div:nth-child(1)>h4>a,
-body>div.kitchen-section.px-5.py-5>div:nth-child(2)>div:nth-child(2)>h4>a,
-body>div.kitchen-section.px-5.py-5>div:nth-child(3)>div:nth-child(1)>h4>a,
-body>div.kitchen-section.px-5.py-5>div:nth-child(3)>div:nth-child(2)>h4>a {
+body>div.application-section.px-5.py-5>div:nth-child(2)>div:nth-child(1)>h4>a,
+body>div.application-section.px-5.py-5>div:nth-child(2)>div:nth-child(2)>h4>a,
+body>div.application-section.px-5.py-5>div:nth-child(3)>div:nth-child(1)>h4>a,
+body>div.application-section.px-5.py-5>div:nth-child(3)>div:nth-child(2)>h4>a {
     color: white;
     text-decoration: none;
 }
@@ -226,8 +226,8 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
     border-radius: 50%;
 }
 
-/* Kitchen section */
-.kitchen-section {
+/* Application section */
+.application-section {
     background-color: #1182C9;
     background-size: cover;
     background-position: center;
