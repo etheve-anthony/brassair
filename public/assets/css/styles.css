@@ -18,8 +18,9 @@ p {
 }
 
 .p_dark_blue {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Lato', sans-serif;
     color: #264B9A;
+    font-weight: bold;
 }
 
 .p_blue {

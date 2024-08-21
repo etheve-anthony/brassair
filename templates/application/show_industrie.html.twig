@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Industrie
+{% endblock %}
+
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+
+  <div class="container mt-4 px-5">
+    <h1>INDUSTRIE</h1>
+    <p>L'installation des ventilateurs HVLS (High Volume, Low Speed) EVEL dans le secteur de l’industrie réduit les coûts énergétiques en même temps qu’il améliore le bien-être des opérateurs.</p>
+    <p>La destratification de l’air assurée par le brassage d’air participe au maintien d’une température uniforme des espaces, et permet d’éviter les changements thermiques nocifs aux équipements.</p>
+    <p>Profitez donc des avantages d'une qualité d'air améliorée et d'un confort thermique accru.</p>
+    <h2 class="mt-4 mb-3">Type d'environnement</h2>
+    <ul>
+      <li>Installations industrielles</li>
+      <li>Ateliers</li>
+      <li>Centres de collecte et de stockage logistiques</li>
+      <li>Sites de stockage</li>
+    </ul>
+    <h2 class="mt-4 mb-3">Caractéristiques</h2>
+    <p>Bâtiments avec des process homme/machine présentant des volumes importants et des hauts plafonds.</p>
+    <h2 class="mt-4 mb-3">Avantages</h2>
+    <ul>
+      <li>
+        <span class="p_dark_blue">Ils réduisent la température perçue</span>
+        (6°C en moins)
+      </li>
+      <li>
+        <span class="p_dark_blue">Ils réduisent</span> la prolifération des <span class="p_dark_blue">virus, bactéries et moisissures</span>
+      </li>
+      <li>
+        <span class="p_dark_blue">Ils empêchent la création de condensation</span> au sol en évitant la détérioration des matériaux et/ou des machines
+      </li>
+      <li>
+        <span class="p_dark_blue">Réduire les temps d’arrêt des machines</span> (dans le cas des machines CCN et/ou des circuits <br />hydrauliques/mécaniques/électroniques)
+      </li>
+      <li>Ils augmentent la productivité des opérateurs grâce à un plus grand confort dans l'environnement de travail</li>
+      <li>
+        Ils ont <span class="p_dark_blue">une consommation extrêmement faible</span> (moteur-onduleur embarqué)
+      </li>
+      <li>
+        Ils peuvent être <span class="p_dark_blue">installés progressivement</span>, évitant ainsi des investissements économiques importants
+      </li>
+    </ul>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/7-0m-pulpes-masc-st-gilles-3-66c57912516c1787642040.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <p>Dans le secteur industriel, il a été observé comment l'installation de ventilateurs HVLS EVEL améliore le bien-être des personnes dans leur environnement de travail. Assurer les meilleures conditions microclimatiques dans l'environnement de vie et de travail est essentiel pour contribuer au bien-être psychophysique de la personne : les variations de température au-delà des limites normales provoquent une souffrance des principales fonctions physiologiques avec des répercussions plus ou moins graves sur les capacités de travail.</p>
+      </div>
+      <div class="col-lg-6">
+        <p>Outre l'environnement de travail et de production, l'espace réservé au stockage des produits doit également respecter certaines normes de qualité de l'air, de température et d'humidité pour le bon maintien de la marchandise. Lorsqu’il s’agit de produits périssables, d’aliments, mais aussi de substances chimiques, il faut éviter la formation d’odeurs et de moisissures.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-6">
+        <p>L'un des nombreux problèmes dans l'aménagement d'un nouvel espace destiné au stockage (dans lequel se trouvent donc des opérateurs et des véhicules de manutention), est l’implantation correcte et pertinente d’un système de ventilation, chaque espace en nécessite un spécifique, c'est un aspect non moins important que l'éclairage ou l'organisation des espaces.</p>
+      </div>
+      <div class="col-lg-6">
+        <p>Installer un ventilateur EVEL dans un environnement industriel c’est bénéficier avant tout d'un air pur et de qualité, ainsi que d'un environnement frais en été, sans dépendre de la climatisation. En réduisant la stratification de l'air on assure une ventilation optimale en diminuant les coûts énergétiques.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-6">
+        <p>Les ventilateurs HVLS EVEL, tout en garantissant une température uniforme dans l'environnement dans lequel ils sont installés, nous permettent également de faire face et de limiter le dangereux problème des changements brusques de température pour les équipements électroniques (qui subissent souvent des pannes dues à des changements excessifs de température).</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/7-0m-pulpes-masc-st-gilles-66c5765da4d82300690186.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    {# <div class="mt-4">
+      <img src="{{ asset('images/produits/7-0m-pulpes-masc-st-gilles-2-66c57665453f6061360190.jpg') }}" alt="" class="img-fluid rounded" />
+    </div> #}
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cinepalmes-ste-marie-2-66c57739a36f2560524027.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cinepalmes-ste-marie-66c577315e278147400393.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+  </div>
+
+  {% include 'contact_bar.html.twig' %}
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}

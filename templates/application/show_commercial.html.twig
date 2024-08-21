@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Commercial
+{% endblock %}
+
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+
+  <div class="container mt-4 px-5">
+    <h1>COMMERCIAL</h1>
+    <h2 class="mt-3">VENTILATION DANS LE SECTEUR COMMERCIAL</h2>
+    <p>Les différents modèles de ventilateurs EVEL offrent de nombreux avantages dans les grands environnements commerciaux, améliorant le bien-être, la productivité et l'économie d'énergie. Conçus pour optimiser la qualité de l’air, ils garantissent un environnement sain et confortable dans les espaces de taille moyenne à grande.</p>
+    <h2 class="mt-4 mb-3">Domaines d'application</h2>
+    <ul>
+      <li>Systèmes de ventilation pour espaces de taille moyenne à grande tels que centres commerciaux</li>
+      <li>Supermarchés</li>
+      <li>Théâtres</li>
+      <li>Salles de conférence</li>
+      <li>Salles de réunion</li>
+      <li>Gymnases</li>
+      <li>Salles de fitness</li>
+      <li>Box Crossfit</li>
+      <li>Courts de padel</li>
+      <li>Salles de sport</li>
+      <li>Concessions automobiles</li>
+      <li>Garages</li>
+      <li>Centres commerciaux</li>
+    </ul>
+    <h2 class="mt-4 mb-3">Caractéristiques</h2>
+    <p>Structures fermées avec plafonds de différentes hauteurs, même sur plusieurs étages pouvant accueillir des activités commerciales ou productives, mais aussi des salons, des formations, des événements musicaux, culturels, artistiques ou des espaces équipés dédiés à l'activité physique individuelle ou collective.</p>
+    <h2 class="mt-4 mb-3">Avantages</h2>
+    <ul>
+      <li>Bien-être et productivité des travailleurs</li>
+      <li>Bien-être des visiteurs</li>
+      <li>Bien-être des visiteurs</li>
+      <li>Économie d'énergie : Nos ventilateurs offrent une ventilation à très faible coût en été. Utilisés en complément des systèmes de climatisation existants, ils homogénéisent l'ambiance en destratifiant les couches d'air, ce qui permet de réduire le temps de fonctionnement des climatiseurs et de réaliser ainsi des économies d'énergie substantielles.</li>
+    </ul>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="row mt-4">
+      {# paragraphe 1 #}
+      <div class="col-lg-6">
+        <p>EVEL étudie et crée les meilleurs systèmes de ventilation pour les grands environnements, destinés non seulement au monde industriel mais adaptés à tout environnement présentant certaines caractéristiques structurelles (principalement une hauteur d'au moins 4 mètres).</p>
+      </div>
+      {# paragraphe 4 #}
+      <div class="col-lg-6">En parallèle, ces mêmes environnements ventilés par les HVLS d’EVEL, où de nombreuses personnes cohabitent sur de longues périodes, bénéficient d'une recirculation d'air adaptée qui assure par un ressenti de 6/7°C une qualité de l'air optimale, les ouvertures de porte n’étant pas ici un facteur aggravant.</div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 2 #}
+      <div class="col-lg-6">Les grands environnements, caractérisés par des hauteurs et des volumes importants, ne sont pas faciles à refroidir avec des systèmes traditionnels qui non seulement ne peuvent garantir des résultats satisfaisants, mais entraînent également un gaspillage considérable d'énergie et d'argent : obtenir et maintenir un bien-être microclimatique, avec des valeurs de température et d'humidité adéquates sont tout sauf simples dans ces environnements et très coûteuses en termes économiques.</div>
+      {# paragraphe 5 #}
+      <div class="col-lg-6">Les ventilateurs EVEL sont des produits adaptés à ce secteur commercial : avec une très faible consommation d'énergie, ils garantissent une répartition optimale de la température dans l'environnement et le bien-être de ceux qui y vivent.</div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 3 #}
+      <div class="col-lg-6">Dans un espace climatisé les ouvertures fréquentes des portes entrainent des changements brusques de température, parfois même très importants, ces facteurs conduisent à la nécessité de consommer beaucoup d’énergie, avec des rendements nettement médiocres afin de tenter de maintenir un certain confort.</div>
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-mygym360-st-jo-66baeb9be39d7097578670.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-5-66baeba614d80902021457.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-2-66bb041ee069f401989409.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+  </div>
+
+  {% include 'contact_bar.html.twig' %}
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}

@@ -77,6 +77,57 @@ class ApplicationController extends AbstractController
         ]);
     }
 
+    #[Route('/application/industrie', name: 'app_application_industrie_show', methods: ['GET'])]
+    public function showIndustrie(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
+    {
+        // Récupération du contenu du bandeau promotionnel
+        $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
+        $productOffer = $promoContent[0] ?? null;
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
+        return $this->render('application/show_industrie.html.twig', [
+            'contact' => $contactContent,
+            'product_offer' => $productOffer,
+        ]);
+    }
+
+    #[Route('/application/bien-etre-animal', name: 'app_application_animal_show', methods: ['GET'])]
+    public function showAnimal(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
+    {
+        // Récupération du contenu du bandeau promotionnel
+        $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
+        $productOffer = $promoContent[0] ?? null;
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
+        return $this->render('application/show_animal.html.twig', [
+            'contact' => $contactContent,
+            'product_offer' => $productOffer,
+        ]);
+    }
+
+    #[Route('/application/commercial', name: 'app_application_commercial_show', methods: ['GET'])]
+    public function showCommercial(ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
+    {
+        // Récupération du contenu du bandeau promotionnel
+        $promoContent = $productOfferRepository->findBy([], ['id' => 'DESC'], 1);
+        $productOffer = $promoContent[0] ?? null;
+
+        // Récupération des informations de contact
+        $contactContent = $contactInfosRepository->findAll();
+        $contactContent = $contactContent[0] ?? null;
+
+        return $this->render('application/show_commercial.html.twig', [
+            'contact' => $contactContent,
+            'product_offer' => $productOffer,
+        ]);
+    }
+
     #[Route('/{slug}', name: 'app_application_show', methods: ['GET'])]
     public function show(string $slug, Application $application, ProductOfferRepository $productOfferRepository, ApplicationRepository $applicationRepository, ContactInfosRepository $contactInfosRepository): Response
     {

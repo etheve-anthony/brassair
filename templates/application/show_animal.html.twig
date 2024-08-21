@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  BIEN-ÊTRE ANIMAL
+{% endblock %}
+
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+
+  <div class="container mt-4 px-5">
+    <h1>BIEN-ÊTRE ANIMAL</h1>
+    <h2 class="mt-3">VENTILATION POUR LE BIEN-ÊTRE ANIMAL</h2>
+    <p>Les ventilateurs EVEL ont également pour vocation d’améliorer le bien-être des animaux dans les process d’élevage.</p>
+    <p>Ils assurent une ventilation idéale des bâtiments tout en réduisant les coûts énergétiques pour un environnement d’élevage optimal.</p>
+    <h2 class="mt-4 mb-3">Type d'environnement</h2>
+    <ul>
+      <li>Installations industrielles</li>
+      <li>Ateliers</li>
+      <li>Centres de collecte et de stockage logistiques</li>
+      <li>Sites de stockage</li>
+    </ul>
+    <h2 class="mt-4 mb-3">Caractéristiques</h2>
+    <p>Des environnements conçus et structurés pour encourager la production animale, dans le respect de leur bien-être.</p>
+    <h2 class="mt-4 mb-3">Avantages</h2>
+    <ul>
+      <li>Bien-être animal</li>
+      <li>Bien-être et amélioration des conditions des opérateurs</li>
+      <li>Economie d'énergie : ventilation de l'écurie à très faible coût en été, elle permet également de sécher les litières</li>
+    </ul>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="row mt-4">
+      {# paragraphe 1 #}
+      <div class="col-lg-6">
+        <p>EVEL produit et commercialise des ventilateurs HVLS (High Volume Low Speed) et des ventilateurs axiaux pour le secteur de l'élevage : ce sont des produits capables de garantir à l'animal le bon système de ventilation qui le protègera des situations de stress et des risques de pathologies.</p>
+      </div>
+      {# paragraphe 6 #}
+      <div class="col-lg-6">
+        <p>Des conditions environnementales optimisées, un bien-être animal accru, il en résultera des performances exceptionnelles avec une production améliorée et une consommation d'énergie minimale.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 2 #}
+      <div class="col-lg-6">
+        <p>EVEL en effet, a toujours eu le souci du bien-être animal, les ventilateurs de plafond EVEL peuvent être utilisés dans le secteur de l'élevage, aussi bien bovins que porcins. Grâce à leur capacité à réduire au minimum la stratification de l'air et à uniformiser la température en déplaçant et en poussant une grande quantité d'air vers le bas, ils garantissent une meilleure habitabilité des environnements.</p>
+      </div>
+      {# paragraphe 7 #}
+      <div class="col-lg-6">
+        <p>Dans les élevages de bovins laitiers, en particulier, une ventilation correcte à l'intérieur d'une étable est un facteur essentiel pour le bien-être animal qui peut influencer profondément la capacité productive et reproductive de la vache et la qualité du lait produit.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 3 #}
+      <div class="col-lg-6">
+        <p>Avec l'installation de ventilateurs de plafond HVLS dans les écuries, porcheries, poulaillers, etc., les animaux bénéficient d'un air frais et moins lourd en été, sans baisses brutales de production dues à la chaleur. De plus, grâce à leur capacité de latéralisation, les ventilateurs de plafond EVEL rendent l'air plus respirable tant pour les animaux que pour les opérateurs, car ils contribuent également à l'élimination des mauvaises odeurs.</p>
+      </div>
+      {# paragraphe 8 #}
+      <div class="col-lg-6">
+        <p>Les températures élevées constituent en effet une menace pour le bien-être des bovins qui ne peut absolument pas être sous-estimée étant donné les conséquences importantes qu'elles peuvent entraîner (augmentation de la fréquence cardiaque, augmentation de la consommation d'eau, augmentation de la température corporelle) pouvant aller jusqu'à déterminer les changements hormonaux réels et propres chez l'animal.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 4 #}
+      <div class="col-lg-6">
+        <p>De plus, la recirculation de l'air obtenue permet de réduire la présence d'organismes pathogènes, l'humidité et les émissions de gaz et, par conséquent, d'avoir un animal présentant un risque moindre de maladies.</p>
+      </div>
+      {# paragraphe 9 #}
+      <div class="col-lg-6">
+        <p>Pour cette raison, l'écurie doit être équipée de systèmes de ventilation efficaces capables de refroidir l'environnement et, en même temps, de permettre la recirculation de l'air de manière à éliminer les organismes pathogènes, l'humidité et les émissions de gaz.</p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      {# paragraphe 5 #}
+      <div class="col-lg-6">
+        <p>Miser sur un ventilateur d'air EVEL dans le cadre du bien-être animal, c'est faire un choix gagnant qui permet de maintenir à l'intérieur de l'écurie un microclimat adéquat, essentiel à leur bien-être. Grandissant dans un environnement plus sain et plus confortable, il vivra mieux, produira des quantités plus importantes et qualitativement supérieures.</p>
+      </div>
+      {# paragraphe 10 #}
+      <div class="col-lg-6">
+        <p>La ventilation de l'écurie garantit, en toutes saisons, une recirculation constante de l'air et l'élimination des organismes pathogènes, de la poussière, de l'humidité et de la chaleur : si le système de ventilation n'est pas adéquat, il existe un risque de maladies respiratoires et de mammites, avec pour conséquence des souffrances animales et les pertes de production.</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-mygym360-st-jo-66baeb9be39d7097578670.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-5-66baeba614d80902021457.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+    <div class="mt-4">
+      <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-2-66bb041ee069f401989409.jpg') }}" alt="" class="img-fluid rounded" />
+    </div>
+  </div>
+
+  {% include 'contact_bar.html.twig' %}
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}
