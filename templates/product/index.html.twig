@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Liste des Produits
+{% endblock %}
+
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+  <div class="container mt-4">
+    <h1 class="mb-4 text-center">Nos Produits</h1>
+
+    {% if (products|length) > 0 %}
+      <div class="row">
+        {% for product in products %}
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">{{ product.title }}</h4>
+
+                {% if product.image %}
+                  <img src="{{ product.image }}" alt="" class="img-fluid rounded" />
+                {% endif %}
+
+                <ul class="list-unstyled mt-2">
+                  {% if product.caracteristique1 %}
+                    <li>
+                      <strong>Caractéristique 1:</strong> {{ product.caracteristique1 }}
+                    </li>
+                  {% endif %}
+                  {% if product.caracteristique2 %}
+                    <li>
+                      <strong>Caractéristique 2:</strong> {{ product.caracteristique2 }}
+                    </li>
+                  {% endif %}
+                  {% if product.caracteristique3 %}
+                    <li>
+                      <strong>Caractéristique 3:</strong> {{ product.caracteristique3 }}
+                    </li>
+                  {% endif %}
+                  {% if product.caracteristique4 %}
+                    <li>
+                      <strong>Caractéristique 4:</strong> {{ product.caracteristique4 }}
+                    </li>
+                  {% endif %}
+                </ul>
+
+                {% if product.pdfName %}
+                  <a href="{{ asset('pdfs/produits/' ~ product.pdfName) }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>{% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_product_edit', { id: product.id }) }}" class="btn btn-warning ms-2">Modifier</a>
+                  {% endif %}
+                {% else %}
+                  <p>Aucun PDF disponible pour ce produit.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Aucun produit disponible pour le moment.</p>
+    {% endif %}
+  </div>
+{% endblock %}

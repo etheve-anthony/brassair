@@ -36,7 +36,7 @@ security:
         - { path: ^/annonces, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
         - { path: ^/accueil, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
         - { path: ^/image/fichier, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
-        - { path: ^/produits, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
+        # - { path: ^/produits, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
         - { path: ^/contact/infos, roles: [ROLE_USER_SEC, ROLE_ADMIN] }
         - { path: ^/profile, roles: ROLE_USER }
 

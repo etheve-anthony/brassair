@@ -17,9 +17,9 @@ class ApplicationType extends AbstractType
             ->add('title', TextType::class, [
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Entrez le titre de la cuisine ou autre'
+                    'placeholder' => 'Entrez le titre de l\'application ou autre'
                 ],
-                'label' => 'Titre du produit'
+                'label' => 'Titre de l\'application'
             ])
             ->add('mainImage', TextType::class, [
                 'attr' => [
@@ -33,7 +33,7 @@ class ApplicationType extends AbstractType
                     'class' => 'form-control mb-3',
                     'id' => 'editor',
                     'rows' => 7,
-                    'placeholder' => 'Veuillez renseigner des détails sur le produit'
+                    'placeholder' => 'Veuillez renseigner des détails sur l\'application'
                 ],
                 'label' => 'Description du produit',
             ])
