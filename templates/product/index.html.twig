@@ -1,3 +1,4 @@
+{# Listing des produits pour les visiteurs #}
 {% extends 'base.html.twig' %}
 
 {% block title %}
@@ -30,9 +31,283 @@
     {% include 'navbar_visitors_md.html.twig' %}
   </div>
   <div class="container mt-4">
-    <h1 class="mb-4 text-center">Nos Produits</h1>
+    <h1 class="mb-4 text-center">Nos Produits de Ventilation</h1>
 
-    {% if (products|length) > 0 %}
+    <h2>Ventilateurs HVLS</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Série WZ</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, odio vero! Voluptates voluptate dicta minima deserunt? Saepe exercitationem, laborum vel temporibus tempora delectus perspiciatis placeat, ea tempore dolorum alias obcaecati.</p>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Série WD</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa, odio vero! Voluptates voluptate dicta minima deserunt? Saepe exercitationem, laborum vel temporibus tempora delectus perspiciatis placeat, ea tempore dolorum alias obcaecati.</p>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Ventilateurs Mobiles</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">WA1400 FIT</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">MDN 1600</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">MDN 2000</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Ventilateurs Axiaux</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">WA 1400-MAX</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Série croisée 2,0m</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Série croisée 2,5m</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Ventilateurs Flower Fan</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">FF3000</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">FF4000</h4>
+
+            <img src="{{ asset('images/produits/5-0m-plalada-pierrefonds-2-66baeb1f52341558349299.jpg') }}" alt="" class="img-fluid rounded" />
+
+            <ul class="list-unstyled mt-2">
+              <li>
+                <strong>Caractéristique 1:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 2:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 3:</strong> lorem ipsum
+              </li>
+
+              <li>
+                <strong>Caractéristique 4:</strong> lorem ipsum
+              </li>
+            </ul>
+
+            <a href="{{ asset('pdfs/produits/240619-hvls-evel-wd-66cd49ad76ed3241080403.pdf') }}" class="btn btn-success" download><i class="fa-regular fa-file-pdf"></i> Télécharger le PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# {% if (products|length) > 0 %}
       <div class="row">
         {% for product in products %}
           <div class="col-md-6 mb-4">
@@ -81,6 +356,14 @@
       </div>
     {% else %}
       <p>Aucun produit disponible pour le moment.</p>
-    {% endif %}
+    {% endif %} #}
+    {% include 'contact_bar.html.twig' %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
   </div>
 {% endblock %}

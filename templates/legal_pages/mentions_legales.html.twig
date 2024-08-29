@@ -1,71 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mentions légales
+{% block title %}
+  Mentions légales
 {% endblock %}
 
 {% block body %}
-	<div class="d-none d-lg-block">
-		{% include 'navbar_visitors_lg.html.twig' %}
-	</div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
 
-	<div class="d-block d-lg-none">
-		{% include 'navbar_visitors_md.html.twig' %}
-	</div>
-	<div class="container px-5 my-4">
-		<h1 class="text-center">Mentions légales
-		</h1>
-		<p>L’utilisation du présent site implique de respecter les termes des présentes mentions légales. En accédant au site, tout internaute déclare avoir lu et accepté les présentes mentions légales et s’engage à s’y conformer.
-		</p>
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+  <div class="container px-5 my-4">
+    <h1 class="text-center">Mentions légales</h1>
+    <p>L’utilisation du présent site implique de respecter les termes des présentes mentions légales. En accédant au site, tout internaute déclare avoir lu et accepté les présentes mentions légales et s’engage à s’y conformer.</p>
 
-		<h2>Article 1 : Description du Site</h2>
-		<p>Ce site est accessible à l’adresse URL suivante :
-			<a href="https://robertcuisines.fr/">https://robertcuisines.fr/</a>
-			(ci-après le « Site »).</p>
-		<p>L’éditeur du Site est l'entreprise ROBERT CUISINES, immatriculée sous le numéro 85361979900010, dont le siège social est situé 21 Chemin Leroy, Tampon, 97430 représentée par M. Robert Aliday, Directeur de publication, dûment habilitée à l’effet des présentes.</p>
-		<p>GSM : 0692 56 16 16 – E-mail : robertcuisines@orange.fr</p>
-		<p>Réalisation du site: ETHEVE Anthony – E-mail : anthony@contenucreation.fr - Site Web :
-			<a href="https:/contenucreation.fr/">https:/contenucreation.fr/</a>
-		</p>
-		<p>L’hébergement de ce site est assuré par la société HOSTINGER INTERNATIONAL LTD, dont le siège social se situe 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant : https://www.hostinger.fr/contact.</p>
-		<p>Le nom de domaine est fourni par OVH, 2 rue kellermann BP 80157 59053 ROUBAIX CEDEX 1 – France</p>
-		<h2>Article 2 : Inscription</h2>
-		<p>L’internaute peut être invité à remplir un formulaire de contact sur certains espaces dédiés. Il s’engage à fournir des informations exactes et complètes. Son message sera confirmé par un message d’information en direct.</p>
-		<h2>Article 3 : Règles d’utilisation du Site</h2>
-		<p>Les utilisateurs doivent disposer des compétences, matériels et logiciels requis pour l’utilisation d’Internet, ou le cas échéant, de services Internet, téléphoniques et par Audiotel et reconnaissent que les caractéristiques et les contraintes d’Internet ne permettent pas de garantir la sécurité, la disponibilité et l’intégrité des transmissions de données sur Internet.</p>
-		<p>Les équipements (ordinateur, logiciels, moyens de télécommunications, etc.) permettant d’accéder au Site, sont à la charge exclusive des utilisateurs, de même que les frais de télécommunications induits par leur utilisation. A ce titre, les utilisateurs reconnaissent qu’ils ne peuvent exiger un quelconque dédommagement, de quelque nature que ce soit, de la part de l'entreprise ROBERT CUISINES.</p>
-		<h2>Article 4 : Protection et usage des données personnelles et utilisation des cookies
-		</h2>
-		<p>Les informations recueillies lors de la soumission du formulaire font l’objet d’un traitement informatique destiné à des fins de gestion et d’étude de votre demande et ne seront conservées que le temps nécessaire à cet effet. Le destinataire des données est L'entreprise ROBERT CUISINES. Vous disposez d’un droit d’accès, de rectification et de suppression des données personnelles vous concernant auprès du responsable de traitement :</p>
-		<p>SARL ROBERT CUISINES</p>
-		<p>21 Chemin Leroy, Tampon, 97430</p>
-		<a href="{{path('app_politique_confidentialite')}}">Consulter la politique de confidentialité</a>
-		<p class="mt-2">Le site robertcuisines.fr utilise un cookie de session pour maintenir la connexion de l'utilisateur lorsqu'il navigue sur plusieurs pages au cours d'une session.</p>
-		<h2>Article 5 : Propriété Intellectuelle</h2>
-		<p>L’ensemble des contenus, pages, scripts, icônes ou sons de ce Site est la propriété exclusive de L'entreprise ROBERT CUISINES. Toute production, reproduction ou représentation de ce Site, en tout ou partie (textes, sons ou images), sur quelque support que ce soit est interdite. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur.
-		</p>
-		<p>Il est strictement interdit d’utiliser ou de reproduire les marques, modèles ou dessins enregistrés, qui sont la propriété de L'entreprise ROBERT CUISINES, à quelque titre que ce soit et notamment à des fins publicitaires sans l’accord préalable écrit de L'entreprise ROBERT CUISINES.</p>
-		<h2>Article 6 : Risques liés au réseau Internet</h2>
-		<p>Les services du Site sont accessibles 24 heures sur 24, sept jours sur sept, sauf en cas de force majeure ou d’un événement hors du contrôle de L'entreprise ROBERT CUISINES, et sous réserve des périodes de maintenance et des pannes éventuelles.</p>
-		<p>Les taux de transfert et les temps de réponse des informations circulant entre le réseau Internet et la plateforme du Site ne sont pas garantis par L'entreprise ROBERT CUISINES. En effet, la vitesse de circulation des informations ne relève pas de la prestation d’accès offerte par L'entreprise ROBERT CUISINES, mais des caractéristiques inhérentes aux réseaux en ligne relatives aux moyens techniques d’absorption du trafic généré.</p>
-		<p>L'entreprise ROBERT CUISINES rappelle aux utilisateurs les caractéristiques et les limites du réseau Internet et décline toute responsabilité liée aux conséquences de la connexion des utilisateurs à ce réseau via le Site.
-		</p>
-		<p>Plus particulièrement, L'entreprise ROBERT CUISINES ne saurait être tenue responsable de tout dommage, matériel ou immatériel, causé aux utilisateurs, à leurs équipements informatiques et aux données qui y sont stockées, et aux conséquences pouvant en découler sur leur activité personnelle, professionnelle ou commerciale.</p>
-		<p>L'entreprise ROBERT CUISINES ne saurait davantage être tenue responsable au cas où un ou plusieurs utilisateurs ne pourraient parvenir à se connecter au Site web du fait de tout défaut technique ou de tout problème lié notamment à l’encombrement du réseau.</p>
-		<h2>Article 7 : Responsabilité</h2>
-		<p>L'entreprise ROBERT CUISINES a fait tous ses efforts pour s’assurer que les informations accessibles par l’intermédiaire de son Site soient exactes. Cependant, L'entreprise ROBERT CUISINES ne garantit en aucune manière que ces informations soient exactes, complètes et à jour.</p>
-		<p>L'entreprise ROBERT CUISINES pourra unilatéralement et à tout moment interrompre temporairement ou définitivement la mise en ligne de son Site sans que sa responsabilité ne puisse être recherchée et sans que cela ne puisse donner lieu à l’allocation de dommages et intérêts de quelque nature que ce soit.</p>
-		<p>Les pages du Site peuvent contenir des liens hypertextes renvoyant vers d’autres sites Internet gérés par des sociétés distinctes de L'entreprise ROBERT CUISINES, et sur lesquels L'entreprise ROBERT CUISINES, n’exerce aucune sorte de contrôle. L'entreprise ROBERT CUISINES n’est pas responsable du contenu de tout autre site auquel vous pourriez avoir accès via le Site ou ses Sites annexes. Tout utilisateur ou visiteur du Site ne peut mettre en place un lien hypertexte en direction de ce Site sans l’autorisation expresse préalable de L'entreprise ROBERT CUISINES.</p>
-		<p>L'entreprise ROBERT CUISINES est libre de modifier les présentes mentions légales à tout moment sans que sa responsabilité ne puisse être engagée. La dernière version des mentions légales s’impose aux utilisateurs.</p>
-		<h2>Article 8 : Législation</h2>
-		<p>Les mentions sont régies par les lois françaises et tout litige relatif à leur exécution et/ou leur interprétation sera soumis aux tribunaux français.</p>
+    <h2>Article 1 : Description du Site</h2>
+    <p>
+      Ce site est accessible à l’adresse URL suivante :
+      <a href="https://brassair.re/">https://brassair.re/</a>
+      (ci-après le « Site »).
+    </p>
+    <p>L’éditeur du Site est l'entreprise BRASSAIR, immatriculée sous le numéro 45219207300016, dont le siège social est situé 2284 Chemin Patelin 97440 Saint-andre représentée par M. Baillif Jean Noël, Directeur de publication, dûment habilitée à l’effet des présentes.</p>
+    <p>GSM : 0692 56 16 16 – E-mail : noel.baillif@brassair.re</p>
+    <p>
+      Réalisation du site: ETHEVE Anthony – E-mail : anthony@contenucreation.fr - Site Web :
+      <a href="https:/contenucreation.fr/">https:/contenucreation.fr/</a>
+    </p>
+    <p>L’hébergement de ce site est assuré par la société HOSTINGER INTERNATIONAL LTD, dont le siège social se situe 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant : https://www.hostinger.fr/contact.</p>
+    <p>Le nom de domaine est fourni par OVH, 2 rue kellermann BP 80157 59053 ROUBAIX CEDEX 1 – France</p>
+    <h2>Article 2 : Inscription</h2>
+    <p>L’internaute peut être invité à remplir un formulaire de contact sur certains espaces dédiés. Il s’engage à fournir des informations exactes et complètes. Son message sera confirmé par un message d’information en direct.</p>
+    <h2>Article 3 : Règles d’utilisation du Site</h2>
+    <p>Les utilisateurs doivent disposer des compétences, matériels et logiciels requis pour l’utilisation d’Internet, ou le cas échéant, de services Internet, téléphoniques et par Audiotel et reconnaissent que les caractéristiques et les contraintes d’Internet ne permettent pas de garantir la sécurité, la disponibilité et l’intégrité des transmissions de données sur Internet.</p>
+    <p>Les équipements (ordinateur, logiciels, moyens de télécommunications, etc.) permettant d’accéder au Site, sont à la charge exclusive des utilisateurs, de même que les frais de télécommunications induits par leur utilisation. A ce titre, les utilisateurs reconnaissent qu’ils ne peuvent exiger un quelconque dédommagement, de quelque nature que ce soit, de la part de l'entreprise BRASSAIR.</p>
+    <h2>Article 4 : Protection et usage des données personnelles et utilisation des cookies</h2>
+    <p>Les informations recueillies lors de la soumission du formulaire font l’objet d’un traitement informatique destiné à des fins de gestion et d’étude de votre demande et ne seront conservées que le temps nécessaire à cet effet. Le destinataire des données est L'entreprise BRASSAIR. Vous disposez d’un droit d’accès, de rectification et de suppression des données personnelles vous concernant auprès du responsable de traitement :</p>
+    <p>ENTREPRISE INDIVIDUELLE BAILLIF JEAN (BRASSAIR)</p>
+    <p>2284 Chemin Patelin 97440 Saint-andre</p>
+    <a href="{{ path('app_politique_confidentialite') }}">Consulter la politique de confidentialité</a>
+    <p class="mt-2">Le site brassair.re utilise un cookie de session pour maintenir la connexion de l'utilisateur lorsqu'il navigue sur plusieurs pages au cours d'une session.</p>
+    <h2>Article 5 : Propriété Intellectuelle</h2>
+    <p>L’ensemble des contenus, pages, scripts, icônes ou sons de ce Site est la propriété exclusive de L'entreprise BRASSAIR. Toute production, reproduction ou représentation de ce Site, en tout ou partie (textes, sons ou images), sur quelque support que ce soit est interdite. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur.</p>
+    <p>Il est strictement interdit d’utiliser ou de reproduire les marques, modèles ou dessins enregistrés, qui sont la propriété de L'entreprise BRASSAIR, à quelque titre que ce soit et notamment à des fins publicitaires sans l’accord préalable écrit de L'entreprise BRASSAIR.</p>
+    <h2>Article 6 : Risques liés au réseau Internet</h2>
+    <p>Les services du Site sont accessibles 24 heures sur 24, sept jours sur sept, sauf en cas de force majeure ou d’un événement hors du contrôle de L'entreprise BRASSAIR, et sous réserve des périodes de maintenance et des pannes éventuelles.</p>
+    <p>Les taux de transfert et les temps de réponse des informations circulant entre le réseau Internet et la plateforme du Site ne sont pas garantis par L'entreprise BRASSAIR. En effet, la vitesse de circulation des informations ne relève pas de la prestation d’accès offerte par L'entreprise BRASSAIR, mais des caractéristiques inhérentes aux réseaux en ligne relatives aux moyens techniques d’absorption du trafic généré.</p>
+    <p>L'entreprise BRASSAIR rappelle aux utilisateurs les caractéristiques et les limites du réseau Internet et décline toute responsabilité liée aux conséquences de la connexion des utilisateurs à ce réseau via le Site.</p>
+    <p>Plus particulièrement, L'entreprise BRASSAIR ne saurait être tenue responsable de tout dommage, matériel ou immatériel, causé aux utilisateurs, à leurs équipements informatiques et aux données qui y sont stockées, et aux conséquences pouvant en découler sur leur activité personnelle, professionnelle ou commerciale.</p>
+    <p>L'entreprise BRASSAIR ne saurait davantage être tenue responsable au cas où un ou plusieurs utilisateurs ne pourraient parvenir à se connecter au Site web du fait de tout défaut technique ou de tout problème lié notamment à l’encombrement du réseau.</p>
+    <h2>Article 7 : Responsabilité</h2>
+    <p>L'entreprise BRASSAIR a fait tous ses efforts pour s’assurer que les informations accessibles par l’intermédiaire de son Site soient exactes. Cependant, L'entreprise BRASSAIR ne garantit en aucune manière que ces informations soient exactes, complètes et à jour.</p>
+    <p>L'entreprise BRASSAIR pourra unilatéralement et à tout moment interrompre temporairement ou définitivement la mise en ligne de son Site sans que sa responsabilité ne puisse être recherchée et sans que cela ne puisse donner lieu à l’allocation de dommages et intérêts de quelque nature que ce soit.</p>
+    <p>Les pages du Site peuvent contenir des liens hypertextes renvoyant vers d’autres sites Internet gérés par des sociétés distinctes de L'entreprise BRASSAIR, et sur lesquels L'entreprise BRASSAIR, n’exerce aucune sorte de contrôle. L'entreprise BRASSAIR n’est pas responsable du contenu de tout autre site auquel vous pourriez avoir accès via le Site ou ses Sites annexes. Tout utilisateur ou visiteur du Site ne peut mettre en place un lien hypertexte en direction de ce Site sans l’autorisation expresse préalable de L'entreprise BRASSAIR.</p>
+    <p>L'entreprise BRASSAIR est libre de modifier les présentes mentions légales à tout moment sans que sa responsabilité ne puisse être engagée. La dernière version des mentions légales s’impose aux utilisateurs.</p>
+    <h2>Article 8 : Législation</h2>
+    <p>Les mentions sont régies par les lois françaises et tout litige relatif à leur exécution et/ou leur interprétation sera soumis aux tribunaux français.</p>
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
 
-	</div>
-	<div class="d-none d-lg-block">
-		{% include 'footer.html.twig' %}
-	</div>
-
-	<div class="d-block d-lg-none">
-		{% include 'footer_md.html.twig' %}
-	</div>
-
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
 {% endblock %}

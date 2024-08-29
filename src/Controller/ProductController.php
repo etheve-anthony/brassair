@@ -16,6 +16,7 @@ use App\Repository\ContactInfosRepository;
 #[Route('/produits-brassair')]
 class ProductController extends AbstractController
 {
+    // Listing des produits pour les visiteurs
     #[Route('/liste', name: 'app_product_index', methods: ['GET'])]
     public function index(ProductRepository $productRepository, ProductOfferRepository $productOfferRepository, ContactInfosRepository $contactInfosRepository): Response
     {
