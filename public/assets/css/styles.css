@@ -403,3 +403,25 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
 .error-message {
     color: blue;
 }
+
+.service-section {
+    background-color: #264B9A;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lottie-file {
+    display: block;
+    margin: 0 auto;
+    /* Centrage horizontal */
+}
+
+.customization-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #197935;
+    color: #FFFFFF;
+}

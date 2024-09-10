@@ -36,7 +36,7 @@ class ContactFormController extends AbstractController
         ]);
     }
 
-    #[Route('/formulaire', name: 'app_contact_form_new', methods: ['GET', 'POST'])]
+    #[Route('/brassair/formulaire', name: 'app_contact_form_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ContactFormRepository $contactFormRepository, MailerInterface $mailer, ContactInfosRepository $contactInfosRepository, ProductOfferRepository $productOfferRepository): Response
     {
 
@@ -57,10 +57,10 @@ class ContactFormController extends AbstractController
             $this->addFlash('success', 'Votre message a bien été envoyé! Nous revenons vers vous très rapidement!');
             // Envoyer un e-mail
             $email = (new Email())
-                ->from('contact@robertcuisines.fr')
-                ->to('contact@robertcuisines.fr')
+                ->from('contact@brassair.re')
+                ->to('noel.baillif@brassair.re')
                 ->cc('anthony@contenucreation.fr')
-                ->subject('Nouveau message reçu sur robertcuisines.fr')
+                ->subject('Nouveau message reçu sur brassair.re')
                 ->html('<p>' . 'Nom: ' . $contactForm->getName() . '</p>' . '<p>' . 'Sujet: ' . $contactForm->getSubject() . '</p>' . '<p>' . 'Email: ' . $contactForm->getEmail() . '</p>' . '<p>' . 'Tel: ' . $contactForm->getTelephone() . '<p>' . 'Type de demande: ' . $contactForm->getRequest() . '</p>' . '</p>' . '<p>' . 'Message: ' . $contactForm->getMessage() . '</p>' . '<p>' . 'RGPD: ' . $contactForm->getRGPD() . '</p>');
 
             // Gestion de la pièce jointe (attachée dans l'e-mail)

@@ -69,7 +69,7 @@ class ContactFormType extends AbstractType
                 'expanded' => false,
                 'choices'  => [
                     'Demande de devis' => 'devis',
-                    'Demande de stage/candidature' => 'stage/emploi',
+                    'Demande technique' => 'technique',
                     'Autres' => 'autres',
                 ],
                 'attr' => [
@@ -79,7 +79,7 @@ class ContactFormType extends AbstractType
                 'placeholder' => 'Sélectionnez le type de demande'
             ])
             ->add('attachedFile', FileType::class, [
-                'label' => 'Fichier à joindre (plan de cuisine, CV, autres)',
+                'label' => 'Fichier à joindre (plan, schéma)',
                 'attr' => [
                     'class' => 'form-control mb-3',
                 ],

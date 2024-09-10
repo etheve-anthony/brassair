@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Service
+{% endblock %}
+
+{% block body %}
+  <div class="bandeau-promo">
+    {% if product_offer is not null %}
+      <p>
+        {{ product_offer.title }}
+        -
+        {{ product_offer.message1 }}
+        -
+        {{ product_offer.message2 }}
+        -
+        {{ product_offer.message3 }}
+        -
+        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
+      </p>
+    {% else %}
+      <p>Pas d'offre disponible pour le moment.</p>
+    {% endif %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+  <div class="container mt-4">
+    <h1 class="mb-4 text-center">Nos Services</h1>
+
+    <!-- Introduction / Groupe 1 -->
+    <section class="service-section py-5 px-3">
+      <div class="container row">
+        <h2 class="section-title text-center mb-4">Notre fournisseur EVEL</h2>
+        <div class="col-lg-8 align-content-center">
+          <p class="section-description text-center">EVEL met en œuvre toutes ses connaissances ainsi que celles des Universités et Centres de Recherche avec lesquels il collabore et les solutions technologiques les plus avancées pour créer des ventilateurs de très haute qualité et peu consommateurs. EVEL pour cela se présente tant en consultant, que producteur, installateur et mainteneur.</p>
+          <p class="section-text text-center">En effet, pour aérer efficacement un espace, il ne suffit pas d'acheter un ventilateur : il faut savoir identifier la pale au profil le plus adapté, tout comme il faut savoir calculer le diamètre idéal ainsi que le bon nombre de ventilateur à appliquer et leur meilleur positionnement.</p>
+        </div>
+        <div class="col-lg-4">
+          <iframe class="lottie-file" src="https://lottie.host/embed/a9359d19-d4a1-44a3-ba25-ad9c5e028471/mjwAUzsNlu.json" style="width: 300px; height: 300px;"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Groupe 2 -->
+    <section class="service-details bg-light py-5">
+      <div class="container">
+        <h2 class="section-title text-center">Un accompagnement complet avec EVEL et BRASS'AIR</h2>
+        <p class="section-description text-center">Avec l'équipe de professionnels de notre fournisseur EVEL nous vous accompagnons tout au long de votre processus, de la phase de conception au conseil après-vente.</p>
+
+        <div class="row text-center mt-4">
+          <!-- Conception -->
+          <div class="col-md-3 mb-4">
+            <h3 class="mb-2">Conception</h3>
+            <i class="fa-solid fa-tape fa-2xl"></i>
+            <p class="mt-2">Nous réalisons des études techniques pour vous proposer la meilleure solution de ventilation, adaptée à vos besoins spécifiques.</p>
+          </div>
+
+          <!-- Production -->
+          <div class="col-md-3 mb-4">
+            <h3 class="mb-2">Production</h3>
+            <i class="fa-solid fa-fan fa-2xl"></i>
+            <p class="mt-2">Les ventilateurs EVEL sont fabriqués en Italie avec les meilleurs matériaux, garantissant fiabilité et sécurité dans le temps.</p>
+          </div>
+
+          <!-- Installation -->
+          <div class="col-md-3 mb-4">
+            <h3 class="mb-2">Installation</h3>
+            <i class="fa-solid fa-warehouse fa-2xl"></i>
+            <p class="mt-2">BRASS’AIR propose une solution clé en main pour l’installation, avec sécurité et rapidité, sans interrompre vos activités.</p>
+          </div>
+
+          <!-- Après-Vente -->
+          <div class="col-md-3 mb-4">
+            <h3 class="mb-2">Après-Vente</h3>
+            <i class="fa-solid fa-screwdriver-wrench fa-2xl"></i>
+            <p class="mt-2">Nous restons à votre disposition pour vous fournir des conseils d'utilisation afin d'optimiser l'efficacité et la durabilité de votre installation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personnalisations -->
+    <section class="customization-section py-5">
+      <div class="container">
+        <h2 class="section-title text-center">Personnalisations</h2>
+        <p class="section-description text-center">
+          L'impression par transfert d'eau, également connue sous le nom d'impression par trempage, d'imagerie par transfert d'eau, d'hydro-trempage, de marbrure à l'eau, <br /> d'impression cubique, ou d'hydrographie, est une méthode d'application de motifs imprimés sur des surfaces tridimensionnelles.
+        </p>
+        <p class="section-description text-center">Les combinaisons qui en résultent peuvent être considérées comme des arts décoratifs ou des arts appliqués.</p>
+        <p class="section-description text-center">Le procédé hydrographique peut être utilisé sur le métal, le plastique, le verre, les bois durs et divers autres matériaux.</p>
+      </div>
+    </section>
+
+    {% include 'contact_bar.html.twig' %}
+  </div>
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}

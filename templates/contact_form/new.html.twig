@@ -1,34 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau formulaire
+{% block title %}
+  Nouveau formulaire
 {% endblock %}
 
 {% block body %}
-	<div class="d-none d-lg-block">
-		{% include 'navbar_visitors_lg.html.twig' %}
-	</div>
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
 
-	<div class="d-block d-lg-none">
-		{% include 'navbar_visitors_md.html.twig' %}
-	</div>
-	<div class="mx-5 mt-3">
-		<h1 class="mb-3">Envoyez-nous un message</h1>
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+  <div class="mx-5 mt-3">
+    <h1 class="mb-3">Envoyez-nous un message</h1>
 
-		<div class="row">
-			<div class="col-lg-5">
-				{{ include('contact_form/_form.html.twig') }}
-			</div>
-			<div class="col-lg-7">
-				<img src="{{asset('images/kitchen/devanture-robert-cuisines-6571accee9977183373935.jpg')}}" alt="" class="img-fluid rounded mx-auto d-block mb-3" style="width:80%">
-			</div>
-		</div>
-	</div>
+    <div class="row">
+      <div class="col-lg-5">{{ include('contact_form/_form.html.twig') }}</div>
+      <div class="col-lg-7">
+        <img src="{{ asset('images/produits/5-0m-cinepalmes-ste-marie-2-66c57739a36f2560524027.jpg') }}" alt="" class="img-fluid rounded mx-auto d-block mb-3" style="width:80%" />
+      </div>
+    </div>
+  </div>
 
-	<div class="d-none d-lg-block">
-		{% include 'footer.html.twig' %}
-	</div>
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
 
-	<div class="d-block d-lg-none">
-		{% include 'footer_md.html.twig' %}
-	</div>
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
 {% endblock %}
