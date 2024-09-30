@@ -57,7 +57,7 @@ class ContactFormController extends AbstractController
             $this->addFlash('success', 'Votre message a bien été envoyé! Nous revenons vers vous très rapidement!');
             // Envoyer un e-mail
             $email = (new Email())
-                ->from('contact@brassair.re')
+                ->from('noel.baillif@brassair.re')
                 ->to('noel.baillif@brassair.re')
                 ->cc('anthony@contenucreation.fr')
                 ->subject('Nouveau message reçu sur brassair.re')
