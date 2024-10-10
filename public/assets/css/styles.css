@@ -425,3 +425,23 @@ body>div.hero-section.bg-primary.text-white.px-5.py-5>p:nth-child(2) {
     background-color: #197935;
     color: #FFFFFF;
 }
+
+/* Ventilateurs section */
+.ventilateurs-hvls-section {
+    background-color: #264B9A;
+}
+
+/* Ventilateurs mobiles section */
+.ventilateurs-mobiles-section {
+    background-color: #197935;
+}
+
+/* Ventilateurs axiaux section */
+.ventilateurs-axiaux-section {
+    background-color: #5EA92B;
+}
+
+/* Ventilateurs axiaux section */
+.flower-fan-section {
+    background-color: #1182C9;
+}
