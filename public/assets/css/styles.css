@@ -23,6 +23,11 @@ p {
     font-weight: bold;
 }
 
+.p_orange {
+    font-family: 'Quicksand', sans-serif;
+
+}
+
 .p_blue {
     font-family: 'Quicksand', sans-serif;
     color: #1182C9;
