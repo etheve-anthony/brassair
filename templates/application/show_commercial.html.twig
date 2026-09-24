@@ -1,27 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Commercial
+  Espaces commerciaux
 {% endblock %}
 
 {% block body %}
-  <div class="bandeau-promo">
-    {% if product_offer is not null %}
-      <p>
-        {{ product_offer.title }}
-        -
-        {{ product_offer.message1 }}
-        -
-        {{ product_offer.message2 }}
-        -
-        {{ product_offer.message3 }}
-        -
-        <a href="{{ path('app_product_offer_visitors', { slug: product_offer.slug }) }}">VOIR L'OFFRE</a>
-      </p>
-    {% else %}
-      <p>Pas d'offre disponible pour le moment.</p>
-    {% endif %}
-  </div>
   <div class="d-none d-lg-block">
     {% include 'navbar_visitors_lg.html.twig' %}
   </div>
@@ -31,7 +14,7 @@
   </div>
 
   <div class="container mt-4 px-5">
-    <h1 class="p_dark_blue fw-bold text-center mb-5">VENTILATION DANS LE SECTEUR COMMERCIAL</h1>
+    <h1 class="p_dark_blue fw-bold text-center mb-5">VENTILATION DES ESPACES COMMERCIAUX</h1>
     <div class="col-lg-12 text-center">
       <p class="lead mb-4">Les différents modèles de ventilateurs EVEL offrent de nombreux avantages dans les grands environnements commerciaux, améliorant le bien-être, la productivité et l'économie d'énergie. Conçus pour optimiser la qualité de l’air, ils garantissent un environnement sain et confortable dans les espaces de taille moyenne à grande.</p>
     </div>
@@ -41,14 +24,8 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Systèmes de ventilation pour espaces de taille moyenne à grande tels que centres commerciaux</li>
           <li class="list-group-item">Supermarchés</li>
-          <li class="list-group-item">Théâtres</li>
           <li class="list-group-item">Salles de conférence</li>
           <li class="list-group-item">Salles de réunion</li>
-          <li class="list-group-item">Gymnases</li>
-          <li class="list-group-item">Salles de fitness</li>
-          <li class="list-group-item">Box Crossfit</li>
-          <li class="list-group-item">Courts de padel</li>
-          <li class="list-group-item">Salles de sport</li>
           <li class="list-group-item">Concessions automobiles</li>
           <li class="list-group-item">Garages</li>
           <li class="list-group-item">Centres commerciaux</li>
@@ -56,7 +33,7 @@
       </div>
     </div>
     <h2 class="p_blue fw-bold mt-4 mb-3">Caractéristiques</h2>
-    <p class="lead mb-4">Structures fermées avec plafonds de différentes hauteurs, même sur plusieurs étages pouvant accueillir des activités commerciales ou productives, mais aussi des salons, des formations, des événements musicaux, culturels, artistiques ou des espaces équipés dédiés à l'activité physique individuelle ou collective.</p>
+    <p class="lead mb-4">Espaces commerciaux de volumes et de hauteurs variés : chaque projet est étudié selon l’usage du bâtiment, son occupation et ses contraintes techniques.</p>
     <h2 class="text-warning mt-4 mb-3">Avantages</h2>
     <ul class="list-group">
       <li class="list-group-item">Bien-être et productivité des travailleurs</li>

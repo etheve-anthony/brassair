@@ -128,6 +128,15 @@ class ApplicationController extends AbstractController
         ]);
     }
 
+    #[Route('/application/sport-culture', name: 'app_application_sport_show', methods: ['GET'])]
+    public function showSport(ContactInfosRepository $contacts, ProductOfferRepository $offers): Response
+    {
+        return $this->render('application/show_sport.html.twig', [
+            'contact' => $contacts->findAll()[0] ?? null,
+            'product_offer' => $offers->findBy([], ['id' => 'DESC'], 1)[0] ?? null,
+        ]);
+    }
+
     #[Route('/{slug}', name: 'app_application_show', methods: ['GET'])]
     public function show(string $slug, Application $application, ProductOfferRepository $productOfferRepository, ApplicationRepository $applicationRepository, ContactInfosRepository $contactInfosRepository): Response
     {

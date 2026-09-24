@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Nouveau formulaire
+  Votre projet — BRASS’AIR
 {% endblock %}
 
 {% block body %}
@@ -13,8 +13,9 @@
     {% include 'navbar_visitors_md.html.twig' %}
   </div>
   <div class="mx-5 mt-3">
-    <h1 class="mb-3">Envoyez-nous un message</h1>
+    <h1 class="mb-3">Parlez-nous de votre projet</h1>
 
+    <p>Décrivez-nous votre besoin et, si vous le souhaitez, joignez vos plans ou documents techniques. Nous étudierons avec vous la solution la mieux adaptée à votre projet.</p>
     <div class="row">
       <div class="col-lg-5">{{ include('contact_form/_form.html.twig') }}</div>
       <div class="col-lg-7">

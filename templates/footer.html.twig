@@ -29,6 +29,9 @@
               <p>
                 <a href="{{ path('app_application_commercial_show') }}" class="text-reset">Commercial</a>
               </p>
+              <p>
+                <a href="{{ path('app_application_sport_show') }}" class="text-reset">Sport &amp; Culture</a>
+              </p>
             </div>
             <!-- Grid column -->
 
@@ -42,12 +45,12 @@
               <p>
                 <a href="{{ path('app_contact_form_new') }}" class="nav-link me-3">Envoyer un message</a>
               </p>
-              <p>
+              {# <p>
                 <a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#locationModal">Nous trouver sur la carte</a>
               </p>
               <p>
                 <a type="button" class="nav-link me-3" data-bs-toggle="modal" data-bs-target="#horaireModal">Nos horaires</a>
-              </p>
+              </p> #}
             </div>
             <!-- Grid column -->
 
@@ -83,7 +86,7 @@
     <!-- Copyright -->
     <div class="text-center p-4 bg-footer">
       <small>
-        &copy 2024
+        &copy; {{ 'now'|date('Y') }}
         <a href="{{ path('app_homepage_visitors') }}" class="nav-footer-small me-3">Brass'Air</a>
         <a href="{{ path('app_mentions_legales') }}" class="nav-footer-small me-3">Mentions légales</a>
         <a href="{{ path('app_politique_confidentialite') }}" class="nav-footer-small me-3">Politique de confidentialité</a>

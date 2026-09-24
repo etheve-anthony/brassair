@@ -1,0 +1,175 @@
+.brassair-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #264b9a;
+  color: #fff
+}
+
+.brassair-hero-copy {
+  padding: clamp(2rem, 5vw, 5rem);
+  align-self: center
+}
+
+.brassair-hero h1 {
+  font-size: clamp(2rem, 3.2vw, 3.5rem);
+  line-height: 1.15
+}
+
+.brassair-hero p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 1.5rem 0
+}
+
+.brassair-hero-photo {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  object-position: 50% 35%
+}
+
+.brassair-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap
+}
+
+.brassair-sector {
+  color: #264b9a;
+  text-decoration: none;
+  display: block
+}
+
+.brassair-sector img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px
+}
+
+.brassair-prose {
+  max-width: 1000px;
+  line-height: 1.8
+}
+
+.brassair-realisation {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: 50% 30%
+}
+
+.brassair-contact {
+  background: #edf4ef
+}
+
+.brassair-contact p {
+  max-width: 850px;
+  margin: 1rem auto
+}
+
+.brassair-actions a:focus-visible,
+.brassair-sector:focus-visible {
+  outline: 3px solid #ffca0a;
+  outline-offset: 4px
+}
+
+@media(max-width:767px) {
+  .brassair-hero {
+    grid-template-columns: 1fr
+  }
+
+  .brassair-hero-photo {
+    grid-row: 1;
+    height: auto;
+    max-height: 520px;
+    object-position: 50% 30%
+  }
+
+  .brassair-hero-copy {
+    padding: 2rem 1.25rem
+  }
+
+  .brassair-sector img {
+    height: 230px
+  }
+
+  .brassair-actions a {
+    width: 100%;
+    text-align: center
+  }
+
+  .brassair-realisation {
+    aspect-ratio: 4/3
+  }
+}
+
+/* Présentation de l’entreprise : styles limités à la nouvelle section. */
+.brassair-about {
+  background: #f4f7f5;
+  color: #293d35;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+  border-top: 1px solid #e2eae4;
+  border-bottom: 1px solid #e2eae4;
+}
+
+.brassair-about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1180px;
+}
+
+.brassair-about-eyebrow {
+  color: #197935;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.brassair-about-heading h2 {
+  color: #243c48;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  margin: 0 0 1.25rem;
+}
+
+.brassair-about-location {
+  color: #53675d;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 25ch;
+  margin: 0;
+}
+
+.brassair-about-text p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0 0 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.brassair-about-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .brassair-about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .brassair-about-location {
+    max-width: none;
+  }
+
+  .brassair-about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

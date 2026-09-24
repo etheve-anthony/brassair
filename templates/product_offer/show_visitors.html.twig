@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Offre du moment
+  Actualités BRASS’AIR
 {% endblock %}
 
 {% block body %}
@@ -13,13 +13,13 @@
     {% include 'navbar_visitors_md.html.twig' %}
   </div>
 
-  <div class="mx-3 my-3">
+  <div class="mx-3 my-3"><h1>ACTUALITÉS BRASS’AIR</h1><p>Réalisations, nouvelles installations et informations sur la ventilation et le brassage d’air.</p>
     <div class="row">
       <div class="col-lg-4 col-md-12 mb-3 d-flex justify-content-center align-items-center">
         <div class="card" style="width: 90%;">
           <img src="{{ product_offer.image1 }}" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h1 class="card-title">{{ product_offer.title }}</h1>
+            <h2 class="card-title">{{ product_offer.title }}</h2>
             <p class="card-text">{{ product_offer.description }}</p>
           </div>
           <ul class="list-group list-group-flush">
@@ -58,7 +58,7 @@
     </div>
 
     <div class="ms-lg-4">
-      <a href="{{ path('app_product_offer_index_visitors') }}"><small class="text-center">Voir les offres précédentes</small></a>
+      <a href="{{ path('app_product_offer_index_visitors') }}"><small class="text-center">Voir toutes les actualités</small></a>
     </div>
   </div>
   {% include 'contact_bar.html.twig' %}
@@ -69,20 +69,4 @@
   <div class="d-block d-lg-none">
     {% include 'footer_md.html.twig' %}
   </div>
-{% endblock %}
-{% block javascripts %}
-  <script>
-    // ajout image 1 hero section
-    document.addEventListener('DOMContentLoaded', function () {
-      var imageUrl = '{{ product_offer.image1 }}' // Récupère l'URL de l'image depuis Twig
-      var heroSection = document.getElementById('dynamic-hero-background')
-    
-      // Définit l'image de fond
-      heroSection.style.backgroundImage = 'url(' + imageUrl + ')'
-      heroSection.style.backgroundSize = 'cover'
-      heroSection.style.backgroundPosition = 'center'
-      heroSection.style.minHeight = '650px'
-      heroSection.style.borderRadius = '5px'
-    })
-  </script>
 {% endblock %}
