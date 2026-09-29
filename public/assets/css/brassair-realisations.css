@@ -1,0 +1,145 @@
+.brassair-projects-intro {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    color: #53636b;
+    line-height: 1.7
+}
+
+.brassair-project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: start
+}
+
+.brassair-project {
+    border: 1px solid #e0e8e3;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff
+}
+
+.brassair-project-photo-link {
+    display: block;
+    background: #f1f4f2
+}
+
+.brassair-project-photo {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: contain
+}
+
+.brassair-project-body {
+    padding: 1.5rem
+}
+
+.brassair-project-sector {
+    color: #197935;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    font-size: .75rem;
+    margin-bottom: .65rem
+}
+
+.brassair-project h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #243c48
+}
+
+.brassair-project-location {
+    font-size: .9rem;
+    color: #63736b
+}
+
+.brassair-project-equipment {
+    font-weight: 700;
+    color: #243c48
+}
+
+.brassair-project-body p {
+    line-height: 1.7
+}
+
+.brassair-project-details {
+    border-top: 1px solid #e0e8e3;
+    padding-top: 1rem;
+    margin-top: 1.25rem
+}
+
+.brassair-project-details summary {
+    cursor: pointer;
+    color: #197935;
+    font-weight: 700;
+    padding: .25rem 0
+}
+
+.brassair-project-details summary:focus-visible,
+.brassair-project a:focus-visible {
+    outline: 3px solid #264b9a;
+    outline-offset: 3px
+}
+
+.brassair-project-content {
+    padding-top: 1.5rem
+}
+
+.brassair-project-content h4 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: #243c48;
+    margin: 1.5rem 0 .75rem
+}
+
+.brassair-project-content h4:first-child {
+    margin-top: 0
+}
+
+.brassair-project-gallery {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0
+}
+
+.brassair-project-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px
+}
+
+.brassair-project-contact {
+    color: #197935;
+    text-decoration: underline
+}
+
+.brassair-projects-note {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    font-size: .9rem;
+    color: #63736b;
+    text-align: center;
+    line-height: 1.7
+}
+
+@media(max-width:991px) {
+    .brassair-project-grid {
+        grid-template-columns: 1fr
+    }
+
+    .brassair-project-photo {
+        height: auto;
+        max-height: 520px
+    }
+
+    .brassair-project-body {
+        padding: 1.25rem
+    }
+
+    .brassair-project-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start
+    }
+}

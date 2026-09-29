@@ -4,6 +4,7 @@
 {% endblock %}
 {% block stylesheets %}
   {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('assets/css/brassair-realisations.css') }}" />
   <style>
     /* Variante claire du hero, limitée à cette page. */
     .brassair-hero.brassair-hero-light {
@@ -147,29 +148,7 @@
         </div>
       </div>
     </section>
-    <section class="container py-5">
-      <h2 class="text-center mb-4">{{ homepage.titleSection3|default('NOS RÉALISATIONS') }}</h2><div class="row g-4">
-        <figure class="col-md-4">
-          <img class="brassair-realisation" loading="lazy" src="{{ asset('images/homepage/mygym-saint-benoit.jpg') }}" alt="Ventilateur chez MYGYM Saint-Benoît" /><figcaption class="mt-2">Salle de sport — MYGYM Saint-Benoît</figcaption>
-        </figure>
-        <figure class="col-md-4">
-          <div class="ratio ratio-16x9">
-            <video controls preload="none" poster="{{ asset('images/produits/4-0m-egl-ass-de-dieu-st-benoit-overlay-30-66bb0605f1f26088266479.jpg') }}">
-              <source src="{{ asset('videos/video-eglise-st-benoit-brassair.mp4') }}" type="video/mp4" />
-            </video>
-          </div>
-          <figcaption class="mt-2">Église — Saint-Benoît — installation de 2019</figcaption>
-        </figure>
-        <figure class="col-md-4">
-          <div class="ratio ratio-16x9">
-            <video controls preload="none">
-              <source src="{{ asset('videos/video-mygym-le-port-brassair.mp4') }}" type="video/mp4" />
-            </video>
-          </div>
-          <figcaption class="mt-2">Salle de sport — MYGYM Le Port</figcaption>
-        </figure>
-      </div>
-    </section>
+    {% include 'homepage/_realisations.html.twig' %}
   </main>
   {% include 'contact_bar.html.twig' %}
   <div class="d-none d-lg-block">
