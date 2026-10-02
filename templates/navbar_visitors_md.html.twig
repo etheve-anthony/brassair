@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <!-- Logo ou titre du site -->
-        <a class="navbar-brand" href="{{ path('app_homepage_visitors') }}"><img src="{{ asset(contact.logoImage) }}" alt="BRASS’AIR" class="img-logo" /></a>
+        <a class="navbar-brand" href="{{ path('app_homepage_visitors') }}"><img src="{{ asset(contact.logoImage) }}" alt="BRASS’AIR" class="img-logo logo-hover" style="width: 200px; max-width: 100%; height: auto; max-height: 100px; object-fit: contain;" /></a>
 
         <!-- Info contact -->
         <!-- Info trigger modal -->
@@ -98,7 +98,7 @@
               <a class="nav-link fw-bold" href="{{ path('app_product_index') }}">Produits</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="{{ path('app_service') }}">Service</a>
+              <a class="nav-link fw-bold" href="{{ path('app_service') }}">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="{{ path('app_contact_form_new') }}">Contact</a>
