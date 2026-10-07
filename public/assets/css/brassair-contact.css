@@ -1,0 +1,43 @@
+/* Styles limités à la page de demande de projet. */
+.brassair-contact { --bc-blue: #234879; --bc-ink: #223b49; --bc-green: #267149; background: #f4f7f8; color: var(--bc-ink); padding-bottom: 1.5rem; }
+.brassair-contact .container { max-width: 1180px; }
+.brassair-contact .bc-intro { max-width: 790px; margin-bottom: 2.25rem; }
+.brassair-contact .bc-eyebrow { color: var(--bc-green); font-size: .76rem; font-weight: 700; letter-spacing: .13em; margin-bottom: .8rem; }
+.brassair-contact h1 { color: var(--bc-blue); font-size: clamp(1.9rem, 3.5vw, 2.9rem); font-weight: 700; line-height: 1.15; margin: 0 0 1rem; }
+.brassair-contact .bc-lead { font-size: 1.08rem; line-height: 1.75; color: #52636e; margin: 0; }
+.brassair-contact .bc-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.brassair-contact .bc-form-card { background: white; border: 1px solid #e0e7eb; border-radius: 18px; padding: clamp(1.25rem, 3vw, 2.5rem); box-shadow: 0 10px 32px rgba(25, 50, 70, .05); min-width: 0; }
+.brassair-contact h2 { font-size: 1.25rem; line-height: 1.4; font-weight: 700; color: var(--bc-ink); }
+.brassair-contact .bc-accent { display: block; width: 38px; height: 4px; background: var(--bc-green); border-radius: 2px; margin-bottom: 1.1rem; }
+.brassair-contact .bc-form-heading { margin-bottom: 1.75rem; }
+.brassair-contact .bc-form-heading p { color: #52636e; line-height: 1.65; margin-bottom: 0; }
+.brassair-contact .bc-form label { font-weight: 600; }
+.brassair-contact .bc-form .form-control,
+.brassair-contact .bc-form .form-select { border-radius: 8px; font-size: 1rem; min-height: 46px; }
+.brassair-contact .bc-form .form-control:not(.is-invalid):not(.is-valid),
+.brassair-contact .bc-form .form-select:not(.is-invalid):not(.is-valid) { border-color: #bbc9d1; }
+.brassair-contact .bc-form textarea.form-control { min-height: 160px; resize: vertical; }
+.brassair-contact .bc-form :is(input, textarea, select, button):focus-visible { outline: 3px solid #376ba7; outline-offset: 3px; }
+.brassair-contact .bc-form .btn-contact { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: .9rem 1.2rem; border: 1px solid var(--bc-green); border-radius: 8px; background: var(--bc-green); color: white; font: inherit; font-weight: 700; line-height: 1.5; cursor: pointer; margin-top: .75rem; margin-bottom: 0 !important; }
+.brassair-contact .bc-form .btn-contact:hover { background: #1d5939; border-color: #1d5939; }
+.brassair-contact .bc-form .error-message { color: #a4262c; }
+.brassair-contact .bc-photo-card { background: white; margin: 0; border: 1px solid #e0e7eb; border-radius: 16px; overflow: hidden; }
+.brassair-contact .bc-photo { display: block; width: 100%; height: auto; max-height: 420px; object-fit: cover; object-position: center 45%; }
+.brassair-contact figcaption { padding: 1rem 1.25rem; font-size: .85rem; color: #52636e; }
+.brassair-contact figcaption span { display: block; color: var(--bc-ink); font-weight: 700; margin-bottom: .2rem; }
+.brassair-contact .bc-help { padding: 1.6rem .25rem 0; }
+.brassair-contact .bc-help h2 { font-size: 1.05rem; }
+.brassair-contact .bc-help p, .brassair-contact .bc-help li { font-size: .94rem; line-height: 1.7; }
+.brassair-contact .bc-help ul { padding-left: 1.3rem; }
+.brassair-contact .bc-help li { margin-bottom: .4rem; padding-left: .2rem; }
+.brassair-contact .bc-help li::marker { color: var(--bc-green); }
+.brassair-contact .bc-help-note { padding-top: 1rem; border-top: 1px solid #dbe4e8; color: #52636e; }
+@media (max-width: 991.98px) {
+  .brassair-contact .bc-layout { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+  .brassair-contact .bc-aside { max-width: 560px; width: 100%; margin-inline: auto; }
+}
+@media (max-width: 575.98px) {
+  .brassair-contact .container { padding-left: 1rem; padding-right: 1rem; }
+  .brassair-contact .bc-intro { margin-bottom: 1.5rem; }
+  .brassair-contact .bc-photo { max-height: 360px; }
+}

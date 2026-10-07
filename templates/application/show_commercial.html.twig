@@ -1,83 +1,111 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}
   Espaces commerciaux
 {% endblock %}
-
+{% block stylesheets %}
+  {{ parent() }}
+  <style>
+    .brassair-commercial section {
+      margin-top: 3rem;
+    }
+    .brassair-commercial p {
+      line-height: 1.75;
+    }
+    .brassair-commercial .commercial-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .brassair-commercial .commercial-photo-frame {
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .brassair-commercial .commercial-video-frame {
+      max-width: 270px;
+      margin: 0 auto;
+    }
+    .brassair-commercial .commercial-video {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      background: #18252c;
+    }
+  </style>
+{% endblock %}
 {% block body %}
   <div class="d-none d-lg-block">
     {% include 'navbar_visitors_lg.html.twig' %}
   </div>
-
   <div class="d-block d-lg-none">
     {% include 'navbar_visitors_md.html.twig' %}
   </div>
-
-  <div class="container mt-4 px-5">
-    <h1 class="p_dark_blue fw-bold text-center mb-5">VENTILATION DES ESPACES COMMERCIAUX</h1>
-    <div class="col-lg-12 text-center">
-      <p class="lead mb-4">Les différents modèles de ventilateurs EVEL offrent de nombreux avantages dans les grands environnements commerciaux, améliorant le bien-être, la productivité et l'économie d'énergie. Conçus pour optimiser la qualité de l’air, ils garantissent un environnement sain et confortable dans les espaces de taille moyenne à grande.</p>
-    </div>
-    <div class="row bg-light p-4 rounded shadow mb-5">
-      <div class="col-lg-12">
-        <h2 class="p_green fw-bold text-center mt-4 mb-3">Domaines d'application</h2>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Systèmes de ventilation pour espaces de taille moyenne à grande tels que centres commerciaux</li>
-          <li class="list-group-item">Supermarchés</li>
-          <li class="list-group-item">Salles de conférence</li>
-          <li class="list-group-item">Salles de réunion</li>
-          <li class="list-group-item">Concessions automobiles</li>
-          <li class="list-group-item">Garages</li>
-          <li class="list-group-item">Centres commerciaux</li>
-        </ul>
+  <main class="container py-5 px-3 px-lg-5 brassair-commercial">
+    <h1 class="p_dark_blue fw-bold text-center mb-4">VENTILATION DES ESPACES COMMERCIAUX</h1>
+    <p>Dans les commerces et les espaces recevant du public, le confort thermique participe directement à la qualité d’accueil des clients comme aux conditions de travail des équipes.</p>
+    <p>Les solutions de brassage d’air EVEL permettent de mettre en mouvement de grands volumes d’air à faible vitesse afin d’améliorer le confort ressenti et l’homogénéité thermique des espaces, avec une consommation électrique maîtrisée.</p>
+    <p>BRASS’AIR accompagne chaque projet dans le choix et le dimensionnement d’une solution adaptée à la configuration du bâtiment et à son usage.</p>
+    <p></p>
+    <section class="bg-light p-3 p-lg-4 rounded" aria-labelledby="commercial-domaines">
+      <h2 id="commercial-domaines" class="p_green fw-bold mb-3">Domaines d’application</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Centres commerciaux</li>
+        <li class="list-group-item">Grandes surfaces et supermarchés</li>
+        <li class="list-group-item">Magasins et commerces</li>
+        <li class="list-group-item">Concessions automobiles</li>
+        <li class="list-group-item">Espaces d’accueil</li>
+        <li class="list-group-item">Autres grands espaces commerciaux recevant du public</li>
+        <li class="list-group-item">Hôtels, restaurants, terrasses et espaces commerciaux ouverts ou semi-ouverts</li>
+      </ul>
+    </section>
+    <section aria-labelledby="commercial-caracteristiques">
+      <h2 id="commercial-caracteristiques" class="p_blue fw-bold mb-3">Caractéristiques</h2>
+      <p>Espaces commerciaux de volumes et de hauteurs variés : chaque projet est étudié selon l’usage du bâtiment, son occupation et ses contraintes techniques.</p>
+      <h2 class="p_green fw-bold mt-4 mb-3">Avantages</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Amélioration du confort thermique des clients et des équipes</li>
+        <li class="list-group-item">Mise en mouvement homogène de l’air dans les grands volumes</li>
+        <li class="list-group-item">Réduction de la sensation de chaleur grâce au mouvement d’air</li>
+        <li class="list-group-item">Faible consommation électrique des solutions EVEL</li>
+        <li class="list-group-item">Possibilité de compléter une installation de climatisation existante</li>
+        <li class="list-group-item">Solution adaptable aux volumes et contraintes du bâtiment</li>
+      </ul>
+    </section>
+    <section aria-labelledby="commercial-realisations">
+      <h2 id="commercial-realisations" class="p_dark_blue fw-bold mb-4">Le brassage d’air en espaces commerciaux</h2>
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-md-6">
+          <figure class="commercial-photo-frame">
+            <img src="{{ asset('images/commercial/ventilateurs-grande-surface.webp') }}" alt="Ventilateurs de grand diamètre installés au-dessus des rayons d’une grande surface" width="1050" height="1400" loading="lazy" decoding="async" class="commercial-photo rounded" />
+            <figcaption class="small text-muted mt-2">Brassage d’air dans une grande surface.</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-md-6">
+          <figure class="commercial-video-frame">
+            <video class="commercial-video rounded" width="540" height="960" controls muted playsinline preload="none" poster="{{ asset('images/commercial/video-poster.webp') }}" aria-label="Ventilateur en fonctionnement dans un espace commercial" aria-describedby="commercial-video-caption">
+              <source src="{{ asset('videos/ventilation-espace-commercial.mp4') }}" type="video/mp4" />Votre navigateur ne permet pas la lecture de cette vidéo. <a href="{{ asset('videos/ventilation-espace-commercial.mp4') }}">Voir la vidéo</a>.
+            </video>
+            <figcaption id="commercial-video-caption" class="small text-muted mt-2">Ventilateur en fonctionnement.</figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
-    <h2 class="p_blue fw-bold mt-4 mb-3">Caractéristiques</h2>
-    <p class="lead mb-4">Espaces commerciaux de volumes et de hauteurs variés : chaque projet est étudié selon l’usage du bâtiment, son occupation et ses contraintes techniques.</p>
-    <h2 class="text-warning mt-4 mb-3">Avantages</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Bien-être et productivité des travailleurs</li>
-      <li class="list-group-item">Bien-être des visiteurs</li>
-      <li class="list-group-item">Bien-être des visiteurs</li>
-      <li class="list-group-item">Économie d'énergie : Les ventilateurs EVEL ont la capacité d'homogénéiser leur environnement. Installés en complément des systèmes de climatisation existants, ils réduisent efficacement leur temps de fonctionnement, permettant ainsi de réaliser des économies significatives.</li>
-    </ul>
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/COMMERCIAL_PHOTO_1.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    <div class="row mt-4">
-      {# paragraphe 1 #}
-      <div class="col-lg-6">
-        <p>EVEL étudie et crée les meilleurs systèmes de ventilation pour les grands environnements, destinés non seulement au monde industriel mais adaptés à tout espace présentant certaines caractéristiques structurelles (principalement une hauteur d'au moins 4 mètres).</p>
+      <div class="mt-4">
+        <p>Dans les grands espaces commerciaux, la hauteur sous plafond, les volumes à traiter, la fréquentation et les ouvertures fréquentes peuvent rendre le maintien du confort thermique complexe et énergivore.</p>
+        <p>Le brassage d’air permet d’améliorer la circulation et l’homogénéité de l’air dans ces volumes. Utilisés seuls ou en complément d’autres équipements de traitement d’air, les ventilateurs EVEL constituent une solution particulièrement adaptée aux grands espaces recevant du public.</p>
+        <p>Chaque implantation doit cependant être étudiée en fonction du volume, de la hauteur disponible, de l’occupation des lieux et des équipements existants. BRASS’AIR réalise cette étude afin de déterminer la solution adaptée au projet.</p>
+        <p></p>
       </div>
-      {# paragraphe 4 #}
-      <div class="col-lg-6">En parallèle, ces mêmes environnements ventilés par les HVLS d’EVEL, où de nombreuses personnes cohabitent sur de longues périodes, bénéficient d'une recirculation d'air adaptée qui assure par un ressenti de 6/7°C une qualité de l'air optimale, les ouvertures de porte n’étant pas ici un facteur aggravant.</div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 2 #}
-      <div class="col-lg-6">Les grands environnements, caractérisés par des hauteurs et des volumes importants, ne sont pas faciles à refroidir avec des systèmes traditionnels qui non seulement ne peuvent garantir des résultats satisfaisants, mais entraînent également un gaspillage considérable d'énergie et d'argent : obtenir et maintenir un bien-être microclimatique, avec des valeurs de température et d'humidité adéquates sont tout sauf simples dans ces environnements et très coûteuses en termes économiques.</div>
-      {# paragraphe 5 #}
-      <div class="col-lg-6">Les ventilateurs EVEL sont des produits adaptés à ce secteur commercial : avec une très faible consommation d'énergie, ils garantissent une répartition optimale de la température dans l'environnement et le bien-être de ceux qui y vivent.</div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 3 #}
-      <div class="col-lg-6">Dans un espace climatisé les ouvertures fréquentes des portes entrainent des changements brusques de température, parfois même très importants, ces facteurs conduisent à la nécessité de consommer beaucoup d’énergie, avec des rendements nettement médiocres afin de tenter de maintenir un certain confort.</div>
-    </div>
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/COMMERCIAL_PHOTO_2.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/COMMERCIAL_PHOTO_3.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/COMMERCIAL_PHOTO_4.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-  </div>
-
-  {% include 'contact_bar.html.twig' %}
+    </section>
+    <section class="bg-light rounded p-4 p-lg-5 text-center" aria-labelledby="commercial-etude-title">
+      <h2 id="commercial-etude-title" class="p_dark_blue fw-bold">VOUS AVEZ UN PROJET ?</h2>
+      <p>Construction neuve, bâtiment existant ou amélioration d’une installation : transmettez-nous les principales caractéristiques de votre projet.</p>
+      <p>BRASS’AIR vous accompagne dans l’étude de la solution adaptée.</p>
+      <a href="{{ path('app_contact_form_new') }}" class="btn btn-success mt-3 px-4 py-3">DEMANDER UNE ÉTUDE</a>
+    </section>
+  </main>
   <div class="d-none d-lg-block">
     {% include 'footer.html.twig' %}
   </div>
-
   <div class="d-block d-lg-none">
     {% include 'footer_md.html.twig' %}
   </div>

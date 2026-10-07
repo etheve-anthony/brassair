@@ -1,1 +1,162 @@
-{% extends 'base.html.twig' %}{% block title %}Sport & Culture — BRASS’AIR{% endblock %}{% block body %}<div class="d-none d-lg-block">{% include 'navbar_visitors_lg.html.twig' %}</div><div class="d-block d-lg-none">{% include 'navbar_visitors_md.html.twig' %}</div><main class="container py-5"><h1 class="p_dark_blue">SPORT &amp; CULTURE</h1><p class="lead">Des solutions de ventilation et de brassage d’air adaptées aux équipements sportifs et culturels.</p><h2>Domaines d’application</h2><ul><li>Salles de sport et de fitness</li><li>Box CrossFit</li><li>Courts de padel</li><li>Gymnases</li><li>Théâtres et cinémas</li><li>Équipements culturels et espaces accueillant des événements</li></ul><h2>Une étude adaptée au bâtiment</h2><p>Hauteur sous plafond, volume, occupation et activités pratiquées : BRASS’AIR étudie ces paramètres pour dimensionner les solutions EVEL et leur intégration au bâtiment.</p><div class="row g-4"><figure class="col-md-6"><img class="img-fluid rounded" src="{{ asset('images/homepage/mygym-saint-benoit.jpg') }}" alt="Ventilateur chez MYGYM Saint-Benoît" /><figcaption>MYGYM Saint-Benoît</figcaption></figure><figure class="col-md-6"><img class="img-fluid rounded" src="{{ asset('images/produits/5-0m-cineplaza-st-denis-5-66baeba614d80902021457.jpg') }}" alt="Installation dans un cinéma" /><figcaption>Cinéma — Saint-Denis</figcaption></figure></div></main>{% include 'contact_bar.html.twig' %}<div class="d-none d-lg-block">{% include 'footer.html.twig' %}</div><div class="d-block d-lg-none">{% include 'footer_md.html.twig' %}</div>{% endblock %}
+{% extends 'base.html.twig' %}
+{% block title %}
+  Ventilation salles de sport &amp; gymnases à La Réunion | BRASS’AIR
+{% endblock %}
+{% block stylesheets %}
+  {{ parent() }}
+  <meta name="description" content="Ventilation et brassage d’air pour salles de sport, gymnases, CrossFit et équipements culturels à La Réunion. Solutions HVLS et ventilateurs mobiles EVEL." />
+  <style>
+    .brassair-sport section {
+      margin-top: 3rem;
+    }
+    .brassair-sport h2 {
+      color: #243c48;
+      margin-bottom: 1.25rem;
+    }
+    .brassair-sport p {
+      line-height: 1.75;
+    }
+    .brassair-sport .sport-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .brassair-sport .sport-reference .sport-photo {
+      height: 390px;
+      object-fit: contain;
+      background: #f5f7f6;
+    }
+    .brassair-sport .sport-hvls-photo {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .brassair-sport .sport-product {
+      max-width: 220px;
+      margin: 1.5rem auto;
+    }
+    @media (max-width: 767px) {
+      .brassair-sport .sport-reference .sport-photo {
+        height: auto;
+        max-height: 520px;
+      }
+    }
+  </style>
+{% endblock %}
+{% block body %}
+  <div class="d-none d-lg-block">
+    {% include 'navbar_visitors_lg.html.twig' %}
+  </div>
+  <div class="d-block d-lg-none">
+    {% include 'navbar_visitors_md.html.twig' %}
+  </div>
+  <main class="container py-5 px-3 px-lg-5 brassair-sport">
+    <h1 class="p_dark_blue fw-bold">Ventilation des espaces sportifs et culturels</h1>
+    <p>BRASS’AIR accompagne les salles de sport, complexes sportifs, gymnases et équipements culturels à La Réunion avec les solutions de ventilation et de brassage d’air EVEL. Ventilateurs HVLS de grand diamètre ou solutions mobiles : chaque projet est étudié en fonction du bâtiment, de son occupation et de ses usages.</p>
+    <section>
+      <h2>Des solutions adaptées aux équipements sportifs et culturels</h2><ul class="list-group list-group-flush">
+        <li class="list-group-item">Salles de sport et fitness</li>
+        <li class="list-group-item">Box de CrossFit</li>
+        <li class="list-group-item">Terrains de football indoor</li>
+        <li class="list-group-item">Courts de padel</li>
+        <li class="list-group-item">Gymnases</li>
+        <li class="list-group-item">Complexes sportifs</li>
+        <li class="list-group-item">Théâtres et cinémas</li>
+        <li class="list-group-item">Salles polyvalentes</li>
+        <li class="list-group-item">Équipements culturels</li>
+        <li class="list-group-item">Espaces accueillant des manifestations et événements</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Une étude adaptée à chaque bâtiment</h2> <p>Hauteur sous plafond, volume, occupation, activités pratiquées, structure du bâtiment et implantation des équipements : BRASS’AIR étudie ces différents paramètres afin de dimensionner la solution EVEL adaptée et son intégration au bâtiment.</p>
+      <p>Dans les grands volumes, les ventilateurs HVLS permettent de mettre en mouvement d’importantes masses d’air à faible vitesse et d’améliorer le confort ressenti des occupants. Ils constituent une solution particulièrement adaptée aux espaces sportifs de grande hauteur et aux bâtiments accueillant simultanément un nombre important de personnes.</p>
+      <p>
+        Découvrez <a href="{{ path('app_service') }}">notre accompagnement pour l’étude et le dimensionnement de votre installation</a>.
+      </p>
+    </section>
+    <section aria-labelledby="sport-hvls-title">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-7">
+          <h2 id="sport-hvls-title">Les ventilateurs HVLS pour les grands volumes</h2>
+          <p>Les salles de sport, gymnases, complexes sportifs et certains équipements culturels présentent souvent de grands volumes et des hauteurs sous plafond importantes. Les ventilateurs HVLS EVEL permettent d’assurer un brassage homogène de l’air sur de grandes surfaces tout en fonctionnant à faible vitesse.</p>
+          <p>BRASS’AIR étudie leur implantation en fonction des dimensions du bâtiment, des zones occupées et des contraintes techniques afin d’obtenir une circulation de l’air adaptée aux usages.</p>
+          <p>
+            Consultez notre gamme de <a href="{{ path('app_product_index') }}#hvls">ventilateurs HVLS EVEL</a> et les <a href="#realisations-sport">réalisations présentées ci-dessous</a>.
+          </p>
+        </div>
+        <div class="col-12 col-lg-5">
+          <figure class="sport-hvls-photo">
+            <img src="{{ asset('images/sport-culture/le-five-saint-louis.webp') }}" alt="Ventilateur HVLS EVEL 7 mètres installé dans un terrain de football indoor à Saint-Louis La Réunion" width="622" height="930" loading="lazy" class="img-fluid rounded sport-photo" /><figcaption class="small text-muted mt-2">Ventilateur HVLS EVEL 7 m – terrain de football indoor – Le FIVE, Saint-Louis, La Réunion</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light rounded p-3 p-lg-4">
+      <h2>Une solution mobile pour les espaces sportifs et les événements</h2> <p>Lorsque la configuration du bâtiment ne permet pas l’installation d’un ventilateur de plafond, ou lorsque le besoin de ventilation est ponctuel ou évolutif, EVEL propose également une gamme de ventilateurs mobiles de grand diamètre.</p>
+      <p>Du WA FIT 1400 au MDN 2000, ces solutions permettent d’adapter le diamètre de l’appareil aux dimensions de l’espace et aux usages. Montés sur roues, ils peuvent être déplacés et positionnés au plus près des zones nécessitant un brassage d’air important.</p>
+      <p>Ils constituent notamment une solution adaptée aux salles de CrossFit et de fitness, aux espaces sportifs présentant des contraintes de hauteur ou de structure, ainsi qu’aux manifestations sportives et événementielles en extérieur.</p><h3 class="h5 mt-4">La gamme de ventilateurs mobiles EVEL</h3><ul class="list-group list-group-flush">
+        <li class="list-group-item">WA FIT 1400 — diamètre d’hélice 1,40 m</li>
+        <li class="list-group-item">MDN 1600 — diamètre d’hélice 1,60 m</li>
+        <li class="list-group-item">MDN 2000 — diamètre d’hélice 2,00 m</li>
+      </ul>
+      <p class="mt-3">
+        Retrouvez les caractéristiques et les fiches techniques de nos <a href="{{ path('app_product_index') }}#mobiles">ventilateurs mobiles EVEL</a>.
+      </p>
+      <figure class="mt-4">
+        <img src="{{ asset('images/sport-culture/mdn2000-evenement.webp') }}" alt="Ventilateur mobile EVEL MDN 2000 pour événement sportif extérieur" width="1500" height="1125" loading="lazy" class="img-fluid rounded sport-photo" /><figcaption class="small text-muted mt-2">Ventilateur mobile EVEL MDN 2000 – ventilation d’un événement sportif en extérieur</figcaption>
+      </figure>
+      <figure class="mt-4">
+        <img src="{{ asset('images/sport-culture/mdn1600-restaurant.webp') }}" alt="Ventilateur mobile EVEL MDN 1600 dans un établissement recevant du public" width="1024" height="683" loading="lazy" class="img-fluid rounded sport-photo" /><figcaption class="small text-muted mt-2">Ventilateur mobile EVEL MDN 1600 – exemple d’utilisation dans un espace accueillant du public</figcaption>
+      </figure>
+      <figure class="sport-product">
+        <img src="{{ asset('images/sport-culture/wa-fit-1400.webp') }}" alt="Ventilateur mobile EVEL WA FIT 1400 sur roues" width="1427" height="1600" loading="lazy" class="img-fluid rounded sport-photo" /><figcaption class="small text-muted mt-2">WA FIT 1400 — illustration produit.</figcaption>
+      </figure>
+    </section>
+    <section>
+      <h2>Une solution pour chaque configuration</h2><ul class="list-group list-group-flush">
+        <li class="list-group-item">Brassage d’air des grands volumes</li>
+        <li class="list-group-item">Amélioration du confort ressenti des sportifs et du public</li>
+        <li class="list-group-item">Solutions adaptées aux différentes hauteurs sous plafond</li>
+        <li class="list-group-item">Ventilation permanente avec les solutions HVLS</li>
+        <li class="list-group-item">Ventilation mobile pour les besoins ponctuels ou évolutifs</li>
+        <li class="list-group-item">Possibilité de déplacer les ventilateurs mobiles selon l’utilisation des espaces</li>
+        <li class="list-group-item">Solutions adaptées aux manifestations et événements en extérieur</li>
+      </ul>
+    </section>
+    <section id="realisations-sport">
+      <h2>Quelques réalisations BRASS’AIR à La Réunion</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h3 class="h5">MYGYM – Saint-Benoît</h3>
+          <figure class="sport-reference">
+            <img class="img-fluid rounded sport-photo" src="{{ asset('images/homepage/mygym-saint-benoit.jpg') }}" alt="Ventilation HVLS EVEL salle de sport MYGYM Saint-Benoît La Réunion" loading="lazy" /><figcaption class="small text-muted mt-2">MYGYM – Saint-Benoît</figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h5">Cinéma – Saint-Denis</h3>
+          <figure class="sport-reference">
+            <img class="img-fluid rounded sport-photo" src="{{ asset('images/produits/5-0m-cineplaza-st-denis-5-66baeba614d80902021457.jpg') }}" alt="Ventilateur HVLS EVEL cinéma Saint-Denis La Réunion" loading="lazy" /><figcaption class="small text-muted mt-2">Cinéma – Saint-Denis</figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h5">Le FIVE – Saint-Louis</h3>
+          <figure class="sport-reference">
+            <img src="{{ asset('images/sport-culture/le-five-saint-louis.webp') }}" alt="Ventilateur HVLS EVEL 7 mètres installé dans un terrain de football indoor à Saint-Louis La Réunion" width="622" height="930" loading="lazy" class="img-fluid rounded sport-photo" /><figcaption class="small text-muted mt-2">Ventilateur HVLS EVEL 7 m – terrain de football indoor – Le FIVE, Saint-Louis, La Réunion</figcaption>
+          </figure>
+          <p>BRASS’AIR a équipé quatre terrains de football indoor avec quatre ventilateurs HVLS EVEL de 7 mètres.</p>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light rounded p-4 p-lg-5 text-center" aria-labelledby="sport-etude-title">
+      <h2 id="sport-etude-title">Un projet de ventilation pour votre équipement sportif ou culturel ?</h2>
+      <p>BRASS’AIR étudie votre bâtiment, vos usages et vos contraintes afin de déterminer la solution de ventilation EVEL adaptée à votre projet à La Réunion et dans l’Océan Indien.</p>
+      <a href="{{ path('app_contact_form_new') }}" class="btn btn-success mt-3 px-4 py-3">DEMANDER UNE ÉTUDE</a>
+    </section>
+  </main>
+  {% include 'contact_bar.html.twig' %}
+  <div class="d-none d-lg-block">
+    {% include 'footer.html.twig' %}
+  </div>
+  <div class="d-block d-lg-none">
+    {% include 'footer_md.html.twig' %}
+  </div>
+{% endblock %}

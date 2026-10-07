@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  BIEN-ÊTRE ANIMAL
+  Bien-être animal : ventilation des élevages | BRASS’AIR
 {% endblock %}
 
 {% block body %}
@@ -13,98 +13,68 @@
     {% include 'navbar_visitors_md.html.twig' %}
   </div>
 
-  <div class="container mt-4 px-5">
+  <div class="container mt-4 px-3 px-lg-5">
     <h1 class="p_dark_blue fw-bold text-center mb-5">VENTILATION POUR LE BIEN-ÊTRE ANIMAL</h1>
     <div class="col-lg-12 text-center">
-      <p class="lead mb-4">Les ventilateurs EVEL ont aussi pour vocation d’améliorer le bien-être des animaux dans les process d’élevage.</p>
-      <p class="lead mb-4">Ils assurent une ventilation idéale des bâtiments tout en réduisant les coûts énergétiques pour un environnement d’élevage optimal.</p>
+      <p class="lead mb-4">Dans les bâtiments d’élevage, la chaleur, l’humidité et le renouvellement de l’air constituent des enjeux importants pour le confort des animaux comme pour les conditions de travail des éleveurs.</p>
+      <p class="lead mb-4">Les solutions de ventilation EVEL permettent de favoriser la circulation de l’air et d’améliorer les conditions ambiantes dans les bâtiments d’élevage. Selon la configuration du site, différentes solutions peuvent être étudiées : ventilateurs HVLS ou ventilateurs axiaux.</p>
+      <p class="lead mb-4">BRASS’AIR accompagne chaque projet dans le choix, le dimensionnement et l’implantation d’une solution adaptée au bâtiment et au type d’élevage.</p>
     </div>
-    <h2 class="p_green fw-bold text-center mt-4 mb-3">Type d'environnement</h2>
-    <p class="text-center lead mb-4">Divers types d'élevage (bovins, porcs, volailles...)</p>
+    <h2 class="p_green fw-bold text-center mt-4 mb-3">Types d’environnement</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Élevages bovins et étables</li>
+      <li class="list-group-item">Salles de traite</li>
+      <li class="list-group-item">Élevages porcins</li>
+      <li class="list-group-item">Élevages avicoles</li>
+      <li class="list-group-item">Bâtiments agricoles nécessitant une circulation d’air adaptée</li>
+    </ul>
 
     <h2 class="p_blue fw-bold mt-4 mb-3">Caractéristiques</h2>
-    <p class="lead mb-4">Des environnements conçus et structurés pour encourager la production animale, dans le respect de leur bien-être.</p>
+    <p class="lead mb-4">Bâtiments accueillant des animaux et pouvant être soumis à des températures élevées, à l’humidité et à des conditions de ventilation variables selon leur conception, leur occupation et leur environnement.</p>
 
     <div class="row bg-light p-4 rounded shadow mb-5">
       <div class="col-lg-12">
-        <h2 class="text-warning mt-4 mb-3">Avantages</h2>
-        <ul class="list-group">
-          <li class="list-group-item">Réduction des insectes piqueurs</li>
-          <li class="list-group-item">Bien-être et amélioration des conditions des opérateurs</li>
-          <li class="list-group-item">Economie d'énergie : ventilation de l'écurie à très faible coût en été, elle permet également de sécher les litières</li>
+        <h2 class="p_green fw-bold mt-4 mb-3">Avantages</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Amélioration du confort thermique des animaux</li>
+          <li class="list-group-item">Circulation plus homogène de l’air dans le bâtiment</li>
+          <li class="list-group-item">Contribution à la gestion de la chaleur et de l’humidité</li>
+          <li class="list-group-item">Amélioration des conditions de travail des éleveurs et opérateurs</li>
+          <li class="list-group-item">Faible consommation électrique des solutions EVEL</li>
+          <li class="list-group-item">Solutions adaptables aux différentes configurations des bâtiments d’élevage</li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/BIEN_ÊTRE_ANIMAL_PHOTO_1_1.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    <div class="row mt-4">
-      {# paragraphe 1 #}
-      <div class="col-lg-6">
-        <p>EVEL produit et commercialise des ventilateurs HVLS (High Volume Low Speed) et des ventilateurs axiaux pour le secteur de l'élevage : ce sont des produits capables de garantir à l'animal le bon système de ventilation qui le protègera des situations de stress et des risques de pathologies.</p>
+    <figure class="mt-4">
+      <img src="{{ asset('images/produits/bien-etre-animal-4.webp') }}" alt="Ventilateur HVLS suspendu au-dessus des bovins dans une étable" loading="lazy" width="1500" height="1125" class="img-fluid rounded" />
+      <figcaption class="small text-muted mt-2">Brassage d’air HVLS dans un bâtiment d’élevage.</figcaption>
+    </figure>
+    <section class="mt-4 mb-4" aria-label="Une ventilation adaptée à votre élevage">
+      <p>La ventilation d’un bâtiment d’élevage doit être adaptée à sa configuration, au type d’animaux accueillis et aux conditions climatiques auxquelles il est exposé. En période chaude, une circulation d’air adaptée contribue notamment à améliorer le confort thermique des animaux.</p>
+      <p>Les ventilateurs HVLS permettent de mettre en mouvement de grands volumes d’air à faible vitesse, tandis que les ventilateurs axiaux peuvent répondre à des besoins de ventilation plus directionnels. Ces technologies peuvent également être combinées selon les caractéristiques du bâtiment.</p>
+      <p>BRASS’AIR étudie l’environnement du site afin de déterminer la solution et l’implantation les mieux adaptées au projet.</p>
+    </section>
+    <figure class="mt-4 mx-auto" style="max-width: 680px;">
+      <div class="rounded" style="aspect-ratio: 1500 / 1840; overflow: hidden;">
+        <img src="{{ asset('images/produits/bien-etre-animal-2.webp') }}" alt="Ventilateurs axiaux alignés au-dessus d’une allée accueillant des bovins" loading="lazy" width="1500" height="2000" style="display: block; width: 100%; height: auto; max-width: 100%;" />
       </div>
-      {# paragraphe 6 #}
-      <div class="col-lg-6">
-        <p>Des conditions environnementales optimisées, un bien-être animal accru, il en résultera des performances exceptionnelles avec une production améliorée et une consommation d'énergie minimale.</p>
-      </div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 2 #}
-      <div class="col-lg-6">
-        <p>EVEL en effet, a toujours eu le souci du bien-être animal, les ventilateurs de plafond EVEL peuvent être utilisés dans le secteur de l'élevage, aussi bien bovins que porcins. Grâce à leur capacité à réduire au minimum la stratification de l'air et à uniformiser la température en déplaçant et en poussant une grande quantité d'air vers le bas, ils garantissent une meilleure habitabilité des environnements.</p>
-      </div>
-      {# paragraphe 7 #}
-      <div class="col-lg-6">
-        <p>Dans les élevages de bovins laitiers, en particulier, une ventilation correcte à l'intérieur d'une étable est un facteur essentiel pour le bien-être animal qui peut influencer profondément la capacité productive et reproductive de la vache et la qualité du lait produit.</p>
-      </div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 3 #}
-      <div class="col-lg-6">
-        <p>Avec l'installation de ventilateurs de plafond HVLS dans les écuries, porcheries, poulaillers, etc., les animaux bénéficient d'un air frais et moins lourd en été, sans baisses brutales de production dues à la chaleur. Grâce à leur capacité de latéralisation, les ventilateurs de plafond EVEL rendent l'air plus sain tant pour les animaux que pour les opérateurs, car ils contribuent également à l'élimination des mauvaises odeurs.</p>
-      </div>
-      {# paragraphe 8 #}
-      <div class="col-lg-6">
-        <p>Les températures élevées constituent en effet une menace pour le bien-être des bovins qui ne peut absolument pas être sous-estimée étant donné les conséquences importantes qu'elles peuvent entraîner (augmentation de la fréquence cardiaque, augmentation de la consommation d'eau, augmentation de la température corporelle) pouvant aller jusqu'à déterminer les changements hormonaux réels et propres chez l'animal.</p>
-      </div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 4 #}
-      <div class="col-lg-6">
-        <p>La recirculation de l'air obtenue permet de réduire la présence d'organismes pathogènes, l'humidité et les émissions de gaz et, par conséquent, d'avoir un animal présentant un risque moindre de maladies.</p>
-      </div>
-      {# paragraphe 9 #}
-      <div class="col-lg-6">
-        <p>Pour cette raison, l'écurie doit être équipée de systèmes de ventilation efficaces capables de refroidir l'environnement et, en même temps, de permettre la recirculation de l'air de manière à éliminer les organismes pathogènes, l'humidité et les émissions de gaz.</p>
-      </div>
-    </div>
-    <div class="row mt-2">
-      {# paragraphe 5 #}
-      {# <div class="col-lg-6">
-        <p>Miser sur un ventilateur d'air EVEL dans le cadre du bien-être animal, c'est faire un choix gagnant qui permet de maintenir à l'intérieur de l'écurie un microclimat adéquat, essentiel à leur bien-être. Grandissant dans un environnement plus sain et plus confortable, il vivra mieux, produira des quantités plus importantes et qualitativement supérieures.</p>
-      </div> #}
-      {# paragraphe 10 #}
-      <div class="col-lg-6">
-        <p>La ventilation de l'écurie garantit, en toutes saisons, une recirculation constante de l'air et l'élimination des organismes pathogènes, de la poussière, de l'humidité et de la chaleur : si le système de ventilation n'est pas adéquat, il existe un risque de maladies respiratoires et de mammites, avec pour conséquence des souffrances animales et des pertes de production.</p>
-      </div>
-    </div>
-    {# <div class="mt-4">
-      <img src="{{ asset('images/produits/BIEN_ÊTRE_ANIMAL_PHOTO_1.jpg') }}" alt="" class="img-fluid rounded" />
-    </div> #}
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/BIEN_ÊTRE_ANIMAL_PHOTO_2.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/BIEN_ÊTRE_ANIMAL_PHOTO_4.jpg') }}" alt="" class="img-fluid rounded" />
-    </div>
-    {# 
-    <div class="mt-4">
-      <img src="{{ asset('images/produits/5-0m-cineplaza-st-denis-2-66bb041ee069f401989409.jpg') }}" alt="" class="img-fluid rounded" />
-    </div> #}
+      <figcaption class="small text-muted mt-2">Ventilation directionnelle avec des ventilateurs axiaux.</figcaption>
+    </figure>
+    <figure class="mt-4 mx-auto" style="max-width: 720px;">
+      <img src="{{ asset('images/produits/bien-etre-animal-1_1.webp') }}" alt="Illustration EVEL : bovins sous un ventilateur HVLS" loading="lazy" width="1200" height="800" class="img-fluid rounded" />
+      <figcaption class="small text-muted mt-2">Illustration du fabricant EVEL.</figcaption>
+    </figure>
   </div>
 
-  {% include 'contact_bar.html.twig' %}
+  <section class="container my-5 px-3 px-lg-5" aria-labelledby="animal-etude-title">
+    <div class="bg-light rounded p-4 p-lg-5 text-center">
+      <h2 id="animal-etude-title" class="p_dark_blue fw-bold">VOUS AVEZ UN PROJET ?</h2>
+      <p>Construction neuve, bâtiment existant ou amélioration d’une installation : transmettez-nous les principales caractéristiques de votre projet.</p>
+      <p>BRASS’AIR vous accompagne dans l’étude de la solution adaptée.</p>
+      <a href="{{ path('app_contact_form_new') }}" class="btn btn-success mt-3 px-4 py-3">DEMANDER UNE ÉTUDE</a>
+    </div>
+  </section>
   <div class="d-none d-lg-block">
     {% include 'footer.html.twig' %}
   </div>
