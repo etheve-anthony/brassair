@@ -7,10 +7,10 @@
     RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
     RewriteRule ^.well-known/acme-challenge - [L]
 
-    # redirect to no-www
+    # Redirection permanente www vers HTTPS sans www
     RewriteBase /
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www\.brassair\.re$ [NC]
+    RewriteRule ^(.*)$ https://brassair.re/$1 [R=301,L]
 
     # https redirect
     RewriteCond %{HTTPS} !=on
